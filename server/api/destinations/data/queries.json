@@ -1,0 +1,19 @@
+{
+  "placeName":"Florence",
+  "countryName":"Italy",
+  "monthsToGo":[10],
+  "historyTags":[
+     {
+		"name": "The Renaissance",
+		"periodStart": 1300,
+		"periodEnd":  1700
+	}
+  ],
+  "artTags":[
+	{
+		"name":"Renaissance",
+		"periodStart":1400,
+		"periodEnd": 1500
+	}
+  ]
+}

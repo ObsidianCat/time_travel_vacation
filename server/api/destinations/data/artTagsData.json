@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Roman",
+    "periodStart": -500,
+    "periodEnd": 476
+  },
+  {
+    "name":"Baroque",
+    "periodStart":1600,
+    "periodEnd": 1750
+  },
+  {
+    "name":"Renaissance",
+    "periodStart":1400,
+    "periodEnd": 1500
+  }
+]

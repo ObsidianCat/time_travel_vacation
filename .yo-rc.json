@@ -1,0 +1,12 @@
+{
+  "generator-ng-fullstack": {
+    "username": "ObsidianCat",
+    "appName": "time-travel-vacation",
+    "stack": "fullstack",
+    "server": "node",
+    "client": "ng2",
+    "transpilerServer": "node",
+    "secure": false,
+    "differentStaticServer": false
+  }
+}
