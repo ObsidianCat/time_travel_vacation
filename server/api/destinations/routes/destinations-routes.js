@@ -20,6 +20,21 @@ module.exports = class DestinationsRoutes {
 
     router
       .route("/api/destinations/:destinationId")
-      .get(destinationCtrl.getOne);
+      .get(destinationCtrl.getOne)
+      .delete(function(req,res){
+          req.destination.remove(function(err){
+            if(err){
+              res.status(500).send(err);
+            }
+            else{
+              res.status(204).send("removed");
+            }
+          });
+        }
+      );
+
+    router
+      .route("/api/destinationsRandom")
+      .get(destinationCtrl.getRandom);
   }
 }

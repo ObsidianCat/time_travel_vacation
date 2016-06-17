@@ -24,10 +24,27 @@ var destinationCtrl = function(Destination){
     res.json(req.destination);
   };
 
+  var getRandom = function getOneRandomItem(req, res){
+    Destination.count().exec(function(err, count){
+      var random = Math.floor(Math.random() * count);
+
+      Destination.findOne().skip(random).exec(
+        function (err, destinations) {
+          if(err){
+            res.status(500).send(err);
+          }
+          else{
+            res.json(destinations);
+          }
+        });
+    });
+  };
+
   return{
     get:get,
     post:post,
-    getOne:getOne
+    getOne:getOne,
+    getRandom:getRandom
   }
 };
 

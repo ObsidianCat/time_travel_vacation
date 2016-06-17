@@ -16,4 +16,55 @@
 		"periodEnd": 1500
 	}
   ]
+},
+{
+"placeName":"Naples",
+"countryName":"Italy",
+"monthsToGo":[10, 11, 12],
+"historyTags":[
+{
+"name": "Late Middle Ages",
+"periodStart": 1300,
+"periodEnd":  1450
 }
+],
+"artTags":[
+{
+"name":"Renaissance",
+"periodStart":1400,
+"periodEnd": 1500
+},
+{
+"name":"Baroque",
+"periodStart":1600,
+"periodEnd": 1750
+}
+]
+}
+
+{
+"placeName":"Rome",
+"countryName":"Italy",
+"monthsToGo":[1, 2, 6],
+"historyTags":[
+{
+"name": "Ancient Rome",
+"periodStart": -753,
+"periodEnd":  476
+}
+],
+"artTags":[
+
+{
+"name":"Baroque",
+"periodStart":1600,
+"periodEnd": 1750
+},
+{
+"name": "Roman",
+"periodStart": -500,
+"periodEnd": 476
+}
+]
+}
+
