@@ -20,7 +20,7 @@ module.exports = class DestinationsRoutes {
 
     router
       .route("/api/destinations/:destinationId")
-      .get(destinationCtrl.getOne)
+      .get(destinationCtrl.getById)
       .delete(function(req,res){
           req.destination.remove(function(err){
             if(err){

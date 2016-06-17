@@ -1,9 +1,8 @@
 "use strict";
 
 var destinationCtrl = function(Destination){
-  var get = function getDestinations(req, res) {
-    var query = {};
-    Destination.find(query, function(err, destinations){
+  function getAll(req, res){
+    Destination.find({}, function(err, destinations){
       if(err){
         res.status(500).send(err);
       }
@@ -11,6 +10,19 @@ var destinationCtrl = function(Destination){
         res.json(destinations);
       }
     });
+  }
+
+  var get = function getDestinations(req, res) {
+    var query = {};
+    if(req.query.bobo) {
+      //do some querrying
+    }
+    else{
+      //bring all
+      getAll(req, res);
+
+    }
+
   };
 
   var post = function createDestination (req,res) {
@@ -20,7 +32,7 @@ var destinationCtrl = function(Destination){
     res.send(destination);
   };
 
-  var getOne = function(req,res){
+  var getById = function(req,res){
     res.json(req.destination);
   };
 
@@ -43,7 +55,7 @@ var destinationCtrl = function(Destination){
   return{
     get:get,
     post:post,
-    getOne:getOne,
+    getById:getById,
     getRandom:getRandom
   }
 };
