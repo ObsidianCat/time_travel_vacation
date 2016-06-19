@@ -7,6 +7,7 @@ var destinationModel = new Schema({
   placeName:String,
   countryName:String,
   monthsToGo:[Number],
+  likes:{type:Number, default:0},
   date: { type: Date, default: Date.now },
   historyTags:[
     {
@@ -25,6 +26,22 @@ var destinationModel = new Schema({
     }
   ],
   books:[{type:mongoose.Schema.Types.ObjectId, ref:"Book"}]
+});
+
+destinationModel.method({
+  likeDestination: function(success, error) {
+    this.likes +=1;
+    this.save()
+      .then(function(){
+          console.log("succes");
+        }
+      )
+      .catch(
+        function(){
+          console.log("error");
+        }
+      )
+  }
 });
 
 module.exports =  mongoose.model("Destination", destinationModel);

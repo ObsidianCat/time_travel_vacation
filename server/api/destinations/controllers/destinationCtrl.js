@@ -1,8 +1,17 @@
 "use strict";
 
 var destinationCtrl = function(Destination){
-  function getAll(req, res){
-    Destination.find({}, function(err, destinations){
+  var get = function getDestinations(req, res) {
+    var query = {};
+    if(req.query.periodStart) {
+      query.artTags = {
+          periodStart: {$gt: req.query.periodStart}
+        }
+    }
+
+    console.log("");
+    /*
+    Destination.find(query, function(err, destinations){
       if(err){
         res.status(500).send(err);
       }
@@ -10,19 +19,32 @@ var destinationCtrl = function(Destination){
         res.json(destinations);
       }
     });
-  }
+    */
+    //
+    //
+    //query.elemMatch('comment', { author: 'autobot', votes: {$gte: 5}})
+    //{ <field>: { $elemMatch: { <query1>, <query2>, ... } } }
+    Destination.find({
+      'artTags': {$elemMatch: {'periodStart':{$gt: 1500}}}
+    }, function(err, destinations){
+      if(err){
+        res.status(500).send(err);
+      }
+      else{
+        res.json(destinations);
+      }
+    });
 
-  var get = function getDestinations(req, res) {
-    var query = {};
-    if(req.query.bobo) {
-      //do some querrying
-    }
-    else{
-      //bring all
-      getAll(req, res);
-
-    }
-
+    // Destination.find().$where(function(){
+    //   this.artTags.length>1;
+    // }).exec(function(err, destinations){
+    //     if(err){
+    //       res.status(500).send(err);
+    //     }
+    //     else{
+    //       res.json(destinations);
+    //     }
+    //   });
   };
 
   var post = function createDestination (req,res) {

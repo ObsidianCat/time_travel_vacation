@@ -33,6 +33,10 @@ module.exports = class DestinationsRoutes {
         }
       );
 
+    router.route('/api/destinations/:destinationId/like').
+      patch(function(req, res, next){
+
+      });
     router
       .route("/api/destinationsRandom")
       .get(destinationCtrl.getRandom);
