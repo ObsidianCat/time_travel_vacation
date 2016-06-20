@@ -15,7 +15,17 @@ var destinationCtrl = function(Destination){
           }
         ]
       }
-    };
+    }
+    else if(req.query.historyTags){
+      query = {
+        'historyTags': {$elemMatch: {name:{ $in:req.query.historyTags}}}
+      }
+    }
+    else if (req.query.artTags){
+      query = {
+        'artTags': {$elemMatch: {name:{ $in:req.query.artTags}}}
+      }
+    }
 
 
     Destination.find(
