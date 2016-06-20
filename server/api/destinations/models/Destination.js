@@ -6,7 +6,6 @@ var mongoose = require("mongoose"),
 var destinationModel = new Schema({
   placeName:String,
   countryName:String,
-  monthsToGo:[Number],
   likes:{type:Number, default:0},
   date: { type: Date, default: Date.now },
   historyTags:[

@@ -18,6 +18,25 @@
   ]
 },
 {
+  "placeName":"Athens",
+  "countryName":"Greece",
+  "historyTags":[
+    {
+    "name": "Ancient Greece",
+    "periodStart": -3000,
+    "periodEnd":  -31
+    }
+  ],
+  "artTags":[
+    {
+    "name": "Greek and Hellenistic",
+    "periodStart": -850,
+    "periodEnd": -31
+    }
+  ]
+},
+
+{
 "placeName":"Naples",
 "countryName":"Italy",
 "monthsToGo":[10, 11, 12],

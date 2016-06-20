@@ -4,29 +4,23 @@ var destinationCtrl = function(Destination){
   var get = function getDestinations(req, res) {
     var query = {};
     if(req.query.periodStart) {
-      query.artTags = {
-          periodStart: {$gt: req.query.periodStart}
-        }
-    }
+      //get items in range of time
+      query={
+        $or:[
+          {
+            'artTags': {$elemMatch: {$and:[{periodStart:{$gte:req.query.periodStart}},{periodEnd:{$lte:req.query.periodEnd}}]}}
+          },
+          {
+            'historyTags': {$elemMatch: {$and:[{periodStart:{$gte:req.query.periodStart}},{periodEnd:{$lte:req.query.periodEnd}}]}}
+          }
+        ]
+      }
+    };
 
-    console.log("");
-    /*
-    Destination.find(query, function(err, destinations){
-      if(err){
-        res.status(500).send(err);
-      }
-      else{
-        res.json(destinations);
-      }
-    });
-    */
-    //
-    //
-    //query.elemMatch('comment', { author: 'autobot', votes: {$gte: 5}})
-    //{ <field>: { $elemMatch: { <query1>, <query2>, ... } } }
-    Destination.find({
-      'artTags': {$elemMatch: {'periodStart':{$gt: 1500}}}
-    }, function(err, destinations){
+
+    Destination.find(
+      query,
+      function(err, destinations){
       if(err){
         res.status(500).send(err);
       }
@@ -35,16 +29,6 @@ var destinationCtrl = function(Destination){
       }
     });
 
-    // Destination.find().$where(function(){
-    //   this.artTags.length>1;
-    // }).exec(function(err, destinations){
-    //     if(err){
-    //       res.status(500).send(err);
-    //     }
-    //     else{
-    //       res.json(destinations);
-    //     }
-    //   });
   };
 
   var post = function createDestination (req,res) {

@@ -5,6 +5,11 @@
     "periodEnd": 476
   },
   {
+    "name": "Greek and Hellenistic",
+    "periodStart": -850,
+    "periodEnd": -31
+  },
+  {
     "name":"Baroque",
     "periodStart":1600,
     "periodEnd": 1750
