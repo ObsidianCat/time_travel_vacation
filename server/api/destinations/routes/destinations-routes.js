@@ -35,7 +35,13 @@ module.exports = class DestinationsRoutes {
 
     router.route('/api/destinations/:destinationId/like').
       patch(function(req, res, next){
-
+        req.destination.likeIt(function(destination){
+          res.json(destination);
+        },
+        function(err){
+          return next(err)
+         }
+        );
       });
     router
       .route("/api/destinationsRandom")

@@ -13,7 +13,7 @@ var destinationModel = new Schema({
       name:String,
       periodStart:{type:Number, default: 0},
       periodEnd:{type:Number, default: 0},
-      upvotes:{type:Number, default:0}
+      votes:{type:Number, default:0}
     }
   ],
   artTags:[
@@ -21,23 +21,24 @@ var destinationModel = new Schema({
       name:String,
       periodStart:{type:Number, default: 0},
       periodEnd:{type:Number, default: 0},
-      upvotes:{type:Number, default:0}
+      votes:{type:Number, default:0}
     }
   ],
   books:[{type:mongoose.Schema.Types.ObjectId, ref:"Book"}]
 });
 
 destinationModel.method({
-  likeDestination: function(success, error) {
+  likeIt: function(success, handleErr) {
     this.likes +=1;
     this.save()
-      .then(function(){
+      .then(function(model){
           console.log("succes");
+          success(model);
         }
       )
       .catch(
-        function(){
-          console.log("error");
+        function(err){
+          handleErr(err);
         }
       )
   }
