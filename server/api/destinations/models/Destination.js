@@ -41,6 +41,32 @@ destinationModel.method({
           handleErr(err);
         }
       )
+  },
+  voteTag: function voteForTag(data, success, handleErr){
+    var setOfTags = this[data.tagType];
+    for(let i = 0; i<setOfTags.length; i++){
+      let tag = setOfTags[i];
+      if(tag._id == data.tagId){
+        if(data.voteType == "up"){
+          tag.votes++;
+        }
+        else{
+          tag.votes--;
+        }
+        break;
+      }
+    }
+    this.save()
+      .then(function(model){
+          success(model);
+        }
+      )
+      .catch(
+        function(err){
+          handleErr(err);
+        }
+      )
+
   }
 });
 

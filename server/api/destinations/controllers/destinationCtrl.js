@@ -68,11 +68,35 @@ var destinationCtrl = function(Destination){
     });
   };
 
+  var voteForTag = function vote(req, res, next){
+    var voteDetails = {};
+    if(req.query.tagType && req.query.tagId && req.query.voteType) {
+      voteDetails.tagType = req.query.tagType;
+      voteDetails.tagId = req.query.tagId;
+      voteDetails.voteType = req.query.voteType;
+      req.destination.voteTag(
+        voteDetails,
+        function(destination){
+          res.json(destination);
+        },
+        function(err){
+          return next(err)
+        }
+      );
+    }
+    else{
+      res.json({"message":"wrong parameters"});
+
+    }
+  };
+
   return{
     get:get,
     post:post,
     getById:getById,
-    getRandom:getRandom
+    getRandom:getRandom,
+    voteForTag:voteForTag
+
   }
 };
 

@@ -18,8 +18,7 @@ module.exports = class DestinationsRoutes {
       .get(destinationCtrl.get)
       .post(destinationCtrl.post);
 
-    router
-      .route("/api/destinations/:destinationId")
+    router.route("/api/destinations/:destinationId")
       .get(destinationCtrl.getById)
       .delete(function(req,res){
           req.destination.remove(function(err){
@@ -43,6 +42,10 @@ module.exports = class DestinationsRoutes {
          }
         );
       });
+    
+    router.route('/api/destinations/:destinationId/voteTag').
+      patch(destinationCtrl.voteForTag);
+    
     router
       .route("/api/destinationsRandom")
       .get(destinationCtrl.getRandom);
