@@ -5,7 +5,7 @@
 // var mongoose = require('mongoose');
 // mongoose.Promise = global.Promise;
 
-var destinationMiddlewares = function(Destination){
+var destinationMw = function(Destination){
   var findDestination = function(req, res, next){
     Destination.findById(req.params.destinationId).exec()
       .then(function(destination) {

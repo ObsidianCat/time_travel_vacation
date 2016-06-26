@@ -3,42 +3,49 @@
 var destinationCtrl = function(Destination){
   var get = function getDestinations(req, res) {
     var query = {};
-    if(req.query.periodStart) {
-      //get items in range of time
-      query={
-        $or:[
-          {
-            'artTags': {$elemMatch: {$and:[{periodStart:{$gte:req.query.periodStart}},{periodEnd:{$lte:req.query.periodEnd}}]}}
-          },
-          {
-            'historyTags': {$elemMatch: {$and:[{periodStart:{$gte:req.query.periodStart}},{periodEnd:{$lte:req.query.periodEnd}}]}}
+    //get one random destination
+    if(req.query.random){
+      getRandom(req, res)
+    }
+    //get all or filter them
+    else{
+      if(req.query.periodStart) {
+        //get items in range of time
+        query={
+          $or:[
+            {
+              'artTags': {$elemMatch: {$and:[{periodStart:{$gte:req.query.periodStart}},{periodEnd:{$lte:req.query.periodEnd}}]}}
+            },
+            {
+              'historyTags': {$elemMatch: {$and:[{periodStart:{$gte:req.query.periodStart}},{periodEnd:{$lte:req.query.periodEnd}}]}}
+            }
+          ]
+        }
+      }
+      else if(req.query.historyTags){
+        query = {
+          'historyTags': {$elemMatch: {name:{ $in:req.query.historyTags}}}
+        }
+      }
+      else if (req.query.artTags){
+        query = {
+          'artTags': {$elemMatch: {name:{ $in:req.query.artTags}}}
+        }
+      }
+
+
+      Destination.find(
+        query,
+        function(err, destinations){
+          if(err){
+            res.status(500).send(err);
           }
-        ]
-      }
+          else{
+            res.json(destinations);
+          }
+        });
     }
-    else if(req.query.historyTags){
-      query = {
-        'historyTags': {$elemMatch: {name:{ $in:req.query.historyTags}}}
-      }
-    }
-    else if (req.query.artTags){
-      query = {
-        'artTags': {$elemMatch: {name:{ $in:req.query.artTags}}}
-      }
-    }
-
-
-    Destination.find(
-      query,
-      function(err, destinations){
-      if(err){
-        res.status(500).send(err);
-      }
-      else{
-        res.json(destinations);
-      }
-    });
-
+    
   };
 
   var post = function createDestination (req,res) {
