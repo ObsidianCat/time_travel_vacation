@@ -50,9 +50,17 @@ var destinationCtrl = function(Destination){
 
   var post = function createDestination (req,res) {
     var destination = new Destination(req.body);
-    destination.save();
-    res.status(201);
-    res.send(destination);
+    destination.save().then(function(model){
+      res.status(201);
+      res.send(model);
+      }
+    )
+    .catch(
+      function(err){
+        console.error("Destination not saved");
+        res.send(err);
+      }
+    );
   };
 
   var getById = function(req,res){

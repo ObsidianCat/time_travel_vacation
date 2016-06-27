@@ -4,7 +4,7 @@ var mongoose = require("mongoose"),
   Schema = mongoose.Schema;
 
 var BookModel = new Schema({
-  author:String,
+  author:[String],
   title:String,
   yearOfPublication:Number,
   amazonLink: String,

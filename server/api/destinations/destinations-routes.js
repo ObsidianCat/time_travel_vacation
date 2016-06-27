@@ -3,13 +3,13 @@
 // var express = require('express'),
 //   router = express.Router();
 
-var Destination = require("models/Destination");
-var destinationCtrl = require("destinationCtrl.js")(Destination);
-var destinationMw = require("../middlewares/destinationsMw")(Destination);
+var Destination = require("../destinations/models/Destination");
+var destinationCtrl = require("../destinations/destinationCtrl.js")(Destination);
+var destinationMw = require("../middlewares/destinationMw")(Destination);
 
 module.exports = class DestinationsRoutes {
   static init(router) {
-    router.use("/api/destinations/:destinationId", destinationMw.findDestination);
+    router.param('destinationId', destinationMw.findDestination);
 
     router
     .route("/api/destinations")
@@ -40,7 +40,7 @@ module.exports = class DestinationsRoutes {
          }
         );
       });
-    
+
     router.route('/api/destinations/:destinationId/voteTag').
       patch(destinationCtrl.voteForTag);
 

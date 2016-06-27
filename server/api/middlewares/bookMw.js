@@ -9,8 +9,8 @@
 // mongoose.Promise = global.Promise;
 
 var bookMiddlewares = function(Book){
-  var findBook = function(req, res, next){
-    Book.findById(req.params.bookId).exec()
+  var findBook = function(req, res, next, id){
+    Book.findById(id).exec()
       .then(function(book) {
         if(book){
           req.book = book;

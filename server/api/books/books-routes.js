@@ -2,27 +2,25 @@
 /**
  * Created by Lula on 6/26/2016.
  */
-var Book = require("models/Book");
-var bookCtrl = require("bookCtrl.js")(Book);
+var Book = require("../books/models/Book");
+var Destination = require("../destinations/models/Destination");
+var bookCtrl = require("../books/bookCtrl.js")(Book, Destination);
 var bookMw = require("../middlewares/bookMw")(Book);
+var destinationMw = require("../middlewares/destinationMw")(Destination);
 
 module.exports = class BookRoutes {
   static init(router) {
-    router.use("/api/books/:bookId", bookMw.findBook);
+    router.param('destinationId', destinationMw.findDestination);
+    router.param("bookId", bookMw.findBook);
+
+    router
+      .route("/api/books/:destinationId")
+      .post(bookCtrl.post);
     router
       .route("/api/books")
-      .post(bookCtrl.post);
-    router.route("/api/books/::bookId")
-      .delete(function(req,res){
-          req.destination.remove(function(err){
-            if(err){
-              res.status(500).send(err);
-            }
-            else{
-              res.status(204).send("removed");
-            }
-          });
-        }
-      );
+      .get(bookCtrl.get);
+
+    router.route("/api/books/:destinationId/:bookId")
+      .delete(bookCtrl.deleteOne);
   }
 };

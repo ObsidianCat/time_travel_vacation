@@ -6,8 +6,9 @@
 // mongoose.Promise = global.Promise;
 
 var destinationMw = function(Destination){
-  var findDestination = function(req, res, next){
-    Destination.findById(req.params.destinationId).exec()
+  var findDestination = function(req, res, next, id){
+    console.log(id);
+    Destination.findById(id).exec()
       .then(function(destination) {
         if(destination){
           req.destination = destination;
@@ -30,4 +31,4 @@ var destinationMw = function(Destination){
 
 
 
-module.exports = destinationMiddlewares;
+module.exports = destinationMw;
