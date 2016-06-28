@@ -8,18 +8,17 @@ var Advice = require("../advices/models/Advice");
 var adviceCtrl = require("../advices/adviceCtrl.js")(Advice, Destination);
 var commonMw = require("../middlewares/commmonMw")();
 
-module.exports = class BookRoutes {
+module.exports = class AdviceRoutes {
   static init(router) {
     router.param('destinationId', commonMw.findItemById);
+    router.param('adviceId', commonMw.findItemById);
 
-    router
-      .route("/api/books/:destinationId")
-      .post(bookCtrl.post);
-    router
-      .route("/api/books")
-      .get(bookCtrl.get);
+    router.route("/api/advices/:destinationId")
+      .post(adviceCtrl.post);
+    router.route("/api/advices")
+      .get(adviceCtrl.get);
 
-    router.route("/api/books/:destinationId/:bookId")
-      .delete(bookCtrl.deleteOne);
+    router.route("/api/books/:destinationId/:adviceId")
+      .delete(adviceCtrl.deleteOne);
   }
 };

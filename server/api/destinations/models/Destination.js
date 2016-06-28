@@ -24,7 +24,9 @@ var destinationModel = new Schema({
       votes:{type:Number, default:0}
     }
   ],
-  books:[{type:mongoose.Schema.Types.ObjectId, ref:"Book"}]
+  books:[{type:mongoose.Schema.Types.ObjectId, ref:"Book"}],
+  advices:[{type:mongoose.Schema.Types.ObjectId, ref:"Advice"}]
+
 });
 
 destinationModel.method({

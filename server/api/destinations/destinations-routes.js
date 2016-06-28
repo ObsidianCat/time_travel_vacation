@@ -1,8 +1,5 @@
 "use strict";
 
-// var express = require('express'),
-//   router = express.Router();
-
 var Destination = require("../destinations/models/Destination");
 var destinationCtrl = require("../destinations/destinationCtrl.js")(Destination);
 var commonMw = require("../middlewares/commmonMw")();
