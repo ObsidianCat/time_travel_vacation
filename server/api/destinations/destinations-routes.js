@@ -5,11 +5,11 @@
 
 var Destination = require("../destinations/models/Destination");
 var destinationCtrl = require("../destinations/destinationCtrl.js")(Destination);
-var destinationMw = require("../middlewares/destinationMw")(Destination);
+var commonMw = require("../middlewares/commmonMw")();
 
 module.exports = class DestinationsRoutes {
   static init(router) {
-    router.param('destinationId', destinationMw.findDestination);
+    router.param('destinationId', commonMw.findItemById);
 
     router
     .route("/api/destinations")

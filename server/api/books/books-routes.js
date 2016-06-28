@@ -5,13 +5,12 @@
 var Book = require("../books/models/Book");
 var Destination = require("../destinations/models/Destination");
 var bookCtrl = require("../books/bookCtrl.js")(Book, Destination);
-var bookMw = require("../middlewares/bookMw")(Book);
-var destinationMw = require("../middlewares/destinationMw")(Destination);
+var commonMw = require("../middlewares/commmonMw")();
 
 module.exports = class BookRoutes {
   static init(router) {
-    router.param('destinationId', destinationMw.findDestination);
-    router.param("bookId", bookMw.findBook);
+    router.param('destinationId', commonMw.findItemById);
+    router.param('bookId', commonMw.findItemById);
 
     router
       .route("/api/books/:destinationId")
