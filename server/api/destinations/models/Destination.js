@@ -46,8 +46,7 @@ destinationModel.method({
   },
   voteTag: function voteForTag(data, success, handleErr){
     var setOfTags = this[data.tagType];
-    for(let i = 0; i<setOfTags.length; i++){
-      let tag = setOfTags[i];
+    for(let tag of setOfTags){
       if(tag._id == data.tagId){
         if(data.voteType == "up"){
           tag.votes++;

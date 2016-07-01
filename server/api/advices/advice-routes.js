@@ -4,7 +4,7 @@
  */
 
 var Destination = require("../destinations/models/Destination");
-var Advice = require("../advices/models/Advice");
+var Advice = require("models/Advice");
 var adviceCtrl = require("../advices/adviceCtrl.js")(Advice, Destination);
 var commonMw = require("../middlewares/commmonMw")();
 

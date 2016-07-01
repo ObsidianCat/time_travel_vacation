@@ -12,6 +12,7 @@ module.exports = class Routes {
      TodoRoutes.init(router);
      DestinationRoutes.init(router);
      BookRoutes.init(router);
+     UserRoutes.init(router);
 
      router
        .route('*')
