@@ -38,19 +38,25 @@ var adviceCtrl = function(User, Destination, Advice){
   };
 
   var deleteOne = function(req, res, next){
+    //remove references to object
+    req.destination.advices.pull({ _id: req.advice._id });
+    req.user.advices.pull({ _id: req.advice._id });
 
-    // req.destination.books.pull({ _id: req.book._id }); // removed
-    // Promise.all([req.destination.save(), req.book.remove()]).then(values => {
-    //   console.log(values);
-    //   res.status(204);
-    //   res.send({"message": "book removed"});
-    // })
-    //   .catch(
-    //     function (err) {
-    //       console.error("error occurred during book deleting");
-    //       next(err);
-    //     }
-    //   );
+    Promise.all([
+      req.destination.save(),
+      req.user.save(),
+      req.advice.remove()
+    ])
+      .then(values => {
+      res.status(204);
+      res.send({"message": "advice removed"});
+    })
+      .catch(
+        function (err) {
+          console.error("error occurred during advice deleting");
+          next(err);
+        }
+      );
   };
 
   return{

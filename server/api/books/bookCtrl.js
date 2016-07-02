@@ -34,7 +34,6 @@ var bookCtrl = function(Book, Destination){
   };
 
   var deleteOne = function(req, res, next){
-
     req.destination.books.pull({ _id: req.book._id }); // removed
     Promise.all([req.destination.save(), req.book.remove()]).then(values => {
       console.log(values);

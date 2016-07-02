@@ -20,7 +20,7 @@ module.exports = class AdvicesRoutes {
       .post(adviceCtrl.post);
     router.route("/api/advices")
       .get(adviceCtrl.get);
-    router.route("/api/books/:destinationId/:userId/:adviceId")
+    router.route("/api/advices/:destinationId/:userId/:adviceId")
       .delete(adviceCtrl.deleteOne);
   }
 };
