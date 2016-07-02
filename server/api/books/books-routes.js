@@ -5,7 +5,7 @@
 var Book = require("../books/models/Book");
 var Destination = require("../destinations/models/Destination");
 var bookCtrl = require("../books/bookCtrl.js")(Book, Destination);
-var commonMw = require("../middlewares/commmonMw")();
+var commonMw = require("../middlewares/commmonMw");
 
 module.exports = class BookRoutes {
   static init(router) {

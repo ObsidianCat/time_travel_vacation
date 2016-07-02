@@ -2,7 +2,7 @@
 
 var Destination = require("../destinations/models/Destination");
 var destinationCtrl = require("../destinations/destinationCtrl.js")(Destination);
-var commonMw = require("../middlewares/commmonMw")();
+var commonMw = require("../middlewares/commmonMw");
 
 module.exports = class DestinationsRoutes {
   static init(router) {

@@ -3,6 +3,7 @@
 const TodoRoutes = require('../api/todo/routes/todo-routes');
 const DestinationRoutes = require('../api/destinations/destinations-routes');
 const BookRoutes = require('../api/books/books-routes');
+const UserRoutes = require('../api/users/users-routes');
 
 const StaticDispatcher = require('../commons/static/index');
 

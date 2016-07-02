@@ -5,12 +5,13 @@
 
 var Destination = require("../destinations/models/Destination");
 var Book = require("../books/models/Book");
-var Advice = require("./Advice");
+var Advice = require("../advices/models/Advice");
+var User = require("../users/models/User");
 
 function findItem(req, res, next, id, name){
   var model;
   var itemName;
-  
+
   switch (name) {
     case "destinationId":
       model = Destination;
@@ -24,8 +25,12 @@ function findItem(req, res, next, id, name){
       model = Advice;
       itemName = "advice";
       break;
+    case "userId":
+      model = User;
+      itemName = "user";
+      break;
   }
-  
+
   model.findById(id).exec()
     .then(function(itemData) {
       if(itemData){

@@ -4,6 +4,7 @@ var mongoose = require("mongoose"),
 var userModel = new Schema({
   firstName:String,
   lastName:String,
+  nickname:String,
   email:String,
   advices:[{type:mongoose.Schema.Types.ObjectId, ref:'Advice'}]
 });
