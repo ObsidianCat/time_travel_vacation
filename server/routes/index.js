@@ -1,9 +1,10 @@
 "use strict";
 
 const TodoRoutes = require('../api/todo/routes/todo-routes');
-const DestinationRoutes = require('../api/destinations/destinations-routes');
-const BookRoutes = require('../api/books/books-routes');
-const UserRoutes = require('../api/users/users-routes');
+const DestinationsRoutes = require('../api/destinations/destinations-routes');
+const BooksRoutes = require('../api/books/books-routes');
+const UsersRoutes = require('../api/users/users-routes');
+const AdvicesRoutes = require('../api/advices/advices-routes');
 
 const StaticDispatcher = require('../commons/static/index');
 
@@ -11,9 +12,10 @@ const StaticDispatcher = require('../commons/static/index');
 module.exports = class Routes {
    static init(app, router) {
      TodoRoutes.init(router);
-     DestinationRoutes.init(router);
-     BookRoutes.init(router);
-     UserRoutes.init(router);
+     DestinationsRoutes.init(router);
+     BooksRoutes.init(router);
+     UsersRoutes.init(router);
+     AdvicesRoutes.init(router);
 
      router
        .route('*')
@@ -22,10 +24,6 @@ module.exports = class Routes {
 
      app.use('/', router);
 
-     app.param('destinationId', function (req, res, next, id) {
-       console.log('CALLED ONLY ONCE');
-       next();
-     });
 
    }
 };

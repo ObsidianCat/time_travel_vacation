@@ -5,10 +5,10 @@
 
 var Destination = require("../destinations/models/Destination");
 var User = require("../users/models/User");
-var Advice = require("models/Advice");
+var Advice = require("../advices/models/Advice");
 
 var adviceCtrl = require("../advices/adviceCtrl.js")(User, Destination, Advice);
-var commonMw = require("../middlewares/commmonMw")();
+var commonMw = require("../middlewares/commmonMw");
 
 module.exports = class AdvicesRoutes {
   static init(router) {
@@ -20,7 +20,6 @@ module.exports = class AdvicesRoutes {
       .post(adviceCtrl.post);
     router.route("/api/advices")
       .get(adviceCtrl.get);
-
     router.route("/api/books/:destinationId/:userId/:adviceId")
       .delete(adviceCtrl.deleteOne);
   }

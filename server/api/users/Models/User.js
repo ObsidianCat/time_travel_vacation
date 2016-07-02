@@ -10,4 +10,4 @@ var userModel = new Schema({
 });
 
 
-module.exports = mongoose.model("Profile", userModel);
+module.exports = mongoose.model("User", userModel);

@@ -16,7 +16,7 @@ var adviceCtrl = function(User, Destination, Advice){
 
     Promise.all([req.user.save(), req.destination.save(), advice.save()]).then(data => {
         console.log(data);
-        res.status(200).send({data:data[1]});
+        res.status(201).send({data:data[2]});
       },
       function(err) {
         console.error("error occurred during advice saving");
