@@ -6,7 +6,8 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
   selector: 'vacations-app',
-  templateUrl:'vacation-chooser/templates/app.component.html'
+  templateUrl:'vacation-chooser/templates/app.component.html',
+  directives: [ROUTER_DIRECTIVES]
 
 })
 export class AppComponent {
