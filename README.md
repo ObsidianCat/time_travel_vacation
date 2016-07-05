@@ -1,3 +1,3 @@
-# time-travel-vacation
-[![Build Status](https://secure.travis-ci.org/ObsidianCat/time-travel-vacation.png?branch=master)](https://travis-ci.org/ObsidianCat/time-travel-vacation)
-[![Coverage Status](https://coveralls.io/repos/ObsidianCat/time-travel-vacation/badge.svg?branch=master)](https://coveralls.io/r/ObsidianCat/time-travel-vacation/?branch=master)
+# vacation-chooser-app
+[![Build Status](https://secure.travis-ci.org/ObsidianCat/vacation-chooser-app.png?branch=master)](https://travis-ci.org/ObsidianCat/vacation-chooser-app)
+[![Coverage Status](https://coveralls.io/repos/ObsidianCat/vacation-chooser-app/badge.svg?branch=master)](https://coveralls.io/r/ObsidianCat/vacation-chooser-app/?branch=master)

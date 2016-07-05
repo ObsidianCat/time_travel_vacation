@@ -13,10 +13,6 @@ const DBConfig = require('./config/db.conf');
 const Routes = require('./routes/index');
 
 const app = express();
-app.param('destinationId', function (req, res, next, id) {
-  console.log('CALLED ONLY ONCE');
-  next();
-});
 
 RoutesConfig.init(app);
 DBConfig.init();
