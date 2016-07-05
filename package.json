@@ -21,7 +21,7 @@
     "@angular/http": "^2.0.0-rc.4",
     "@angular/platform-browser": "^2.0.0-rc.4",
     "@angular/platform-browser-dynamic": "^2.0.0-rc.4",
-    "@angular/router": "^2.0.0-rc.2",
+    "@angular/router": "^3.0.0-beta.2",
     "bluebird": "^3.3.4",
     "body-parser": "^1.5.0",
     "bootstrap": "^3.3.6",
