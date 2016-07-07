@@ -6,6 +6,7 @@ bower_components
 typings
 *.map
 tests
-client/**/*.js
+client/dev/**/*.js
+client/dev/index.js
 
 *.3268827652
