@@ -4,6 +4,7 @@
 import { Component } from '@angular/core';
 
 @Component({
+  selector:'destination-preview',
   templateUrl:'vacation-chooser/templates/show-list.component.html',
 })
 export class ShowListComponent { }
