@@ -12,6 +12,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Created by Lula on 7/3/2016.
  */
 var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
+var destination_data_handler_service_1 = require("../services/destination-data-handler.service");
 var AppComponent = (function () {
     function AppComponent() {
         this.name = "Time traveler";
@@ -19,7 +21,9 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'vacations-app',
-            templateUrl: 'vacation-chooser/templates/app.component.html'
+            templateUrl: 'vacation-chooser/templates/app.component.html',
+            directives: [router_1.ROUTER_DIRECTIVES],
+            providers: [destination_data_handler_service_1.DestinationDataHandlerService]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
