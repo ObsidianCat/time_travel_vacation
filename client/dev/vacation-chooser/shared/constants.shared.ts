@@ -9,7 +9,7 @@
 
 
 const DESTINATION_URLS = {
-  ALL_DESTINATIONS: "localhost:3333/api/destinations",
+  ALL_DESTINATIONS: "api/destinations",
   RANDOM_DESTINATION: "/api/destinations?random=true",
 };
 

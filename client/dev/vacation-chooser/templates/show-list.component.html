@@ -1,4 +1,9 @@
 <div class="starter-template">
   <h1>List component route!</h1>
-  <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+  <p class="lead">List of art and history destinations</p>
+  <section class="destinations-list">
+    <div *ngFor="let dest of destList">
+      <destination-preview [destination]="dest"></destination-preview>
+    </div>
+  </section>
 </div>
