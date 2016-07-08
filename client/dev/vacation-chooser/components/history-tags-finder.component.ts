@@ -5,6 +5,5 @@ import { Component } from '@angular/core';
   selector: 'history-tags-finder',
 })
 export class HistoryTagsFinderComponent {
-
-  
+  tags = ["Early Middle Ages","The Renaissance", "Ancient Rome", "Ancient Greece"]
 }

@@ -4,4 +4,6 @@ import { Component } from '@angular/core';
   templateUrl:'vacation-chooser/templates/art-tags-finder.component.html',
   selector: 'art-tags-finder',
 })
-export class ArtTagsFinderComponent { }
+export class ArtTagsFinderComponent { 
+  tags = ["Roman", "Greek and Hellenistic","Baroque", "Renaissance"];
+}
