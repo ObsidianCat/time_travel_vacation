@@ -4,7 +4,6 @@
 import {Component, OnInit} from '@angular/core';
 import { DestinationDataHandlerService } from "../services/destination-data-handler.service";
 import { DestPreviewComponent } from './dest-preview.component';
-import { DESTINATION_URLS } from '../shared/constants.shared';
 
 @Component({
   selector:'destination-preview',
@@ -18,10 +17,9 @@ export class ShowListComponent implements OnInit {
   destList: any[];
   ngOnInit() {
     this.destList = [];
-    this.dataHandlerService.getData(DESTINATION_URLS.ALL_DESTINATIONS)
+    this.dataHandlerService.getAllDestinations()
       .then((data)=>{
         this.destList = data;
-        // console.log(this.randomDest);
         console.log(data);
 
       })

@@ -9,18 +9,28 @@ import { Http, Response } from  '@angular/http';
 import 'rxjs/Rx';
 import 'rxjs/add/operator/toPromise';
 
+import { DESTINATION_URLS } from '../shared/constants.shared';
 
 @Injectable()
 export class DestinationDataHandlerService{
   constructor(private http:Http ){}
 
-  getData(data_url): Promise<any> {
+  private getData(data_url): Promise<any> {
     return this.http.get(data_url)
       .toPromise()
       .then(this.extractData)
       .catch(this.handleError);
   }
-
+  
+  getRandomDestination(){
+    return this.getData(DESTINATION_URLS.RANDOM_DESTINATION);
+  }
+  getDestinationById(id){
+    return this.getData(DESTINATION_URLS.ALL_DESTINATIONS+"/"+id);
+  }
+  getAllDestinations(){
+    return this.getData(DESTINATION_URLS.ALL_DESTINATIONS);
+  }
   private extractData(res: Response) {
     let body = res.json();
     return body || { };
