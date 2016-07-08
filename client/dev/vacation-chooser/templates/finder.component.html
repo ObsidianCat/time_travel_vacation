@@ -1,6 +1,13 @@
 <div class="starter-template">
+  <h1>Choose option for search</h1>
   <nav>
+    <button (click)="searchType = 'art'">Art tags</button>
+    <button (click)="searchType = 'history'">History tags</button>
+    <button (click)="searchType = 'period'">Time Period</button>
   </nav>
 </div>
 <section id="search-option">
+  <period-finder *ngIf="searchType == 'period'"></period-finder>
+  <history-tags-finder *ngIf="searchType == 'history'"></history-tags-finder>
+  <art-tags-finder *ngIf="searchType == 'art'"></art-tags-finder>
 </section>
