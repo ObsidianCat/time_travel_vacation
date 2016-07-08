@@ -3,14 +3,13 @@
  */
 import { Component, Input  } from '@angular/core';
 import { Router } from '@angular/router';
-import { ROUTER_DIRECTIVES, RouterLink } from '@angular/router';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 
 
 @Component({
   selector:'destination-preview',
   templateUrl:'vacation-chooser/templates/dest-preview.component.html',
   directives: [ROUTER_DIRECTIVES],
-
 })
 export class DestPreviewComponent {
   @Input() destination: {};
