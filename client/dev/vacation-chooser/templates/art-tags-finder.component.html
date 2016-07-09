@@ -1,1 +1,13 @@
 Art tags
+<form *ngIf="active" (ngSubmit)="onSubmit()" #artTagsForm="ngForm">
+  <div class="form-group" *ngFor="let tag of model.tags">
+    <input
+      class="form-control"
+      type="checkbox"
+      [name]="tag.name"
+      [value]="tag.name"
+      (change)="tag.isChecked = !tag.isChecked">
+    {{tag.name}}
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
