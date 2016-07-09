@@ -28,6 +28,9 @@ export class DestinationDataHandlerService{
   getDestinationById(id){
     return this.getData(DESTINATION_URLS.ALL_DESTINATIONS+"/"+id);
   }
+  getDestinationsByTags(dataModel){
+    return this.getData(DESTINATION_URLS.ALL_DESTINATIONS+"?"+dataModel.tagsType+"="+dataModel.selectedTags.join());
+  }
   getAllDestinations(){
     return this.getData(DESTINATION_URLS.ALL_DESTINATIONS);
   }

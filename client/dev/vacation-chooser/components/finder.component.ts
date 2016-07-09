@@ -14,6 +14,16 @@ import { PeriodFinderComponent } from './period-finder.component';
 })
 export class FinderComponent {
   public searchType: String;
+  public searchResults:{}[] = [];
+  searchResultsChange(event) {
+    // result: { value: <number> }
+    console.log(event);
+  }
+
   constructor(
   ) {}
+
+  gotSearchResults(data){
+    console.log(data);
+  }
 }
