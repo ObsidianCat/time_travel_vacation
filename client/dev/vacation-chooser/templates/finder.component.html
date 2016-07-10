@@ -7,8 +7,8 @@
   </nav>
 </div>
 <section id="search-option">
-  <period-finder *ngIf="searchType == 'period'"></period-finder>
-  <history-tags-finder *ngIf="searchType == 'history'"></history-tags-finder>
+  <period-finder (gotSearchResults)="gotSearchResults($event)" *ngIf="searchType == 'period'"></period-finder>
+  <history-tags-finder (gotSearchResults)="gotSearchResults($event)" *ngIf="searchType == 'history'"></history-tags-finder>
   <art-tags-finder (gotSearchResults)="gotSearchResults($event)" *ngIf="searchType == 'art'"></art-tags-finder>
 </section>
 <section class="destinations-list">

@@ -1,5 +1,5 @@
-Art tags
-<form *ngIf="active" (ngSubmit)="onSubmit()" #artTagsForm="ngForm">
+<h3>Tags finder</h3>
+<form *ngIf="active" (ngSubmit)="onSubmit()" #tagsForm="ngForm">
   <div class="form-group" *ngFor="let tag of model.tags">
     <input
       class="form-control"

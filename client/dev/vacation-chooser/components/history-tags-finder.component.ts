@@ -26,6 +26,7 @@ export class HistoryTagsFinderComponent {
     // console.log(this.model);
     this.dataHandlerService.getDestinationsByTags(this.model)
       .then((data)=>{
+        console.log(data);
         this.gotSearchResults.emit(data);
       })
       .catch((err)=>{

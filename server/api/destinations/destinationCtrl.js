@@ -11,13 +11,15 @@ var destinationCtrl = function(Destination){
     else{
       if(req.query.periodStart) {
         //get items in range of time
+        let queryStart = parseInt(req.query.periodStart);
+        let queryEnd = parseInt(req.query.periodEnd);
         query={
           $or:[
             {
-              'artTags': {$elemMatch: {$and:[{periodStart:{$gte:req.query.periodStart}},{periodEnd:{$lte:req.query.periodEnd}}]}}
+              'artTags': {$elemMatch: {$and:[{periodStart:{$gte:queryStart}},{periodEnd:{$lte:queryEnd}}]}}
             },
             {
-              'historyTags': {$elemMatch: {$and:[{periodStart:{$gte:req.query.periodStart}},{periodEnd:{$lte:req.query.periodEnd}}]}}
+              'historyTags': {$elemMatch: {$and:[{periodStart:{$gte:queryStart}},{periodEnd:{$lte:queryEnd}}]}}
             }
           ]
         }
@@ -45,7 +47,7 @@ var destinationCtrl = function(Destination){
           }
         });
     }
-    
+
   };
 
   var post = function createDestination (req,res) {

@@ -21,7 +21,7 @@ export class DestinationDataHandlerService{
       .then(this.extractData)
       .catch(this.handleError);
   }
-  
+
   getRandomDestination(){
     return this.getData(DESTINATION_URLS.RANDOM_DESTINATION);
   }
@@ -30,6 +30,11 @@ export class DestinationDataHandlerService{
   }
   getDestinationsByTags(dataModel){
     return this.getData(DESTINATION_URLS.ALL_DESTINATIONS+"?"+dataModel.tagsType+"="+dataModel.selectedTags.join());
+  }
+
+  getDestinationsByPeriod(dataModel){
+    let queryString ="?"+dataModel.start.name+"="+dataModel.start.date+"&"+dataModel.end.name+"="+dataModel.end.date;
+    return this.getData(DESTINATION_URLS.ALL_DESTINATIONS+queryString);
   }
   getAllDestinations(){
     return this.getData(DESTINATION_URLS.ALL_DESTINATIONS);

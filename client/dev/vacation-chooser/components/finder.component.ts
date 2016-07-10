@@ -20,14 +20,17 @@ import {DestPreviewComponent } from './dest-preview.Component';
 export class FinderComponent {
   public searchType: String;
   public searchResults:{}[] = [];
-  
+
   constructor() {
-    
+
   }
 
-  gotSearchResults(data){
-    console.log(data);
+  showHistoryTagsResults(data){
+    console.log("got data");
     this.searchResults = data;
-
+  }
+  gotSearchResults(data){
+    console.log("got data");
+    this.searchResults = data;
   }
 }
