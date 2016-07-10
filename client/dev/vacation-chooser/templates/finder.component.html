@@ -11,3 +11,8 @@
   <history-tags-finder *ngIf="searchType == 'history'"></history-tags-finder>
   <art-tags-finder (gotSearchResults)="gotSearchResults($event)" *ngIf="searchType == 'art'"></art-tags-finder>
 </section>
+<section class="destinations-list">
+  <div *ngFor="let dest of searchResults">
+    <destination-preview [destination]="dest"></destination-preview>
+  </div>
+</section>

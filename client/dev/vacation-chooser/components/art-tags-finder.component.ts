@@ -4,7 +4,7 @@ import {ART_TAGS } from '../shared/constants.shared'
 import { DestinationDataHandlerService } from "../services/destination-data-handler.service";
 
 @Component({
-  templateUrl:'vacation-chooser/templates/art-tags-finder.component.html',
+  templateUrl:'vacation-chooser/templates/tags-finder.component.html',
   selector: 'art-tags-finder',
 })
 export class ArtTagsFinderComponent {
@@ -32,10 +32,7 @@ export class ArtTagsFinderComponent {
       });
 
   }
-  onCheckboxChange(ev){
-    console.log(ev);
-  }
-  // tags: string[];
+
   model = {
     tagsType:"artTags"
   };
