@@ -5,10 +5,14 @@
 import {Component, Input, OnInit, OnDestroy} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DestinationDataHandlerService } from "../services/destination-data-handler.service";
+import { AdviceItemComponent } from './advice-item.component';
+import { BookItemComponent } from './book-item.component';
 
 @Component({
   selector:'destination-view',
-  templateUrl:'vacation-chooser/templates/dest-view.component.html'
+  templateUrl:'vacation-chooser/templates/dest-view.component.html',
+  directives:[AdviceItemComponent, BookItemComponent]
+
 })
 export class DestViewComponent implements OnInit, OnDestroy{
   @Input() destination: {};
@@ -25,7 +29,10 @@ export class DestViewComponent implements OnInit, OnDestroy{
     this.sub = this.route.params.subscribe(params => {
       let id = params['id'];
       this.dataHandlerService.getDestinationById(id)
-        .then(destination => this.destination = destination);
+        .then(destination => {
+          console.log(destination);
+          this.destination = destination;
+        });
     });
   }
 

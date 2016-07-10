@@ -1,4 +1,30 @@
-<div class="dest-wrapper">
-  <p>Destination view</p>
-  {{destination.placeName}}
+<div class="destination-wrapper">
+  <article>
+    <p>{{destination.placeName}}</p>
+    <button>Like it</button>
+    <p>{{destination.countryName}}</p>
+    <div>
+      <p>History Tags</p>
+      <ul *ngFor="let tag of destination.historyTags;" >
+        <li>
+          {{tag.name}}
+          <button>Upvote</button>
+          <button>Downvote</button>
+        </li>
+      </ul>
+      <ul *ngFor="let tag of destination.artTags;" >
+        <li>
+          {{tag.name}}
+          <button>Upvote</button>
+          <button>Downvote</button>
+        </li>
+      </ul>
+    </div>
+    <ul *ngFor="let b of destination.books;">
+      <book-item [book]="b"></book-item>
+    </ul>
+  </article>
+  <section class="advices-list" *ngFor="let adv of destination.advices;">
+    <advice-item [advice]="adv"></advice-item>
+  </section>
 </div>

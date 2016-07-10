@@ -27,6 +27,9 @@ module.exports = class DestinationsRoutes {
         }
       );
 
+    router.route("/api/destinations/:destinationId/fullDescription")
+      .get(destinationCtrl.getFullDescription);
+
     router.route('/api/destinations/:destinationId/like').
       patch(function(req, res, next){
         req.destination.likeIt(function(destination){

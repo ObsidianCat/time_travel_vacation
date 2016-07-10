@@ -7,7 +7,7 @@ var BookModel = new Schema({
   author:[String],
   title:String,
   yearOfPublication:Number,
-  amazonLink: String,
+  linkToSeller: String,
   destination:{type:mongoose.Schema.Types.ObjectId, ref:'Destination'}
 });
 

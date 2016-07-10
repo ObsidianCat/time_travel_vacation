@@ -69,6 +69,32 @@ var destinationCtrl = function(Destination){
     res.json(req.destination);
   };
 
+  var getFullDescription = function(req, res, next){
+    console.log("test");
+    Destination.findById(req.params.destinationId)
+      .populate('advices books')
+      .exec()
+      .then(function(destination) {
+        if(destination){
+          res.json(destination);
+        }
+        else{
+          res.status(404).send("No item found");
+        }
+      })
+      .catch(function(err){
+        res.status(500).send(err);
+      });
+
+    // getById(req, res);
+    // req.destination
+    //   .populate('books advices') // space delimited path names
+    //   .exec(function (err, story) {
+    //     if (err) return handleError(err);
+    //     console.log(req.destination.books, req.destination.advices);
+    //     // prints "The creator is Aaron"
+    //   });
+  };
   var getRandom = function getOneRandomItem(req, res){
     Destination.count().exec(function(err, count){
       var random = Math.floor(Math.random() * count);
@@ -108,11 +134,12 @@ var destinationCtrl = function(Destination){
   };
 
   return{
-    get:get,
-    post:post,
-    getById:getById,
-    getRandom:getRandom,
-    voteForTag:voteForTag
+    get,
+    post,
+    getById,
+    getRandom,
+    voteForTag,
+    getFullDescription
 
   }
 };
