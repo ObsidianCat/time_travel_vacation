@@ -1,30 +1,46 @@
 <div class="destination-wrapper">
   <article>
-    <p>{{destination.placeName}}</p>
+    <h1>{{destination.placeName}}</h1>
     <button>Like it</button>
-    <p>{{destination.countryName}}</p>
+    <h2>{{destination.countryName}}</h2>
     <div>
-      <p>History Tags</p>
-      <ul *ngFor="let tag of destination.historyTags;" >
-        <li>
+      <h4>History Tags</h4>
+      <ul>
+        <li *ngFor="let tag of destination.historyTags;" >
           {{tag.name}}
           <button>Upvote</button>
           <button>Downvote</button>
         </li>
       </ul>
-      <ul *ngFor="let tag of destination.artTags;" >
-        <li>
+      <h4>Art Tags</h4>
+      <ul>
+        <li *ngFor="let tag of destination.artTags;">
           {{tag.name}}
           <button>Upvote</button>
           <button>Downvote</button>
         </li>
       </ul>
     </div>
-    <ul *ngFor="let b of destination.books;">
-      <book-item [book]="b"></book-item>
+    <h4>Books</h4>
+    <ul class="book-list" >
+      <li *ngFor="let book of destination.books;">
+        <p class="lead" *ngIf="book.linkToSeller"><a [href]="book.linkToSeller">{{book.title}}</a></p>
+        <h4 *ngIf="!book.linkToSeller">{{book.title}}</h4>
+        <p>{{book.title}}</p>
+        <p >{{book.author}}</p>
+        <p>{{book.yearOfPublication}}</p>
+      </li>
     </ul>
   </article>
-  <section class="advices-list" *ngFor="let adv of destination.advices;">
-    <advice-item [advice]="adv"></advice-item>
+  <section class="advices" >
+    <h3>Visitor advices</h3>
+    <ul >
+      <li *ngFor="let advice of destination.advices;">
+        <p>{{advice.userNickname}}</p>
+        <p>{{advice.date}}</p>
+        <p>{{advice.title}}</p>
+        <p>{{advice.body}}</p>
+      </li>
+    </ul>
   </section>
 </div>

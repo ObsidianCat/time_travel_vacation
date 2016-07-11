@@ -23,21 +23,21 @@ export class DestinationDataHandlerService{
   }
 
   getRandomDestination(){
-    return this.getData(DESTINATION_URLS.RANDOM_DESTINATION);
+    return this.getData(DESTINATION_URLS.RANDOM);
   }
   getDestinationById(id){
-    return this.getData(DESTINATION_URLS.ALL_DESTINATIONS+"/"+id);
+    return this.getData(DESTINATION_URLS.FULL_DESCRIPTION+id);
   }
   getDestinationsByTags(dataModel){
-    return this.getData(DESTINATION_URLS.ALL_DESTINATIONS+"?"+dataModel.tagsType+"="+dataModel.selectedTags.join());
+    return this.getData(DESTINATION_URLS.ALL+"?"+dataModel.tagsType+"="+dataModel.selectedTags.join());
   }
 
   getDestinationsByPeriod(dataModel){
     let queryString ="?"+dataModel.start.name+"="+dataModel.start.date+"&"+dataModel.end.name+"="+dataModel.end.date;
-    return this.getData(DESTINATION_URLS.ALL_DESTINATIONS+queryString);
+    return this.getData(DESTINATION_URLS.ALL+queryString);
   }
   getAllDestinations(){
-    return this.getData(DESTINATION_URLS.ALL_DESTINATIONS);
+    return this.getData(DESTINATION_URLS.ALL);
   }
   private extractData(res: Response) {
     let body = res.json();

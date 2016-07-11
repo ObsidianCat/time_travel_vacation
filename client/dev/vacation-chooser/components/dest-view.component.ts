@@ -5,13 +5,12 @@
 import {Component, Input, OnInit, OnDestroy} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DestinationDataHandlerService } from "../services/destination-data-handler.service";
-import { AdviceItemComponent } from './advice-item.component';
-import { BookItemComponent } from './book-item.component';
+
 
 @Component({
   selector:'destination-view',
   templateUrl:'vacation-chooser/templates/dest-view.component.html',
-  directives:[AdviceItemComponent, BookItemComponent]
+  directives:[]
 
 })
 export class DestViewComponent implements OnInit, OnDestroy{
