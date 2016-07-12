@@ -6,10 +6,10 @@ import { Http, Response } from  '@angular/http';
 import 'rxjs/Rx';
 import 'rxjs/add/operator/toPromise';
 
-import { ADVICE_URLS } from '../shared/constants.shared';
+import { BOOK_URLS } from '../shared/constants.shared';
 
 @Injectable()
-export class AdviceDataHandlerService{
+export class BookDataHandlerService{
   constructor(private http:Http ){}
 
   private getData(data_url): Promise<any> {
@@ -39,10 +39,7 @@ export class AdviceDataHandlerService{
     return Promise.reject(errMsg);
   }
 
-  private sayHello(){
-    return "Hello";
-  }
-  saveAdvice(dataModel, destId, userId){
-    return this.sendData(ADVICE_URLS.BASE+"/"+destId+"/"+userId, dataModel);
+  saveBook(dataModel, destId){
+    return this.sendData(BOOK_URLS.BASE+"/"+destId, dataModel);
   }
 }

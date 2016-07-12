@@ -22,10 +22,16 @@ const DESTINATION_URLS = {
 const ADVICE_URLS = {
   BASE:"api/advices"
 };
+
+const BOOK_URLS = {
+  BASE:"api/books"
+};
+
 export {
-  ART_TAGS, 
-  HISTORY_TAGS, 
-  TIME_RANGE, 
+  ART_TAGS,
+  HISTORY_TAGS,
+  TIME_RANGE,
   DESTINATION_URLS,
-  ADVICE_URLS  
+  ADVICE_URLS,
+  BOOK_URLS
 };

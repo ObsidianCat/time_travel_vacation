@@ -8,11 +8,12 @@ import { DestinationDataHandlerService } from "../services/destination-data-hand
 import { AdviceDataHandlerService } from "../services/advice-data-handler.service";
 
 import { AdviceFormComponent } from "./advice-form.component";
+import { BookFormComponent } from "./book-form.component";
 
 @Component({
   selector:'destination-view',
   templateUrl:'vacation-chooser/templates/dest-view.component.html',
-  directives:[AdviceFormComponent]
+  directives:[AdviceFormComponent, BookFormComponent]
 })
 export class DestViewComponent implements OnInit, OnDestroy{
   @Input() destination: {};
