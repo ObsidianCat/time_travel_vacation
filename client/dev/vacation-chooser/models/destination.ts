@@ -6,6 +6,8 @@ export class Destination {
     public placeName: string,
     public countryName: string,
     public historyTags: {}[],
-    public alterEgo?:String
+    public artTags: {}[],
+    public books: {}[],
+    public advices: {}[]
   ) {  }
 }

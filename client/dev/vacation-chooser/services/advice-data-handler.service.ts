@@ -9,7 +9,7 @@ import 'rxjs/add/operator/toPromise';
 import { ADVICE_URLS } from '../shared/constants.shared';
 
 @Injectable()
-export class DestinationDataHandlerService{
+export class AdviceDataHandlerService{
   constructor(private http:Http ){}
 
   private getData(data_url): Promise<any> {
@@ -39,7 +39,7 @@ export class DestinationDataHandlerService{
     return Promise.reject(errMsg);
   }
 
-  saveAdvice(dataModel){
-    return this.sendData(ADVICE_URLS.BASE+"/"+dataModel.destId+"/"+dataModel.userId, dataModel.advice);
+  saveAdvice(dataModel, destId, userId){
+    return this.sendData(ADVICE_URLS.BASE+"/"+destId+"/"+userId, dataModel);
   }
 }
