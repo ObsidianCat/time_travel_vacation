@@ -15,9 +15,17 @@ const TIME_RANGE = {
   END:2000
 };
 const DESTINATION_URLS = {
-  ALL: "api/destinations",
+  BASE: "api/destinations",
   RANDOM: "api/destinations?random=true",
   FULL_DESCRIPTION:"api/destinations/fullDescription/"
 };
-
-export {ART_TAGS, HISTORY_TAGS, TIME_RANGE, DESTINATION_URLS};
+const ADVICE_URLS = {
+  BASE:"api/advices"
+};
+export {
+  ART_TAGS, 
+  HISTORY_TAGS, 
+  TIME_RANGE, 
+  DESTINATION_URLS,
+  ADVICE_URLS  
+};

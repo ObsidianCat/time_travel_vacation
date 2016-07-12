@@ -1,7 +1,4 @@
 /**
- * Created by Lula on 7/6/2016.
- */
-/**
  * Created by Lula on 7/4/2016.
  */
 import { Injectable } from '@angular/core';
@@ -9,7 +6,7 @@ import { Http, Response } from  '@angular/http';
 import 'rxjs/Rx';
 import 'rxjs/add/operator/toPromise';
 
-import { DESTINATION_URLS } from '../shared/constants.shared';
+import { ADVICE_URLS } from '../shared/constants.shared';
 
 @Injectable()
 export class DestinationDataHandlerService{
@@ -22,23 +19,13 @@ export class DestinationDataHandlerService{
       .catch(this.handleError);
   }
 
-  getRandomDestination(){
-    return this.getData(DESTINATION_URLS.RANDOM);
-  }
-  getDestinationById(id){
-    return this.getData(DESTINATION_URLS.FULL_DESCRIPTION+id);
-  }
-  getDestinationsByTags(dataModel){
-    return this.getData(DESTINATION_URLS.BASE+"?"+dataModel.tagsType+"="+dataModel.selectedTags.join());
+  private sendData(data_url, data): Promise<any> {
+    return this.http.post(data_url, data)
+      .toPromise()
+      .then(this.extractData)
+      .catch(this.handleError);
   }
 
-  getDestinationsByPeriod(dataModel){
-    let queryString ="?"+dataModel.start.name+"="+dataModel.start.date+"&"+dataModel.end.name+"="+dataModel.end.date;
-    return this.getData(DESTINATION_URLS.BASE+queryString);
-  }
-  getAllDestinations(){
-    return this.getData(DESTINATION_URLS.BASE);
-  }
   private extractData(res: Response) {
     let body = res.json();
     return body || { };
@@ -52,4 +39,7 @@ export class DestinationDataHandlerService{
     return Promise.reject(errMsg);
   }
 
+  saveAdvice(dataModel){
+    return this.sendData(ADVICE_URLS.BASE+"/"+dataModel.destId+"/"+dataModel.userId, dataModel.advice);
+  }
 }
