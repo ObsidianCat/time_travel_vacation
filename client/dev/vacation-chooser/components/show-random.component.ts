@@ -9,6 +9,7 @@ import { DestPreviewComponent } from './dest-preview.component';
   selector:'destination-random',
   templateUrl:'vacation-chooser/templates/show-random.component.html',
   directives:[DestPreviewComponent],
+  styleUrls: ['vacation-chooser/styles/show-random.component.css'],
 
 })
 export class ShowRandomComponent implements OnInit {
@@ -19,9 +20,9 @@ export class ShowRandomComponent implements OnInit {
   ngOnInit() {
     this.randomDest = {};
     this.findRandomDestination();
-    
+
   }
-  
+
   findRandomDestination(){
     this.dataHandlerService.getRandomDestination()
       .then((data)=>{
