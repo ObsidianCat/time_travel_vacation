@@ -16,20 +16,20 @@ export class BookFormComponent {
   onSubmit() {
     this.submitted = true;
     console.log(this.model);
-    // this.dataHandlerService.saveAdvice(this.model, this.destId, this.userId)
-    //   .then((data)=>{
-    //     console.log(data);
-    //     // this.newAdviceAdded.emit(data);
-    //   })
-    //   .catch((err)=>{
-    //     console.error(err);
-    //   });
+    this.dataHandlerService.saveBook(this.model, this.destId)
+      .then((data)=>{
+        console.log(data);
+        this.newBookAdded.emit(data);
+      })
+      .catch((err)=>{
+        console.error(err);
+      });
 
   }
 
   model = {};
 
-  constructor(private bookDataHandlerService:BookDataHandlerService) {
+  constructor(private dataHandlerService:BookDataHandlerService) {
   }
 
 

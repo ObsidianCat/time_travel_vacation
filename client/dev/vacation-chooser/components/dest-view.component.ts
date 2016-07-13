@@ -5,8 +5,7 @@
 import {Component, Input, OnInit, OnDestroy} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DestinationDataHandlerService } from "../services/destination-data-handler.service";
-import { AdviceDataHandlerService } from "../services/advice-data-handler.service";
-
+import { DestinationModel } from "../models/destination";
 import { AdviceFormComponent } from "./advice-form.component";
 import { BookFormComponent } from "./book-form.component";
 
@@ -16,28 +15,37 @@ import { BookFormComponent } from "./book-form.component";
   directives:[AdviceFormComponent, BookFormComponent]
 })
 export class DestViewComponent implements OnInit, OnDestroy{
-  @Input() destination: {};
+  @Input() destination: DestinationModel;
   sub: any;
 
   constructor(
     private dataHandlerService: DestinationDataHandlerService,
     private route: ActivatedRoute
-  ) {}
+  ) {
+    this.destination = new DestinationModel("","", [],[],[],[]);
+
+  }
 
   ngOnInit() {
-    this.destination = {};
-
     this.sub = this.route.params.subscribe(params => {
       let id = params['id'];
       this.dataHandlerService.getDestinationById(id)
         .then(destination => {
-          console.log(destination);
-          this.destination = destination;
+          Object.assign(this.destination, destination);
         });
     });
   }
 
   ngOnDestroy() {
     this.sub.unsubscribe();
+  }
+
+  newAdviceAdded(advice){
+    this.destination.advices.push(advice.data);
+  }
+
+  newBookAdded(book){
+    this.destination.books.push(book.data);
+    console.log(this.destination);
   }
 }

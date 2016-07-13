@@ -19,14 +19,13 @@ export class AdviceFormComponent {
   onSubmit() {
     this.submitted = true;
     console.log(this.model);
-    // this.dataHandlerService.saveAdvice(this.model, this.destId, this.userId)
-    //   .then((data)=>{
-    //     console.log(data);
-    //     // this.newAdviceAdded.emit(data);
-    //   })
-    //   .catch((err)=>{
-    //     console.error(err);
-    //   });
+    this.dataHandlerService.saveAdvice(this.model, this.destId, this.userId)
+      .then((data)=>{
+        this.newAdviceAdded.emit(data);
+      })
+      .catch((err)=>{
+        console.error(err);
+      });
 
   }
 

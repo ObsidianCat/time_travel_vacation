@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm }    from '@angular/forms';
-import { Destination }    from '../models/destination';
+import { DestinationModel }    from '../models/destination';
 
 @Component({
   selector: 'add-destination-form',
@@ -12,7 +12,7 @@ export class AddDestFormComponent {
   artTags = ["Roman", "Greek and Hellenistic","Baroque", "Renaissance"];
   active = true;
 
-  model = new Destination("Milano", "Italy", [this.historyTags[0], this.historyTags[2]], [], [], []);
+  model = new DestinationModel ("Milano", "Italy", [this.historyTags[0], this.historyTags[2]], [], [], []);
   submitted = false;
   onSubmit() { this.submitted = true; }
 

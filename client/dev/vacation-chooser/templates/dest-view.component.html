@@ -31,7 +31,7 @@
         <p>{{book.yearOfPublication}}</p>
       </li>
     </ul>
-    <book-form [destId]="destination._id"></book-form>
+    <book-form (newBookAdded)="newBookAdded($event)" [destId]="destination._id"></book-form>
 
   </article>
   <section class="advices" >
@@ -45,6 +45,6 @@
       </li>
     </ul>
     <!--TODO pass to form dynamic user id-->
-    <advice-form [destId]="destination._id" [userId]="'5777bd1a6984a3d800e026f9'"></advice-form>
+    <advice-form (newAdviceAdded)="newAdviceAdded($event)" [destId]="destination._id" [userId]="'5777bd1a6984a3d800e026f9'"></advice-form>
   </section>
 </div>
