@@ -1,8 +1,7 @@
-<div class="starter-template">
-  <h1>List component route!</h1>
-  <p class="lead">List of art and history destinations</p>
-  <section class="destinations-list">
-    <div *ngFor="let dest of destList">
+<div class="">
+  <h1 class="page-title">All our Art&History destinations</h1>
+  <section class="row destinations-list">
+    <div class="col-md-6" *ngFor="let dest of destList">
       <destination-preview [destination]="dest"></destination-preview>
     </div>
   </section>

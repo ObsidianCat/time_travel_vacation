@@ -1,7 +1,6 @@
-<div class="starter-template">
-  <h1>Random component route!</h1>
-  <p class="lead">Be inspired by the destination</p>
+<div class="">
+  <h1 class="page-title">Be inspired!</h1>
   <destination-preview [destination]="randomDest"></destination-preview>
-  <p>Or try our inspirer again</p>
-  <button>Get another destination</button>
+  <p>Not exactly your cup of tee?</p>
+  <button (click)="findRandomDestination()" class="btn btn-warning">Get another destination</button>
 </div>

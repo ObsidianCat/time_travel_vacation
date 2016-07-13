@@ -9,3 +9,15 @@ body {
 .hidden{
   display: none;
 }
+
+.navbar-header a{
+  color:#FFA000 !important;
+}
+h1.page-title{
+  font-size: 30px;
+}
+
+.well{
+  margin-top: 2rem;
+  background: #FFECB3;
+}

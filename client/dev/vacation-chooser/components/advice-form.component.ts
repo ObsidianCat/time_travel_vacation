@@ -4,7 +4,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { NgForm }    from '@angular/forms';
 import { AdviceDataHandlerService } from "../services/advice-data-handler.service";
-import { Advice } from "../models/advice";
+
 @Component({
   templateUrl:'vacation-chooser/templates/advice-form.component.html',
   selector: 'advice-form',
@@ -15,6 +15,7 @@ export class AdviceFormComponent {
   @Output() newAdviceAdded = new EventEmitter();
   @Input() destId: string;
   @Input() userId: string;
+  model = {};
 
   onSubmit() {
     this.submitted = true;
@@ -29,7 +30,6 @@ export class AdviceFormComponent {
 
   }
 
-  model = new Advice("", "");
 
   constructor(private dataHandlerService:AdviceDataHandlerService) {
   }

@@ -8,6 +8,7 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
   selector:'destination-preview',
+  styleUrls: ['vacation-chooser/styles/dest-preview.component.css'],
   templateUrl:'vacation-chooser/templates/dest-preview.component.html',
   directives: [ROUTER_DIRECTIVES],
 })

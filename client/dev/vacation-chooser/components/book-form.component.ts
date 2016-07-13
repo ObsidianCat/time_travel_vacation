@@ -12,14 +12,15 @@ export class BookFormComponent {
   submitted = false;
   @Output() newBookAdded = new EventEmitter();
   @Input() destId: string;
+  model = {};
 
   onSubmit() {
     this.submitted = true;
     console.log(this.model);
     this.dataHandlerService.saveBook(this.model, this.destId)
       .then((data)=>{
-        console.log(data);
         this.newBookAdded.emit(data);
+        this.model = {};
       })
       .catch((err)=>{
         console.error(err);
@@ -27,7 +28,6 @@ export class BookFormComponent {
 
   }
 
-  model = {};
 
   constructor(private dataHandlerService:BookDataHandlerService) {
   }

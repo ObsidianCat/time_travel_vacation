@@ -1,3 +1,25 @@
-<div class="dest-wrapper">
-  <a (click)="goToDestView(destination._id)">{{destination.placeName}}</a>
-</div>
+<article class="dest-wrapper panel panel-default">
+
+  <div class="panel-heading">
+    <a (click)="goToDestView(destination._id)">{{destination.placeName}}</a>
+  </div>
+  <div class="panel-body">
+    <p>{{destination.likes}} people like it</p>
+    <p>{{destination.countryName}}</p>
+    <section class="tags-wrap">
+      <h4>History Tags</h4>
+      <div>
+        <span class="label label-warning" *ngFor="let tag of destination.historyTags;" >
+          {{tag.name}}
+        </span>
+      </div>
+      <h4>Art Tags</h4>
+      <div>
+        <span class="label label-warning" *ngFor="let tag of destination.artTags;" >
+          {{tag.name}}
+        </span>
+      </div>
+
+    </section>
+  </div>
+</article>

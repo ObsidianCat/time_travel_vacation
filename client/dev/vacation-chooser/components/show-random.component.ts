@@ -15,9 +15,14 @@ export class ShowRandomComponent implements OnInit {
   constructor(
     private dataHandlerService:DestinationDataHandlerService
   ){}
-  randomDest: {};
+  randomDest = {};
   ngOnInit() {
     this.randomDest = {};
+    this.findRandomDestination();
+    
+  }
+  
+  findRandomDestination(){
     this.dataHandlerService.getRandomDestination()
       .then((data)=>{
         this.randomDest = data;
