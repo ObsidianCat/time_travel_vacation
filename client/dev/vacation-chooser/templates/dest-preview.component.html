@@ -1,7 +1,9 @@
 <article class="dest-wrapper panel panel-default">
 
   <div class="panel-heading">
-    <a (click)="goToDestView(destination._id)">{{destination.placeName}}</a>
+    <a (click)="goToDestView(destination._id)">
+      <h5 class="name">{{destination.placeName}}</h5>
+    </a>
   </div>
   <div class="panel-body">
     <p>{{destination.likes}} people like it</p>
@@ -21,5 +23,10 @@
       </div>
 
     </section>
+  </div>
+  <div class="panel-footer">
+    <a (click)="goToDestView(destination._id)">
+      <p (click)="goToDestView(destination._id)" class="name">Read more</p>
+    </a>
   </div>
 </article>

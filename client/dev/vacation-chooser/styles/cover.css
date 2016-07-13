@@ -11,9 +11,6 @@ body {
   display: none;
 }
 
-.navbar .container{
-  width: 100%;
-}
 .navbar-header a{
   color:#FFA000 !important;
 }
