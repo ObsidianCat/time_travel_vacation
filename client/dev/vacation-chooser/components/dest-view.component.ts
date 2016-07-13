@@ -15,14 +15,16 @@ import { BookFormComponent } from "./book-form.component";
   directives:[AdviceFormComponent, BookFormComponent]
 })
 export class DestViewComponent implements OnInit, OnDestroy{
-  @Input() destination: DestinationModel;
+  @Input() destination = new DestinationModel("","", [],[],[],[]);
   sub: any;
+  isBookFormVisible = false;
+  isAdviceFormVisible = false;
 
   constructor(
     private dataHandlerService: DestinationDataHandlerService,
     private route: ActivatedRoute
   ) {
-    this.destination = new DestinationModel("","", [],[],[],[]);
+    // this.destination = new DestinationModel("","", [],[],[],[]);
 
   }
 
@@ -46,6 +48,7 @@ export class DestViewComponent implements OnInit, OnDestroy{
 
   newBookAdded(book){
     this.destination.books.push(book.data);
+    this.isBookFormVisible = false;
     console.log(this.destination);
   }
 }
