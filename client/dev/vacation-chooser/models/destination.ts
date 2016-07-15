@@ -8,6 +8,8 @@ export class DestinationModel {
     public historyTags: {}[],
     public artTags: {}[],
     public books: {}[],
-    public advices: {}[]
-  ) {  }
+    public advices: {}[],
+    public _id?:string,
+    public likes?:number
+) {  }
 }

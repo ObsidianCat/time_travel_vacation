@@ -12,6 +12,7 @@ import { BookFormComponent } from "./book-form.component";
 @Component({
   selector:'destination-view',
   templateUrl:'vacation-chooser/templates/dest-view.component.html',
+  styleUrls: ['vacation-chooser/styles/dest-view.component.css'],
   directives:[AdviceFormComponent, BookFormComponent]
 })
 export class DestViewComponent implements OnInit, OnDestroy{
@@ -23,10 +24,7 @@ export class DestViewComponent implements OnInit, OnDestroy{
   constructor(
     private dataHandlerService: DestinationDataHandlerService,
     private route: ActivatedRoute
-  ) {
-    // this.destination = new DestinationModel("","", [],[],[],[]);
-
-  }
+  ) {}
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
@@ -50,5 +48,16 @@ export class DestViewComponent implements OnInit, OnDestroy{
     this.destination.books.push(book.data);
     this.isBookFormVisible = false;
     console.log(this.destination);
+  }
+
+  likeDestination(btnRef){
+    btnRef.disabled = true;
+    this.dataHandlerService.likeDestination(this.destination._id)
+      .then((data)=>{
+        this.destination.likes = data;
+      })
+      .catch((err)=>{
+        console.error(err);
+      });
   }
 }

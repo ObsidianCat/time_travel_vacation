@@ -22,6 +22,32 @@ export class DestinationDataHandlerService{
       .catch(this.handleError);
   }
 
+  private sendData(data_url, data): Promise<any> {
+    return this.http.post(data_url, data)
+      .toPromise()
+      .then(this.extractData)
+      .catch(this.handleError);
+  }
+
+  private updateData(data_url, data): Promise<any> {
+    return this.http.patch(data_url, data)
+      .toPromise()
+      .then(this.extractData)
+      .catch(this.handleError);
+  }
+
+  private extractData(res: Response) {
+    let body = res.json();
+    return body || { };
+  }
+
+  private handleError(error: any){
+    // We'd also dig deeper into the error to get a better message
+    let errMsg = (error.message) ? error.message :
+      error.status ? `${error.status} - ${error.statusText}` : 'Server error';
+    console.error(errMsg); // log to console instead
+    return Promise.reject(errMsg);
+  }
   getRandomDestination(){
     return this.getData(DESTINATION_URLS.RANDOM);
   }
@@ -39,17 +65,9 @@ export class DestinationDataHandlerService{
   getAllDestinations(){
     return this.getData(DESTINATION_URLS.BASE);
   }
-  private extractData(res: Response) {
-    let body = res.json();
-    return body || { };
+  likeDestination(destId){
+    return this.updateData(DESTINATION_URLS.LIKE_IT+destId, {});
   }
 
-  private handleError(error: any){
-    // We'd also dig deeper into the error to get a better message
-    let errMsg = (error.message) ? error.message :
-      error.status ? `${error.status} - ${error.statusText}` : 'Server error';
-    console.error(errMsg); // log to console instead
-    return Promise.reject(errMsg);
-  }
 
 }

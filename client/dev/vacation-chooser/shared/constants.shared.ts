@@ -17,7 +17,8 @@ const TIME_RANGE = {
 const DESTINATION_URLS = {
   BASE: "api/destinations",
   RANDOM: "api/destinations?random=true",
-  FULL_DESCRIPTION:"api/destinations/fullDescription/"
+  FULL_DESCRIPTION:"api/destinations/fullDescription/",
+  LIKE_IT:"api/destinations/like/"
 };
 const ADVICE_URLS = {
   BASE:"api/advices"

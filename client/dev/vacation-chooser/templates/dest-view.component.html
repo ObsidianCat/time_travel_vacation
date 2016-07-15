@@ -1,51 +1,57 @@
-<div class="destination-wrapper">
-  <article>
-    <h1>{{destination.placeName}}</h1>
-    <button>Like it</button>
-    <h3>{{destination.countryName}}</h3>
-    <div>
-      <h4>History Tags</h4>
-      <ul>
-        <li *ngFor="let tag of destination.historyTags;" >
-          {{tag.name}}
-          <button>Upvote</button>
-          <button>Downvote</button>
-        </li>
-      </ul>
-      <h4>Art Tags</h4>
-      <ul>
-        <li *ngFor="let tag of destination.artTags;">
-          {{tag.name}}
-          <button>Upvote</button>
-          <button>Downvote</button>
-        </li>
-      </ul>
-    </div>
-    <h4>Books</h4>
-    <ul class="book-list" >
-      <li *ngFor="let book of destination.books;">
-        <p class="lead" *ngIf="book.linkToSeller"><a [href]="book.linkToSeller">{{book.title}}</a></p>
-        <h4 *ngIf="!book.linkToSeller">{{book.title}}</h4>
-        <p>{{book.title}}</p>
-        <p >{{book.author}}</p>
-        <p>{{book.yearOfPublication}}</p>
-      </li>
-    </ul>
-    <button (click)="isBookFormVisible=true;">Add new book</button>
-    <book-form *ngIf="isBookFormVisible" (newBookAdded)="newBookAdded($event)" [destId]="destination._id"></book-form>
+<div class="container-fluid">
+  <div class="destination-wrapper">
+    <article class="well">
+      <h1>{{destination.placeName}}</h1>
+      <div class="likes">
+        <p>{{destination.likes}} people like this destination</p>
+        <button class="btn btn-sm btn-default" (click)="likeDestination(btnLikeIt);" #btnLikeIt>Like it</button>
+      </div>
 
-  </article>
-  <section class="advices" >
-    <h3>Visitor advices</h3>
-    <ul >
-      <li *ngFor="let advice of destination.advices;">
-        <p>{{advice.userNickname}}</p>
-        <p>{{advice.date}}</p>
-        <p>{{advice.title}}</p>
-        <p>{{advice.body}}</p>
-      </li>
-    </ul>
-    <!--TODO pass to form dynamic user id-->
-    <advice-form (newAdviceAdded)="newAdviceAdded($event)" [destId]="destination._id" [userId]="'5777bd1a6984a3d800e026f9'"></advice-form>
-  </section>
+      <h3>{{destination.countryName}}</h3>
+      <div>
+        <h4>History Tags</h4>
+        <ul>
+          <li *ngFor="let tag of destination.historyTags;" >
+            {{tag.name}}
+            <button>Upvote</button>
+            <button>Downvote</button>
+          </li>
+        </ul>
+        <h4>Art Tags</h4>
+        <ul>
+          <li *ngFor="let tag of destination.artTags;">
+            {{tag.name}}
+            <button>Upvote</button>
+            <button>Downvote</button>
+          </li>
+        </ul>
+      </div>
+      <h4>Books</h4>
+      <ul class="book-list" >
+        <li *ngFor="let book of destination.books;">
+          <p class="lead" *ngIf="book.linkToSeller"><a [href]="book.linkToSeller">{{book.title}}</a></p>
+          <h4 *ngIf="!book.linkToSeller">{{book.title}}</h4>
+          <p>{{book.title}}</p>
+          <p >{{book.author}}</p>
+          <p>{{book.yearOfPublication}}</p>
+        </li>
+      </ul>
+      <button (click)="isBookFormVisible=true;">Add new book</button>
+      <book-form *ngIf="isBookFormVisible" (newBookAdded)="newBookAdded($event)" [destId]="destination._id"></book-form>
+
+    </article>
+    <section class="advices" class="well" >
+      <h3>Visitor advices</h3>
+      <ul >
+        <li *ngFor="let advice of destination.advices;">
+          <p>{{advice.userNickname}}</p>
+          <p>{{advice.date}}</p>
+          <p>{{advice.title}}</p>
+          <p>{{advice.body}}</p>
+        </li>
+      </ul>
+      <!--TODO pass to form dynamic user id-->
+      <advice-form (newAdviceAdded)="newAdviceAdded($event)" [destId]="destination._id" [userId]="'5777bd1a6984a3d800e026f9'"></advice-form>
+    </section>
+  </div>
 </div>

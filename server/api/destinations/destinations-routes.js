@@ -30,10 +30,10 @@ module.exports = class DestinationsRoutes {
     router.route("/api/destinations/fullDescription/:destinationId")
       .get(destinationCtrl.getFullDescription);
 
-    router.route('/api/destinations/:destinationId/like').
+    router.route('/api/destinations/like/:destinationId').
       patch(function(req, res, next){
-        req.destination.likeIt(function(destination){
-          res.json(destination);
+        req.destination.likeIt(function(destLikes){
+          res.json(destLikes);
         },
         function(err){
           return next(err)

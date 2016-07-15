@@ -21,5 +21,9 @@ h1.page-title{
 
 .well{
   margin-top: 2rem;
+}
+
+.home-page .well{
   background: #FFB300;
+
 }

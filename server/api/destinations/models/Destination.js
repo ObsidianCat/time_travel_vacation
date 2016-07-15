@@ -34,8 +34,7 @@ destinationModel.method({
     this.likes +=1;
     this.save()
       .then(function(model){
-          console.log("succes");
-          success(model);
+          success(model.likes);
         }
       )
       .catch(
