@@ -12,10 +12,10 @@
         <h4>History Tags</h4>
         <ul>
           <li *ngFor="let tag of destination.historyTags;" >
-            <i (click)="tagVote('down', 'history',tag)" class="material-icons">keyboard_arrow_down</i>
+            <i (click)="tagVote('down','historyTags',tag)" class="material-icons">keyboard_arrow_down</i>
             <span class="counter">{{tag.votes}}</span>
             <span class="name">{{tag.name}}</span>
-            <i (click)="tagVote('up', 'history', tag)" class="material-icons">keyboard_arrow_up</i>
+            <i (click)="tagVote('up', 'historyTags', tag)" class="material-icons">keyboard_arrow_up</i>
             <button>Upvote</button>
             <button>Downvote</button>
           </li>
@@ -23,10 +23,10 @@
         <h4>Art Tags</h4>
         <ul>
           <li *ngFor="let tag of destination.artTags;">
-            <i (click)="tagVote('down', 'art',tag)" class="material-icons">keyboard_arrow_down</i>
+            <i (click)="tagVote('down', 'artTags',tag)" class="material-icons">keyboard_arrow_down</i>
             <span class="counter">{{tag.votes}}</span>
             <span class="name">{{tag.name}}</span>
-            <i (click)="tagVote('up', 'art',tag)" class="material-icons">keyboard_arrow_up</i>
+            <i (click)="tagVote('up', 'artTags',tag)" class="material-icons">keyboard_arrow_up</i>
             <button>Upvote</button>
             <button>Downvote</button>
           </li>

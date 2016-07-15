@@ -119,8 +119,8 @@ var destinationCtrl = function(Destination){
       voteDetails.voteType = req.query.voteType;
       req.destination.voteTag(
         voteDetails,
-        function(destination){
-          res.json(destination);
+        function(){
+          res.send('OK');
         },
         function(err){
           return next(err)
