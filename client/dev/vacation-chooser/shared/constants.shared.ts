@@ -18,7 +18,9 @@ const DESTINATION_URLS = {
   BASE: "api/destinations",
   RANDOM: "api/destinations?random=true",
   FULL_DESCRIPTION:"api/destinations/fullDescription/",
-  LIKE_IT:"api/destinations/like/"
+  LIKE_IT:"api/destinations/like/",
+  VOTE_FOR_TAG:"api/destinations/voteTag/"
+
 };
 const ADVICE_URLS = {
   BASE:"api/advices"

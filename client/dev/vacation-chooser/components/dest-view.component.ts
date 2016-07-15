@@ -60,4 +60,7 @@ export class DestViewComponent implements OnInit, OnDestroy{
         console.error(err);
       });
   }
+  tagVote(voteType, tagData){
+    console.log(voteType, tagData);
+  }
 }

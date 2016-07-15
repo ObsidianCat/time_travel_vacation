@@ -41,7 +41,7 @@ module.exports = class DestinationsRoutes {
         );
       });
 
-    router.route('/api/destinations/:destinationId/voteTag').
+    router.route('/api/destinations/voteTag/:destinationId').
       patch(destinationCtrl.voteForTag);
 
   }

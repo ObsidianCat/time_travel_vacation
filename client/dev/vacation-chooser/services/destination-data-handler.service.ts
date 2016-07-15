@@ -68,6 +68,9 @@ export class DestinationDataHandlerService{
   likeDestination(destId){
     return this.updateData(DESTINATION_URLS.LIKE_IT+destId, {});
   }
-
+  voteForTag(destId, voteType, tagId, tagType){
+    return this.updateData(`${DESTINATION_URLS.VOTE_FOR_TAG}${destId}?tagId=${tagId}
+    &voteType=${voteType}&tagType=${tagType}`, {});
+  }
 
 }
