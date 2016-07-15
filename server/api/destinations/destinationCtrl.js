@@ -120,7 +120,7 @@ var destinationCtrl = function(Destination){
       req.destination.voteTag(
         voteDetails,
         function(){
-          res.send('OK');
+          res.json({"message":"success"});
         },
         function(err){
           return next(err)
