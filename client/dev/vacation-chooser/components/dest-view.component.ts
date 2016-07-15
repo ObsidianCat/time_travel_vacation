@@ -60,12 +60,15 @@ export class DestViewComponent implements OnInit, OnDestroy{
         console.error(err);
       });
   }
-  tagVote(voteType, tagType,tag){
+  tagVote(voteType, tagType,tag, name){
+    if(tag.alreadyVoted){return;}
     console.log(this.destination._id,voteType, tagType, tag._id);
     this.dataHandlerService.voteForTag(this.destination._id,{tagId:tag._id, tagType, voteType})
       .then((data)=>{
-        // this.destination.likes = data;
-        console.log(data);
+        // let index = this.destination[tagType].indexOf(tag);
+        // this.destination[tagType][index].votes++;
+        voteType == "up"?tag.votes++:tag.votes--;
+        tag.alreadyVoted = true;
       })
       .catch((err)=>{
         console.error(err);

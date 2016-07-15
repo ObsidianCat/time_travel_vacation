@@ -6,16 +6,20 @@
       class="form-control"
       type="text"
       name="title"
-      [(ngModel)]="model.title">
+      [(ngModel)]="model.title"
+      required
+    >
   </div>
   <div class="form-group">
     <label for="body">Advice</label>
-    <input
+    <textarea
       id="body"
       class="form-control"
       type="text"
       name="body"
-      [(ngModel)]="model.body">
+      rows="4"
+      required
+      [(ngModel)]="model.body"></textarea>
   </div>
   <button type="submit" class="btn btn-default">Submit</button>
 </form>

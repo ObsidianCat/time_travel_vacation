@@ -23,7 +23,8 @@ h1.page-title{
   margin-top: 2rem;
 }
 
-.home-page .well{
+.home-page .well,
+.finder-page .well{
   background: #FFB300;
 
 }
