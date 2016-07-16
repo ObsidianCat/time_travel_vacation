@@ -5,7 +5,7 @@
 
 var Destination = require("../destinations/models/Destination");
 var User = require("../users/models/User");
-var Advice = require("../advices/models/Advice");
+var Advice = require("../advices/models/advice");
 
 var adviceCtrl = require("../advices/adviceCtrl.js")(User, Destination, Advice);
 var commonMw = require("../middlewares/commmonMw");
