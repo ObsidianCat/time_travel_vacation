@@ -134,7 +134,7 @@ var destinationCtrl = function(Destination){
   };
 
   return{
-    get,
+    get: get,
     post,
     getById,
     getRandom,
