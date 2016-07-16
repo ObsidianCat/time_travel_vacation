@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
 import {ArtTagsFinderComponent } from './art-tags-finder.component';
 import { HistoryTagsFinderComponent } from './history-tags-finder.component';
 import { PeriodFinderComponent } from './period-finder.component';
-import {DestPreviewComponent } from './dest-preview.Component';
+import {DestPreviewComponent } from './dest-preview.component';
 @Component({
   templateUrl:'vacation-chooser/templates/finder.component.html',
   selector: 'finder',
