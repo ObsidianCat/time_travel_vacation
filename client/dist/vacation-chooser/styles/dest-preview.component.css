@@ -1,0 +1,12 @@
+span.label{
+  margin: 0.5rem;
+  font-weight: 500;
+}
+.panel-heading a
+{
+  display: block;
+  cursor: pointer;
+}
+.panel-default{
+  background-color:#FFB300;;
+}

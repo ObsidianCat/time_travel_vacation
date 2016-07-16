@@ -1,0 +1,14 @@
+.container-fluid{
+  background: #FFB300;
+}
+.vote-inactive{
+  opacity: 0.5;
+}
+.dest-likes p{
+  margin: 0px;
+  margin-left: 1rem;
+}
+ul.tags li,
+ul.books li {
+  list-style: none;
+}
