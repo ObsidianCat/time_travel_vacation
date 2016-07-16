@@ -6,8 +6,8 @@
 var Destination = require("../destinations/models/Destination");
 var Book = require("../books/models/Book");
 
-var Advice = require("./Advice");
-var User = require("./User");
+var Advice = require("../advices/models/Advice");
+var User = require("../users/models/User");
 
 function findItem(req, res, next, id, name){
   var model;
