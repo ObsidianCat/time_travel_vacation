@@ -4,7 +4,7 @@
  */
 
 var Destination = require("../destinations/models/Destination");
-var User = require("../users/models/User");
+var User = require("./User");
 var Advice = require("a/advice");
 
 var adviceCtrl = require("../advices/adviceCtrl.js")(User, Destination, Advice);
