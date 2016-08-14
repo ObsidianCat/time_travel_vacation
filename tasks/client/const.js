@@ -2,13 +2,15 @@ export const path = {
   ROOT: './',
   DEV: './client/dev/',
   DIST: './client/dist/',
-  TEST: './tests/'
+  TEST: './tests/',
+  APP_NAME:'vacation-chooser'
 }
 
 export const tasks = {
   CLIENT_BUILD_DEV: 'client.build:dev',
   CLIENT_BUILD_DIST: 'client.build:dist',
 
+  CLIENT_SASS_TO_CSS: 'client.sass_to_css',
   CLIENT_CSS_DIST: 'client.build_css:dist',
   CLIENT_JS_DIST: 'client.build_js:dist',
   CLIENT_VIEWS_DIST: 'client.views:dist',
