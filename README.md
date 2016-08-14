@@ -8,3 +8,7 @@ To test production build locally:
 ```
 set NODE_ENV=production && set MONGODBHQ_ENV=mongodb://localhost/vacationsDB && npm start
 ```
+
+## Application demo
+https://art-and-history.herokuapp.com/
+

@@ -8,5 +8,11 @@ typings
 tests
 client/dev/**/*.js
 client/dev/index.js
+client/dist/
+client/dist/*
+client/dist/**/*.*
+
+
+
 
 npm-debug.log.*
