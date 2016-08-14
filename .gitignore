@@ -12,7 +12,4 @@ client/dist/
 client/dist/*
 client/dist/**/*.*
 
-
-
-
 npm-debug.log.*
