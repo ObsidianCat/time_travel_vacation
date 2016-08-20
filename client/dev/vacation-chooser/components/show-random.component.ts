@@ -9,7 +9,7 @@ import { DestPreviewComponent } from './dest-preview.component';
   selector:'destination-random',
   templateUrl:'vacation-chooser/templates/show-random.component.html',
   directives:[DestPreviewComponent],
-  styleUrls: ['vacation-chooser/styles/show-random.component.css'],
+  styleUrls: ['vacation-chooser/styles/css/omponents/show-random.component.css'],
 
 })
 export class ShowRandomComponent implements OnInit {

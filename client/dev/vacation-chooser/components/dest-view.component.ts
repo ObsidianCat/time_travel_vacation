@@ -12,7 +12,7 @@ import { BookFormComponent } from "./book-form.component";
 @Component({
   selector:'destination-view',
   templateUrl:'vacation-chooser/templates/dest-view.component.html',
-  styleUrls: ['vacation-chooser/styles/dest-view.component.css'],
+  styleUrls: ['vacation-chooser/styles/css/components/dest-view.component.css'],
   directives:[AdviceFormComponent, BookFormComponent]
 })
 export class DestViewComponent implements OnInit, OnDestroy{

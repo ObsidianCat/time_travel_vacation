@@ -11,3 +11,4 @@ platform_browser_dynamic_1.bootstrap(app_component_1.AppComponent, [
     forms_1.provideForms()
 ])
     .catch(function (err) { return console.error(err); });
+//# sourceMappingURL=index.js.map

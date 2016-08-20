@@ -5,7 +5,6 @@ import { DestinationModel }    from '../models/destination';
 @Component({
   selector: 'add-destination-form',
   templateUrl:'vacation-chooser/templates/add-dest-form.component.html',
-  styleUrls: ['vacation-chooser/styles/forms.css']
 })
 export class AddDestFormComponent {
   historyTags = ["Early Middle Ages","The Renaissance", "Ancient Rome", "Ancient Greece"];

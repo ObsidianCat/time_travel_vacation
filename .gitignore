@@ -7,6 +7,7 @@ typings
 *.map
 tests
 client/dev/**/*.js
+client/dev/**/*.css
 client/dev/index.js
 client/dist/vacation-chooser/
 
