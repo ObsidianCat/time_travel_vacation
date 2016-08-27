@@ -6,7 +6,10 @@ span.label{
 {
   display: block;
   cursor: pointer;
+  &:hover{
+    color:green;
+  }
 }
 .panel-default{
-  background-color:#FFB300;;
+  background-color:$c-middle-amber;
 }

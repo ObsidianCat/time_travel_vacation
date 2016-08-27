@@ -6,3 +6,13 @@
 
 //base
 @import 'base/errors';
+
+//layouts
+@import 'layouts/cover';
+@import 'layouts/basic-page';
+
+//pages
+@import 'pages/home-page';
+
+//components
+@import 'components/top-menu';

@@ -12,11 +12,11 @@ body {
 }
 
 .navbar-header a{
-  color:#FFA000 !important;
+  color:$c-dark-amber !important;
 }
 h1.page-title{
   font-size: 30px;
-  color: #FFF8E1;
+  color: $c-linen;
 }
 
 .well{
@@ -25,6 +25,6 @@ h1.page-title{
 
 .home-page .well,
 .finder-page .well{
-  background: #FFB300;
+  background: $c-middle-amber;
 
 }

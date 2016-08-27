@@ -11,7 +11,4 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
   templateUrl:'vacation-chooser/templates/home.component.html',
 })
 
-@Component({
-  templateUrl:'vacation-chooser/templates/home.component.html',
-})
 export class HomeComponent { }
