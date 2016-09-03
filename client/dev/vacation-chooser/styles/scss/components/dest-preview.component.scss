@@ -1,6 +1,15 @@
+@import '../abstracts/vars';
+
 span.label{
   margin: 0.5rem;
   font-weight: 500;
+}
+
+.panel-heading{
+  background-repeat: no-repeat;
+  background-image: url("./vacation-chooser/resources/bee_one_comb.png");
+  background-position: 5px center;
+  background-size: 5%;
 }
 .panel-heading a
 {
@@ -8,6 +17,9 @@ span.label{
   cursor: pointer;
   &:hover{
     color:green;
+  }
+  h5{
+    padding-left: 30px;
   }
 }
 .panel-default{

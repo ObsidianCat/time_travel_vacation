@@ -7,7 +7,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" [routerLink]="['/']">Art&History vacation chooser</a>
+      <a class="navbar-brand" [routerLink]="['/']">
+        <span class="bee-in-circle">
+          <img
+            class="bee-in-circle__picture"
+            src="./vacation-chooser/resources/bee02_ca06.png">
+        </span>
+        <p class="navbar-brand__title">Art&History vacation chooser</p>
+      </a>
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
@@ -17,8 +24,6 @@
         <li><a [routerLink]="['/inspire']" routerLinkActive="active">Be inspired</a></li>
       </ul>
     </div><!--/.nav-collapse -->
-    <a class="bee-link" [routerLink]="['/']" routerLinkActive="active"><img class="bee-link__picture" src="./vacation-chooser/resources/bee02_ca06.png"></a>
-
   </div>
 </nav>
 

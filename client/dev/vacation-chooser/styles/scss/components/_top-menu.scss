@@ -1,8 +1,34 @@
-.navbar-fixed-top .container-fluid{
-  display: flex;
-  flex-direction: row;
+.navbar-header{
+  @include media(">=extraSmall") {
+    width: 25%;
+  }
+}
 
-  .bee-link{
+.navbar.navbar-fixed-top:after{
+  content: "";
+  background-repeat: no-repeat;
+  background-image: url("./vacation-chooser/resources/bee_flags.png");
+
+}
+
+.nav.navbar-nav{
+  @include media(">=extraSmall") {
+    margin-top: 25px;
+  }
+}
+
+
+.navbar-brand{
+  height: 95px;
+  font-size: 1.2em;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  @include media(">=extraSmall") {
+    width: initial;
+  }
+
+  .bee-in-circle{
     background-color: #FFA000;
     border-radius: 50%;
     margin: 5px 0 5px 0;
@@ -13,10 +39,16 @@
     &:hover{
       background-color: white;
     }
-    .bee-link__picture{
+    .bee-in-circle__picture{
       height: 40px;
     }
   }
-
-
+  .navbar-brand__title{
+    display: inline-block;
+    margin: 0 10px;
+    width: 60%;
+    @include media(">=extraSmall") {
+      width: initial;
+    }
+  }
 }

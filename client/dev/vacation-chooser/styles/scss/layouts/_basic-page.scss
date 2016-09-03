@@ -1,3 +1,25 @@
+body{
+  background-size: cover;
+  background: linear-gradient(to bottom, white 0%, white 40%, rgba(255, 255, 255, 0.83) 70%, rgba(255, 255, 255, 0.8) 81%, rgba(255, 255, 255, 0.1) 100%), url("../../resources/bee_bg_1.jpg") bottom center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 100vh;
+  height: 100%;
+  //background-blend-mode: saturation;
+  background-attachment: fixed;
+}
+
+/* Permalink - use to edit and share this gradient:
+http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+56,ffffff+100&1+22,0.8+61,0.1+100 */
+.page-gradient{
+  background: linear-gradient(to bottom, white 0%, white 40%, rgba(255, 255, 255, 0.83) 70%, rgba(255, 255, 255, 0.8) 81%, rgba(255, 255, 255, 0.1) 100%);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top:0px;
+  left: 0px;
+}
+
 .finder-page,
 .home-page {
   margin-top: 5rem;
