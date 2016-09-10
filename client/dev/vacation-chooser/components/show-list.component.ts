@@ -8,7 +8,7 @@ import { DestPreviewComponent } from './dest-preview.component';
 @Component({
   selector:'destination-preview',
   templateUrl:'vacation-chooser/templates/show-list.component.html',
-  directives:[DestPreviewComponent]
+  // directives:[DestPreviewComponent]
 })
 export class ShowListComponent implements OnInit {
   constructor(

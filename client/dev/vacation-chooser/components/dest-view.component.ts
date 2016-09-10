@@ -13,7 +13,7 @@ import { BookFormComponent } from "./book-form.component";
   selector:'destination-view',
   templateUrl:'vacation-chooser/templates/dest-view.component.html',
   styleUrls: ['vacation-chooser/styles/css/components/dest-view.component.css'],
-  directives:[AdviceFormComponent, BookFormComponent]
+  // directives:[AdviceFormComponent, BookFormComponent]
 })
 export class DestViewComponent implements OnInit, OnDestroy{
   @Input() destination = new DestinationModel("","", [],[],[],[]);
@@ -32,6 +32,7 @@ export class DestViewComponent implements OnInit, OnDestroy{
       this.dataHandlerService.getDestinationById(id)
         .then(destination => {
           Object.assign(this.destination, destination);
+          
         });
     });
   }

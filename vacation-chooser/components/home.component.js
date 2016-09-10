@@ -9,20 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 /**
- * Created by Lula on 7/3/2016.
+ * Created by Lula on 7/5/2016.
  */
 const core_1 = require('@angular/core');
-let AppComponent = class AppComponent {
-    constructor() {
-        this.name = "Time traveler";
-    }
+// import { ROUTER_DIRECTIVES } from '@angular/router';
+let HomeComponent = class HomeComponent {
 };
-AppComponent = __decorate([
+HomeComponent = __decorate([
     core_1.Component({
-        selector: 'vacations-app',
-        templateUrl: 'vacation-chooser/templates/app.component.html',
+        selector: 'home-content',
+        // directives: [ROUTER_DIRECTIVES],
+        templateUrl: 'vacation-chooser/templates/home.component.html',
     }), 
     __metadata('design:paramtypes', [])
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+], HomeComponent);
+exports.HomeComponent = HomeComponent;

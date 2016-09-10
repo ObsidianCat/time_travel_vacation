@@ -9,20 +9,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 /**
- * Created by Lula on 7/3/2016.
+ * Created by Lula on 7/5/2016.
  */
 const core_1 = require('@angular/core');
-let AppComponent = class AppComponent {
+let FinderComponent = class FinderComponent {
     constructor() {
-        this.name = "Time traveler";
+        this.searchResults = [];
+    }
+    showHistoryTagsResults(data) {
+        console.log("got data");
+        this.searchResults = data;
+    }
+    gotSearchResults(data) {
+        console.log("got data");
+        this.searchResults = data;
     }
 };
-AppComponent = __decorate([
+FinderComponent = __decorate([
     core_1.Component({
-        selector: 'vacations-app',
-        templateUrl: 'vacation-chooser/templates/app.component.html',
+        templateUrl: 'vacation-chooser/templates/finder.component.html',
+        selector: 'finder',
     }), 
     __metadata('design:paramtypes', [])
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+], FinderComponent);
+exports.FinderComponent = FinderComponent;

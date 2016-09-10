@@ -9,12 +9,12 @@ import {DestPreviewComponent } from './dest-preview.component';
 @Component({
   templateUrl:'vacation-chooser/templates/finder.component.html',
   selector: 'finder',
-  directives:[
-    HistoryTagsFinderComponent,
-    ArtTagsFinderComponent,
-    PeriodFinderComponent,
-    DestPreviewComponent
-  ]
+  // directives:[
+  //   HistoryTagsFinderComponent,
+  //   ArtTagsFinderComponent,
+  //   PeriodFinderComponent,
+  //   DestPreviewComponent
+  // ]
 
 })
 export class FinderComponent {
