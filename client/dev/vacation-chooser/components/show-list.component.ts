@@ -3,12 +3,10 @@
  */
 import {Component, OnInit} from '@angular/core';
 import { DestinationDataHandlerService } from "../services/destination-data-handler.service";
-import { DestPreviewComponent } from './dest-preview.component';
 
 @Component({
   selector:'destination-preview',
   templateUrl:'vacation-chooser/templates/show-list.component.html',
-  // directives:[DestPreviewComponent]
 })
 export class ShowListComponent implements OnInit {
   constructor(

@@ -11,18 +11,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 /**
  * Created by Lula on 7/3/2016.
  */
-const core_1 = require('@angular/core');
-let AppComponent = class AppComponent {
-    constructor() {
+var core_1 = require('@angular/core');
+var AppComponent = (function () {
+    function AppComponent() {
         this.name = "Time traveler";
     }
-};
-AppComponent = __decorate([
-    core_1.Component({
-        selector: 'vacations-app',
-        templateUrl: 'vacation-chooser/templates/app.component.html',
-    }), 
-    __metadata('design:paramtypes', [])
-], AppComponent);
+    AppComponent = __decorate([
+        core_1.Component({
+            selector: 'vacations-app',
+            templateUrl: 'vacation-chooser/templates/app.component.html',
+        }), 
+        __metadata('design:paramtypes', [])
+    ], AppComponent);
+    return AppComponent;
+}());
 exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
