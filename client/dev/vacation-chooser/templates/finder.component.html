@@ -13,8 +13,41 @@
     <art-tags-finder (gotSearchResults)="gotSearchResults($event)" *ngIf="searchType == 'art'"></art-tags-finder>
   </section>
   <section class="destinations-list">
-    <div *ngFor="let dest of searchResults">
+    <div *ngFor="let destination of searchResults">
       <!--<destination-preview [destination]="dest"></destination-preview>-->
+      <article class="dest-wrapper panel panel-default">
+
+        <div class="panel-heading">
+          <a (click)="goToDestView(destination._id)">
+            <span class="name">{{destination.placeName}}</span>
+          </a>
+        </div>
+        <div class="panel-body">
+          <p>{{destination.likes}} people like it</p>
+          <p>{{destination.countryName}}</p>
+          <section class="tags-wrap">
+            <h4>History Tags</h4>
+            <div>
+        <span class="label label-default" *ngFor="let tag of destination.historyTags;" >
+          {{tag.name}}
+        </span>
+            </div>
+            <h4>Art Tags</h4>
+            <div>
+        <span class="label label-default" *ngFor="let tag of destination.artTags;" >
+          {{tag.name}}
+        </span>
+            </div>
+
+          </section>
+        </div>
+        <div class="panel-footer">
+          <a (click)="goToDestView(destination._id)">
+            <span (click)="goToDestView(destination._id)" class="name">Read more</span>
+          </a>
+        </div>
+      </article>
+
     </div>
   </section>
 </div>

@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class DestPreviewComponent {
   // @Input() destination: {};
-  @Input() destination: {};
+  @Input('cur-destination') destination: any;
 
   constructor(
     private router: Router
