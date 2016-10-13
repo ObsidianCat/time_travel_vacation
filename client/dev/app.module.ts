@@ -20,6 +20,9 @@ import { ArtTagsFinderComponent }   from './vacation-chooser/components/art-tags
 import { BookFormComponent }   from './vacation-chooser/components/book-form.component';
 import { AdviceFormComponent }   from './vacation-chooser/components/advice-form.component';
 import { DestinationDataHandlerService }   from './vacation-chooser/services/destination-data-handler.service';
+import { AdviceDataHandlerService }   from './vacation-chooser/services/advice-data-handler.service';
+import { BookDataHandlerService }   from './vacation-chooser/services/book-data-handler.service';
+
 
 @NgModule({
     imports: [
@@ -52,6 +55,8 @@ import { DestinationDataHandlerService }   from './vacation-chooser/services/des
     ],
     providers: [
       DestinationDataHandlerService,
+      AdviceDataHandlerService,
+      BookDataHandlerService,
     ],
     bootstrap: [
       AppComponent,

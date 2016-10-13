@@ -11,7 +11,7 @@ import { DestinationDataHandlerService } from "../services/destination-data-hand
 export class ShowListComponent implements OnInit {
   constructor(
     private dataHandlerService:DestinationDataHandlerService
-  ){}
+){}
   destList: any[];
   ngOnInit() {
     this.destList = [];

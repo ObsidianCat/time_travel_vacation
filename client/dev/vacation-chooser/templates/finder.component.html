@@ -18,7 +18,7 @@
       <article class="dest-wrapper panel panel-default">
 
         <div class="panel-heading">
-          <a (click)="goToDestView(destination._id)">
+          <a [routerLink]="['/destination',  destination._id ]">
             <span class="name">{{destination.placeName}}</span>
           </a>
         </div>
@@ -42,8 +42,8 @@
           </section>
         </div>
         <div class="panel-footer">
-          <a (click)="goToDestView(destination._id)">
-            <span (click)="goToDestView(destination._id)" class="name">Read more</span>
+          <a [routerLink]="['/destination',  destination._id ]">
+            <span class="name">Read more</span>
           </a>
         </div>
       </article>
