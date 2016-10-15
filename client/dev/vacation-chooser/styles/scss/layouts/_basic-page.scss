@@ -5,7 +5,8 @@ html{
 http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+56,ffffff+100&1+22,0.8+61,0.1+100 */
 body{
   background-size: cover;
-  background: linear-gradient(to bottom, white 0%, white 20%, rgba(255, 255, 255, 0.83) 40%, rgba(255, 255, 255, 0.5) 70%, rgba(255, 255, 255, 0.1) 100%), url("../../resources/bee_bg_1_less_color.jpg") bottom center;  background-repeat: no-repeat;
+  background: linear-gradient(to bottom, white 0%, white 20%, rgba(255, 255, 255, 0.83) 40%, rgba(255, 255, 255, 0.5) 70%, rgba(255, 255, 255, 0.1) 100%), url('#{$path-to-images}bee_bg_1_less_color.jpg') bottom center;
+  background-repeat: no-repeat;
   background-size: 150%;
   height: 100%;
   width: 100%;

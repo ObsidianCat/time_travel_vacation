@@ -3,6 +3,7 @@ import { HttpModule } from '@angular/http';
 import { FormsModule, FormBuilder } from '@angular/forms';
 import { BrowserModule  } from '@angular/platform-browser';
 import { RouterModule }   from '@angular/router';
+import { AUTH_PROVIDERS }      from 'angular2-jwt';
 
 import { AppComponent }   from './vacation-chooser/components/app.component';
 import { HomeComponent }   from './vacation-chooser/components/home.component';
@@ -16,12 +17,15 @@ import { AddDestFormComponent }   from './vacation-chooser/components/add-dest-f
 import { PeriodFinderComponent }   from './vacation-chooser/components/period-finder.component';
 import { HistoryTagsFinderComponent }   from './vacation-chooser/components/history-tags-finder.component';
 import { ArtTagsFinderComponent }   from './vacation-chooser/components/art-tags-finder.component';
+// import { UserAuthComponent }   from './vacation-chooser/components/user-auth.component';
 
 import { BookFormComponent }   from './vacation-chooser/components/book-form.component';
 import { AdviceFormComponent }   from './vacation-chooser/components/advice-form.component';
 import { DestinationDataHandlerService }   from './vacation-chooser/services/destination-data-handler.service';
 import { AdviceDataHandlerService }   from './vacation-chooser/services/advice-data-handler.service';
 import { BookDataHandlerService }   from './vacation-chooser/services/book-data-handler.service';
+import { NativeReferencesService } from './vacation-chooser/services/native-references.service';
+// import { Auth } from './vacation-chooser/services/auth.service';
 
 
 @NgModule({
@@ -30,12 +34,17 @@ import { BookDataHandlerService }   from './vacation-chooser/services/book-data-
       FormsModule,
       HttpModule,
       RouterModule.forRoot([
-        { path: '', component: HomeComponent},
+        { path: '',
+          redirectTo: '/home',
+          pathMatch: 'full'},
+        { path: 'home', component: HomeComponent},
         { path: 'find', component: FinderComponent },
         { path: 'browse', component: ShowListComponent },
         { path: 'inspire', component: ShowRandomComponent },
         { path: 'destination/:id', component: DestViewComponent},
         { path: 'add-destination', component: AddDestFormComponent},
+         // { path: 'login', component: UserAuthComponent},
+
       ])
     ],
    declarations: [
@@ -52,11 +61,15 @@ import { BookDataHandlerService }   from './vacation-chooser/services/book-data-
      ArtTagsFinderComponent,
      BookFormComponent,
      AdviceFormComponent,
+     // UserAuthComponent,
+     // Auth,
     ],
     providers: [
+      AUTH_PROVIDERS,
       DestinationDataHandlerService,
       AdviceDataHandlerService,
       BookDataHandlerService,
+      NativeReferencesService,
     ],
     bootstrap: [
       AppComponent,

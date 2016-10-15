@@ -7,7 +7,7 @@
 .navbar.navbar-fixed-top:after{
   content: "";
   background-repeat: no-repeat;
-  background-image: url("./vacation-chooser/resources/bee_flags.png");
+  background-image: url('#{$path-to-images}bee_flags.png');
 
 }
 
