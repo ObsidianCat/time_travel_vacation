@@ -33,6 +33,7 @@ ShowListComponent = __decorate([
     core_1.Component({
         selector: 'destination-preview',
         templateUrl: 'vacation-chooser/templates/show-list.component.html',
+        styleUrls: ['vacation-chooser/styles/css/components/show-list.component.css'],
     }), 
     __metadata('design:paramtypes', [destination_data_handler_service_1.DestinationDataHandlerService])
 ], ShowListComponent);
