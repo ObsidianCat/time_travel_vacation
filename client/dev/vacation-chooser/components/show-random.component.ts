@@ -8,7 +8,7 @@ import { DestPreviewComponent } from './dest-preview.component';
 @Component({
   selector:'destination-random',
   templateUrl:'vacation-chooser/templates/show-random.component.html',
-  directives:[DestPreviewComponent],
+  // directives:[DestPreviewComponent],
   styleUrls: ['vacation-chooser/styles/css/components/show-random.component.css'],
 
 })

@@ -3,9 +3,12 @@
 
 //abstracts
 @import 'abstracts/vars';
+@import 'abstracts/palette';
 
 //base
 @import 'base/errors';
+@import 'base/margins_paddings';
+@import 'base/typography';
 
 //layouts
 @import 'layouts/cover';
@@ -16,6 +19,6 @@
 
 //components
 @import 'components/top-menu';
-//@import 'components/dest-preview.component';
+@import 'components/dest-preview.component';
 //@import 'components/dest-view.component';
 //@import 'components/show-random.component';
