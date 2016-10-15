@@ -7,6 +7,8 @@ import { DestinationDataHandlerService } from "../services/destination-data-hand
 @Component({
   selector:'destination-preview',
   templateUrl:'vacation-chooser/templates/show-list.component.html',
+  styleUrls: ['vacation-chooser/styles/css/components/show-list.component.css'],
+
 })
 export class ShowListComponent implements OnInit {
   constructor(
