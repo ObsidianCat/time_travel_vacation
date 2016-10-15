@@ -8,8 +8,16 @@ typings
 tests
 client/dev/**/*.js
 client/dev/**/*.css
-client/dev/index.js
+client\dev\**\*.js
+
 client/dist/vacation-chooser/
 
 
 npm-debug.log.*
+client/dev/vacation-chooser/styles/css/
+npm-debug.log
+todo/
+vacation-chooser
+vacation-chooser/components/user-auth.component.js
+vacation-chooser/services/auth.service.js
+vacation-chooser/services/native-references.service.js
