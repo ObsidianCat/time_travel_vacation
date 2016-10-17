@@ -13,6 +13,7 @@ const DBConfig = require('./config/db.conf');
 const Routes = require('./routes/index');
 
 const app = express();
+app.use(cors());
 
 RoutesConfig.init(app);
 DBConfig.init();

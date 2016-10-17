@@ -25,7 +25,7 @@ var add_dest_form_component_1 = require('./vacation-chooser/components/add-dest-
 var period_finder_component_1 = require('./vacation-chooser/components/period-finder.component');
 var history_tags_finder_component_1 = require('./vacation-chooser/components/history-tags-finder.component');
 var art_tags_finder_component_1 = require('./vacation-chooser/components/art-tags-finder.component');
-// import { UserAuthComponent }   from './vacation-chooser/components/user-auth.component';
+var user_profile_component_1 = require('./vacation-chooser/components/user-profile.component');
 var book_form_component_1 = require('./vacation-chooser/components/book-form.component');
 var advice_form_component_1 = require('./vacation-chooser/components/advice-form.component');
 var destination_data_handler_service_1 = require('./vacation-chooser/services/destination-data-handler.service');
@@ -52,6 +52,7 @@ var AppModule = (function () {
                     { path: 'inspire', component: show_random_component_1.ShowRandomComponent },
                     { path: 'destination/:id', component: dest_view_component_1.DestViewComponent },
                     { path: 'add-destination', component: add_dest_form_component_1.AddDestFormComponent },
+                    { path: 'user-profile', component: user_profile_component_1.UserProfileComponent },
                 ])
             ],
             declarations: [
@@ -68,6 +69,7 @@ var AppModule = (function () {
                 art_tags_finder_component_1.ArtTagsFinderComponent,
                 book_form_component_1.BookFormComponent,
                 advice_form_component_1.AdviceFormComponent,
+                user_profile_component_1.UserProfileComponent,
             ],
             providers: [
                 angular2_jwt_1.AUTH_PROVIDERS,

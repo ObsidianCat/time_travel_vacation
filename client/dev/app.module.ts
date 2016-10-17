@@ -17,7 +17,7 @@ import { AddDestFormComponent }   from './vacation-chooser/components/add-dest-f
 import { PeriodFinderComponent }   from './vacation-chooser/components/period-finder.component';
 import { HistoryTagsFinderComponent }   from './vacation-chooser/components/history-tags-finder.component';
 import { ArtTagsFinderComponent }   from './vacation-chooser/components/art-tags-finder.component';
-// import { UserAuthComponent }   from './vacation-chooser/components/user-auth.component';
+import { UserProfileComponent }   from './vacation-chooser/components/user-profile.component';
 
 import { BookFormComponent }   from './vacation-chooser/components/book-form.component';
 import { AdviceFormComponent }   from './vacation-chooser/components/advice-form.component';
@@ -43,7 +43,7 @@ import { NativeReferencesService } from './vacation-chooser/services/native-refe
         { path: 'inspire', component: ShowRandomComponent },
         { path: 'destination/:id', component: DestViewComponent},
         { path: 'add-destination', component: AddDestFormComponent},
-         // { path: 'login', component: UserAuthComponent},
+         { path: 'user-profile', component: UserProfileComponent},
 
       ])
     ],
@@ -61,7 +61,7 @@ import { NativeReferencesService } from './vacation-chooser/services/native-refe
      ArtTagsFinderComponent,
      BookFormComponent,
      AdviceFormComponent,
-     // UserAuthComponent,
+     UserProfileComponent,
      // Auth,
     ],
     providers: [

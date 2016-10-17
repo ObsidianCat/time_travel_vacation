@@ -39,9 +39,6 @@ export class AdviceDataHandlerService{
     return Promise.reject(errMsg);
   }
 
-  private sayHello(){
-    return "Hello";
-  }
   saveAdvice(dataModel, destId, userId){
     return this.sendData(ADVICE_URLS.BASE+"/"+destId+"/"+userId, dataModel);
   }

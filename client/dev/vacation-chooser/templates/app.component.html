@@ -22,11 +22,10 @@
         <li><a [routerLink]="['/find']" routerLinkActive="active">Find perfect destination</a></li>
         <li><a [routerLink]="['/browse']" routerLinkActive="active">Browse destinations list</a></li>
         <li><a [routerLink]="['/inspire']" routerLinkActive="active">Be inspired</a></li>
-        <li><button class="btn btn-primary btn-margin" (click)="auth.login()" *ngIf="!auth.authenticated()">Log In</button></li>
         <li class="navbar__login-status">
-          <p *ngIf="auth.authenticated()">You are logged in</p>
-          <!--<p *ngIf="!auth.authenticated()">You are not logged in, please click 'Log in' button to login</p>-->
+          <a [routerLink]="['/user-profile']" routerLinkActive="active" *ngIf="auth.authenticated()">User profile</a>
         </li>
+        <li><button class="btn btn-primary btn-margin" (click)="auth.login()" *ngIf="!auth.authenticated()">Log In</button></li>
         <li><button class="btn btn-primary btn-margin" (click)="auth.logout()" *ngIf="auth.authenticated()">Log Out</button></li>
       </ul>
     </div><!--/.nav-collapse -->

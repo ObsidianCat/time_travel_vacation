@@ -2,10 +2,7 @@ var mongoose = require("mongoose"),
   Schema = mongoose.Schema;
 
 var userModel = new Schema({
-  firstName:String,
-  lastName:String,
-  nickname:String,
-  email:String,
+  authUserId:String,
   advices:[{type:mongoose.Schema.Types.ObjectId, ref:'Advice'}]
 });
 

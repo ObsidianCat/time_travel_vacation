@@ -4,19 +4,22 @@
 "use strict";
 
 var userCtrl = function(User){
-  var createOne = function createDestination (req,res, next) {
+  var findOrCreate = function createDestination (req, res, next) {
+    var currentUserId = req.body.authUserId;
+    User.findById(req.params.destinationId);
     var user = new User(req.body);
-    user.save().then(function(model){
-        res.status(201);
-        res.send(model);
-      }
-    )
-    .catch(
-      function(err){
-        console.error("User not saved");
-        next(err);
-      }
-    );
+    res.status(204).send("findOrCreate run on user controller");
+    // user.save().then(function(model){
+    //     res.status(201);
+    //     res.send(model);
+    //   }
+    // )
+    // .catch(
+    //   function(err){
+    //     console.error("User not saved");
+    //     next(err);
+    //   }
+    // );
   };
 
   var getAll = function(req, res){
@@ -44,7 +47,7 @@ var userCtrl = function(User){
   };
 
   return{
-    createOne:createOne,
+    findOrCreate,
     get:getAll,
     deleteOne:deleteOne
   }
