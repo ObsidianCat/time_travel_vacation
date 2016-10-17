@@ -7,6 +7,7 @@ const PORT = process.env.PORT || 3333;
 
 const os = require('os');
 const http = require('http');
+const cors = require('cors');
 const express = require('express');
 const RoutesConfig = require('./config/routes.conf');
 const DBConfig = require('./config/db.conf');
