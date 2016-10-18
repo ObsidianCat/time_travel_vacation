@@ -21,9 +21,8 @@ var userCtrl = function(User){
             return user.save();
           }
         })
-        .then(function(data){
-          console.log(data);
-          res.status(200).send({message:"User exist or created"});
+        .then((data)=>{
+          res.status(200).json(data)
         })
         .catch(function(error){
           console.error(error);
@@ -60,9 +59,15 @@ var userCtrl = function(User){
     });
   };
 
+  var getById = function(req,res){
+    res.json(req.user);
+  };
+
+
   return{
     findOrCreate,
-    get:getAll,
+    getAll,
+    getById,
     deleteOne:deleteOne
   }
 };

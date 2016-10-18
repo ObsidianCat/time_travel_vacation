@@ -27,12 +27,13 @@ var usersList = [
 module.exports = class UsersRoutes {
   static init(router) {
     router.route("/api/users")
-      .post(userCtrl.findOrCreate);
-    router.route("/api/users")
-      .get(userCtrl.get);
-    router.route("/api/users")
+      .get(userCtrl.getAll)
       .delete(userCtrl.deleteOne)
       .post(userCtrl.findOrCreate);
+
+    router.route("/api/users/:userId")
+      .get(userCtrl.getById);
+
     router.route("/api/users/profile")
       .get(authCheck, function(req, res) {
         res.json(usersList);

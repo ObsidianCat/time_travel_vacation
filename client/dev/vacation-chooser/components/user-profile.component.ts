@@ -22,8 +22,8 @@ export class UserProfileComponent implements OnInit {
     this.authHttp.get('api/users/profile')
       .map(res => res.json())
       .subscribe(
-        users => {
-          this.users = users
+        (users) => {
+          this.users = users;
           console.log(users)
         },
         error => console.log(error)

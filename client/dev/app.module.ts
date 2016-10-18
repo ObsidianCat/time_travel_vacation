@@ -25,6 +25,7 @@ import { DestinationDataHandlerService }   from './vacation-chooser/services/des
 import { AdviceDataHandlerService }   from './vacation-chooser/services/advice-data-handler.service';
 import { BookDataHandlerService }   from './vacation-chooser/services/book-data-handler.service';
 import { NativeReferencesService } from './vacation-chooser/services/native-references.service';
+import { UserDataHandlerService }  from './vacation-chooser/services/user-data-handler.service';
 // import { Auth } from './vacation-chooser/services/auth.service';
 
 
@@ -70,6 +71,7 @@ import { NativeReferencesService } from './vacation-chooser/services/native-refe
       AdviceDataHandlerService,
       BookDataHandlerService,
       NativeReferencesService,
+      UserDataHandlerService,
     ],
     bootstrap: [
       AppComponent,
