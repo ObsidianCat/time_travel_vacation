@@ -30,9 +30,9 @@ module.exports = class UsersRoutes {
       .post(userCtrl.findOrCreate);
     router.route("/api/users")
       .get(userCtrl.get);
-    router.route("/api/users/:userId")
+    router.route("/api/users")
       .delete(userCtrl.deleteOne)
-      .post(authCheck, userCtrl.findOrCreate);
+      .post(userCtrl.findOrCreate);
     router.route("/api/users/profile")
       .get(authCheck, function(req, res) {
         res.json(usersList);

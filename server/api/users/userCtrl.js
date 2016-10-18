@@ -3,23 +3,37 @@
  */
 "use strict";
 
+const Promise = require("bluebird");
+
+
 var userCtrl = function(User){
-  var findOrCreate = function createDestination (req, res, next) {
-    var currentUserId = req.body.authUserId;
-    User.findById(req.params.destinationId);
-    var user = new User(req.body);
-    res.status(204).send("findOrCreate run on user controller");
-    // user.save().then(function(model){
-    //     res.status(201);
-    //     res.send(model);
-    //   }
-    // )
-    // .catch(
-    //   function(err){
-    //     console.error("User not saved");
-    //     next(err);
-    //   }
-    // );
+  var findOrCreate = function (req, res, next) {
+    var currentAuthId = req.body.authUserId;
+
+    function findUserByAuthId(authId){
+      User.findOne({ authUserId: currentAuthId })
+        .then(function(data){
+          if(data){
+            return Promise.resolve(data);
+          }
+          else{
+            var user = new User(req.body);
+            return user.save();
+          }
+        })
+        .then(function(data){
+          console.log(data);
+          res.status(200).send({message:"User exist or created"});
+        })
+        .catch(function(error){
+          console.error(error);
+          res.status(500).send({error});
+
+        });
+    }
+
+    findUserByAuthId(currentAuthId);
+
   };
 
   var getAll = function(req, res){
