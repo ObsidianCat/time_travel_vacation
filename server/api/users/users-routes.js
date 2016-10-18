@@ -17,11 +17,6 @@ var authCheck = jwt({
 });
 
 
-var usersList = [
-  { id: 1, name: 'Todd Motto', image: 'image-1.jpg' },
-  { id: 2, name: 'Brad Green', image: 'image-2.jpg' },
-  { id: 3, name: 'Igor Minar', image: 'image-3.jpg' }
-];
 
 
 module.exports = class UsersRoutes {
@@ -33,10 +28,5 @@ module.exports = class UsersRoutes {
 
     router.route("/api/users/:userId")
       .get(userCtrl.getById);
-
-    router.route("/api/users/profile")
-      .get(authCheck, function(req, res) {
-        res.json(usersList);
-      });
   }
 };

@@ -2,7 +2,12 @@
 <article>
   <h1>User profile</h1>
   <section>
-
+    <img [src]="auth.userProfile.picture" alt="" class="profile-img">
+    <p><strong>Email: </strong> {{auth.userProfile.email}}</p>
+    <p><strong>Created At: </strong> {{auth.userProfile.created_at}}</p>
+  </section>
+  <section>
+    {{appUserData._id}}
   </section>
 </article>
 </div>

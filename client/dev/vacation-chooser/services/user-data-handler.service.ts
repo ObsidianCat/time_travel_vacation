@@ -25,4 +25,23 @@ export class UserDataHandlerService {
       );
   }
 
+  // private getData(data_url): Promise<any> {
+  //   return this.http.get(data_url)
+  //     .toPromise()
+  //     .then(this.extractData)
+  //     .catch(this.handleError);
+  // }
+
+  public getAppUserData(){
+    let userAppId = localStorage.getItem('appUserId');
+    return this.authHttp.get(`api/users/${userAppId}`);
+      // .subscribe(
+      //   (responseData) => {
+      //     console.log(responseData.json());
+      //     return responseData.json();
+      //   },
+      //   error => console.error(error),
+      //   () => console.log('Request Complete')
+      // );
+  }
 }

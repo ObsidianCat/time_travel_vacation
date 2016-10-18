@@ -31,7 +31,7 @@ const BOOK_URLS = {
 };
 
 const USER_URLS = {
-  PROFILE:"api/users/profile"
+  BASE:"api/users"
 };
 
 export {
