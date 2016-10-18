@@ -1,5 +1,5 @@
 <div class="container-fluid main-content-top-space">
-<article>
+<article *ngIf="auth.authenticated()">
   <h1>User profile</h1>
   <section>
     <img [src]="auth.userProfile.picture" alt="" class="profile-img">
@@ -10,4 +10,5 @@
     {{appUserData._id}}
   </section>
 </article>
+<h4 *ngIf="!auth.authenticated()">You are not logged in, please click 'Log in' button to login</h4>
 </div>
