@@ -17,16 +17,14 @@ var authCheck = jwt({
 });
 
 
-
-
 module.exports = class UsersRoutes {
   static init(router) {
     router.route("/api/users")
-      .get(userCtrl.getAll)
-      .delete(userCtrl.deleteOne)
-      .post(userCtrl.findOrCreate);
+      .get(authCheck, userCtrl.getAll)
+      .delete(authCheck, userCtrl.deleteOne)
+      .post(authCheck, userCtrl.findOrCreate);
 
     router.route("/api/users/:userId")
-      .get(userCtrl.getById);
+      .get(authCheck, userCtrl.getById);
   }
 };
