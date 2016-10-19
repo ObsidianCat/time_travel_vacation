@@ -6,11 +6,14 @@
 var bookCtrl = function(Book, Destination){
 
   var post = function createDestination (req,res, next) {
-    var book = new Book(req.body);
+    let book = new Book(req.body);
     book.destination = req.destination;
+    book.user = req.user;
+
+    req.user.books.push(book);
     req.destination.books.push(book);
 
-    Promise.all([req.destination.save(), book.save()]).then(data => {
+    Promise.all([req.user.save(), req.destination.save(), book.save()]).then(data => {
       console.log(data);
       res.status(200).send({data:data[1]});
     },
@@ -35,6 +38,8 @@ var bookCtrl = function(Book, Destination){
 
   var deleteOne = function(req, res, next){
     req.destination.books.pull({ _id: req.book._id }); // removed
+    req.user.books.pull({ _id: req.book._id }); // removed
+
     Promise.all([req.destination.save(), req.book.remove()]).then(values => {
       console.log(values);
       res.status(204);

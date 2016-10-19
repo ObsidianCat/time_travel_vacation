@@ -64,8 +64,11 @@ export class Auth {
     return tokenNotExpired();
   };
 
+
   public logout() {
     // Remove token from localStorage
     localStorage.removeItem('id_token');
+    localStorage.removeItem('appUserId');
+
   };
 }

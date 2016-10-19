@@ -52,8 +52,7 @@
           <p>{{advice.body}}</p>
         </li>
       </ul>
-      <!--TODO pass to form dynamic user id-->
-      <advice-form (newAdviceAdded)="newAdviceAdded($event)" [destId]="destination._id" [userId]="'5777bd1a6984a3d800e026f9'"></advice-form>
+      <advice-form (newAdviceAdded)="newAdviceAdded($event)" [destId]="destination._id"></advice-form>
     </section>
   </div>
 </div>

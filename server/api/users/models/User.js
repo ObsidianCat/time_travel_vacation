@@ -5,7 +5,9 @@ const mongoose = require("mongoose"),
 
 var userModel = new Schema({
   authUserId:String,
-  advices:[{type:mongoose.Schema.Types.ObjectId, ref:'Advice'}]
+  advices:[{type:mongoose.Schema.Types.ObjectId, ref:'Advice'}],
+  books:[{type:mongoose.Schema.Types.ObjectId, ref:'Book'}]
+
 });
 
 

@@ -32,6 +32,7 @@ var destination_data_handler_service_1 = require('./vacation-chooser/services/de
 var advice_data_handler_service_1 = require('./vacation-chooser/services/advice-data-handler.service');
 var book_data_handler_service_1 = require('./vacation-chooser/services/book-data-handler.service');
 var native_references_service_1 = require('./vacation-chooser/services/native-references.service');
+var user_data_handler_service_1 = require('./vacation-chooser/services/user-data-handler.service');
 // import { Auth } from './vacation-chooser/services/auth.service';
 var AppModule = (function () {
     function AppModule() {
@@ -77,6 +78,7 @@ var AppModule = (function () {
                 advice_data_handler_service_1.AdviceDataHandlerService,
                 book_data_handler_service_1.BookDataHandlerService,
                 native_references_service_1.NativeReferencesService,
+                user_data_handler_service_1.UserDataHandlerService,
             ],
             bootstrap: [
                 app_component_1.AppComponent,

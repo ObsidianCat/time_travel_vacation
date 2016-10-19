@@ -70,7 +70,6 @@ var destinationCtrl = function(Destination){
   };
 
   var getFullDescription = function(req, res, next){
-    console.log("test");
     Destination.findById(req.params.destinationId)
       .populate('advices books')
       .exec()

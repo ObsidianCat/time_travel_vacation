@@ -60,7 +60,14 @@ var userCtrl = function(User){
   };
 
   var getById = function(req,res){
-    res.json(req.user);
+    User.populate(req.user, 'advices books').then((data)=>{
+      res.status(200).json(data)
+    })
+    .catch(function(error){
+      console.error(error);
+      res.status(500).send({error});
+
+    });
   };
 
 

@@ -11,15 +11,16 @@ module.exports = class BookRoutes {
   static init(router) {
     router.param('destinationId', commonMw.findItemById);
     router.param('bookId', commonMw.findItemById);
+    router.param('userId', commonMw.findItemById);
 
     router
-      .route("/api/books/:destinationId")
+      .route("/api/books/:destinationId/:userId/")
       .post(bookCtrl.post);
     router
       .route("/api/books")
       .get(bookCtrl.get);
 
-    router.route("/api/books/:destinationId/:bookId")
+    router.route("/api/books/:destinationId/:userId/:bookId")
       .delete(bookCtrl.deleteOne);
   }
 };

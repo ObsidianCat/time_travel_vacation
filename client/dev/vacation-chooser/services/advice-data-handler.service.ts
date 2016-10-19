@@ -5,12 +5,14 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from  '@angular/http';
 import 'rxjs/Rx';
 import 'rxjs/add/operator/toPromise';
-
+import {AuthHttp} from 'angular2-jwt';
 import { ADVICE_URLS } from '../shared/constants.shared';
 
 @Injectable()
 export class AdviceDataHandlerService{
-  constructor(private http:Http ){}
+  constructor(private http:Http,
+              private authHttp: AuthHttp,
+  ){}
 
   private getData(data_url): Promise<any> {
     return this.http.get(data_url)
@@ -20,7 +22,7 @@ export class AdviceDataHandlerService{
   }
 
   private sendData(data_url, data): Promise<any> {
-    return this.http.post(data_url, data)
+    return this.authHttp.post(data_url, data)
       .toPromise()
       .then(this.extractData)
       .catch(this.handleError);

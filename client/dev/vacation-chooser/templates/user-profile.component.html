@@ -7,7 +7,24 @@
     <p><strong>Created At: </strong> {{auth.userProfile.created_at}}</p>
   </section>
   <section>
-    {{appUserData._id}}
+    <h3>My advices</h3>
+    <ul>
+      <li *ngFor="let advice of appUserData.advices;">
+        <a [routerLink]="['/destination',  advice.destination ]">
+        {{advice.date}} | {{advice.title}}
+          </a>
+      </li>
+    </ul>
+
+    <h3>My books</h3>
+    <ul>
+      <li *ngFor="let book of appUserData.books;">
+        <a [routerLink]="['/destination',  book.destination ]">
+          {{book.yearOfPublication}} | {{book.title}}
+          <!--<span *ngFor="let bookAuthor of book.author">{bookAuthor}}</span>-->
+        </a>
+      </li>
+    </ul>
   </section>
 </article>
 <h4 *ngIf="!auth.authenticated()">You are not logged in, please click 'Log in' button to login</h4>
