@@ -11,7 +11,7 @@ import { ADVICE_URLS } from '../shared/constants.shared';
 @Injectable()
 export class AdviceDataHandlerService{
   constructor(private http:Http,
-              private authHttp: AuthHttp,
+              private authHttp: AuthHttp
   ){}
 
   private getData(data_url): Promise<any> {

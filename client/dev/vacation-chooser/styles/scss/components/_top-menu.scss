@@ -36,18 +36,18 @@
     width: initial;
   }
 
-  .bee-in-circle{
-    background-color: #FFA000;
-    border-radius: 50%;
+  .bee-brand-icon{
     margin: 5px 0 5px 0;
     padding: 10px;
     display: inline-block;
     margin-right: 0px;
     margin-left: auto;
+    opacity: 0.8;
+
     &:hover{
-      background-color: white;
+      opacity: 1;
     }
-    .bee-in-circle__picture{
+    .bee-brand-icon__picture{
       height: 40px;
     }
   }

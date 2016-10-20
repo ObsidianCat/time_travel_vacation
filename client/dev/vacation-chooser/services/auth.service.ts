@@ -9,13 +9,18 @@ declare var Auth0Lock: any;
 @Injectable()
 export class Auth {
   // Configure Auth0
-  lock = new Auth0Lock(myConfig.clientID, myConfig.domain, {});
+  lock = new Auth0Lock(myConfig.clientID, myConfig.domain, {
+    theme: {
+      logo: './vacation-chooser/resources/images/bee_icon_small.png',
+      primaryColor: '#FFA000'
+    }
+  });
   //Store profile object in auth class
   userProfile: any;
   appUserData: any;
 
   constructor(
-    private authHttp: AuthHttp,
+    private authHttp: AuthHttp
     // @Inject (UserDataHandlerService) private userDataHandlerService:UserDataHandlerService
     ) {
     // Set userProfile attribute if already saved profile

@@ -19,12 +19,23 @@ var authCheck = jwt({
 
 module.exports = class UsersRoutes {
   static init(router) {
-    router.route("/api/users")
-      .get(authCheck, userCtrl.getAll)
-      .delete(authCheck, userCtrl.deleteOne)
-      .post(authCheck, userCtrl.findOrCreate);
+    router.route("/api/users" )
+      .get(userCtrl.getAll)
+      .delete( userCtrl.deleteOne)
+      .post( userCtrl.findOrCreate);
+
 
     router.route("/api/users/:userId")
-      .get(authCheck, userCtrl.getById);
+      .get(userCtrl.getById);
+
+    // router.route("/api/users/:userId")
+    //   .get(function() {
+    //     //TODO fix this call
+    //     // authCheck();
+    //     userCtrl.getById();
+    //   });
+
+    // router.get('/api/users/:userId', authCheck, userCtrl.getById());
+
   }
 };
