@@ -12,7 +12,8 @@
       <ul *ngIf="appUserData.advices && appUserData.advices.length>=1">
         <li *ngFor="let advice of appUserData.advices;">
           <a [routerLink]="['/destination',  advice.destination ]">
-          {{advice.date}} | {{advice.title}}
+            {{advice.destination.placeName}}, {{advice.destination.countryName}}  <br/>
+            {{advice.date}} | {{advice.title}}
             </a>
         </li>
       </ul>
@@ -25,6 +26,7 @@
     <ul *ngIf="appUserData.books && appUserData.books.length>=1">
       <li *ngFor="let book of appUserData.books;">
         <a [routerLink]="['/destination',  book.destination ]">
+          {{book.destination.placeName}}, {{book.destination.countryName}} <br/>
           {{book.yearOfPublication}} | {{book.title}}
           <!--<span *ngFor="let bookAuthor of book.author">{bookAuthor}}</span>-->
         </a>

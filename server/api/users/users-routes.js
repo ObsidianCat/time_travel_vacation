@@ -3,6 +3,7 @@
  * Created by Lula on 6/26/2016.
  */
 const User = require("../users/models/User");
+var Destination = require("../destinations/models/Destination");
 const userCtrl = require("../users/userCtrl.js")(User);
 const jwt = require('express-jwt');
 const commonMw = require("../middlewares/commmonMw");

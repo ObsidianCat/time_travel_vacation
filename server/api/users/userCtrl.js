@@ -6,7 +6,7 @@
 const Promise = require("bluebird");
 
 
-var userCtrl = function(User){
+var userCtrl = function(User, Destination){
   var findOrCreate = function (req, res, next) {
     var currentAuthId = req.body.authUserId;
 
@@ -60,16 +60,57 @@ var userCtrl = function(User){
   };
 
   var getById = function(req,res){
-    User.populate(req.user, 'advices books').then((data)=>{
-      res.status(200).json(data)
-    })
-    .catch(function(error){
-      console.error(error);
-      res.status(500).send({error});
+    User.findById(req.params.userId)
+      .populate([
+        {
+          path: 'books',
+          // Get friends of friends - populate the 'friends' array for every friend
+          populate: { path: 'destination' }
+        },
+        {
+            path: 'advices',
+            // Get friends of friends - populate the 'friends' array for every friend
+            populate: { path: 'destination' }
+        }
+      ])
+      .then((data)=>{
+        let convertedData = convertUserDocumentForPresentation(data);
+        res.status(200).json(convertedData)
+      })
+      .catch(function(error){
+        console.error(error);
+        res.status(500).send({error});
 
-    });
+      });
+
   };
 
+  function convertUserDocumentForPresentation(document){
+    const fieldsForPruning = ['advices', 'books'];
+    const destinationFields = ['_id', 'placeName', 'countryName'];
+    let documentForPresentation = Object.assign({}, document.toObject());
+
+    for(let j = 0; j<fieldsForPruning.length; j++){
+      let pruningField = fieldsForPruning[j];
+      documentForPresentation[pruningField].forEach((item)=>{
+        Object.keys(item.destination).forEach((destPropName)=>{
+          let isRequiredProp = false;
+          for(let i =0; i<destinationFields.length; i++){
+            let curRequiredFieldName = destinationFields[i];
+            if(destPropName === curRequiredFieldName){
+              isRequiredProp = true;
+              break;
+            }
+          }
+          if(!isRequiredProp){
+            delete item.destination[destPropName];
+          }
+        });
+      });
+    }
+
+    return documentForPresentation;
+  }
 
   return{
     findOrCreate,
