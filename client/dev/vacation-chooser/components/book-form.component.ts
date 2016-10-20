@@ -5,6 +5,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { NgForm }    from '@angular/forms';
 import {BookDataHandlerService } from "../services/book-data-handler.service";
 import { UserDataHandlerService } from '../services/user-data-handler.service';
+import { Auth } from '../services/auth.service';
 
 @Component({
   templateUrl:'vacation-chooser/templates/book-form.component.html',
@@ -18,7 +19,8 @@ export class BookFormComponent {
   userId: string;
 
   constructor(private dataHandlerService:BookDataHandlerService,
-              private userDataHandlerService:UserDataHandlerService) {}
+              private userDataHandlerService:UserDataHandlerService,
+              private auth: Auth) {}
 
   onSubmit() {
     this.userId = this.userDataHandlerService.getStoredAppUserId();

@@ -21,5 +21,10 @@
       required
       [(ngModel)]="model.body"></textarea>
   </div>
-  <button type="submit" class="btn btn-default">Submit</button>
+  <button
+    type="submit"
+    class="btn
+    btn-default"
+    *ngIf="auth.authenticated()" >Submit</button>
+  <p *ngIf="!auth.authenticated()">only logged in users can post advices</p>
 </form>
