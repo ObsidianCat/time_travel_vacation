@@ -62,6 +62,7 @@ export class Auth {
   }
   public login() {
     // Call the show method to display the widget.
+    // TODO Change reference to window to reference from NativeReferencesService
     this.lock.show({callbackURL: window.location.href});
   };
 
