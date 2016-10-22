@@ -2,20 +2,11 @@
 coverage
 node_modules
 unit_coverage
-typings
+
 *.map
 tests
-client/dev/**/*.css
 
 npm-debug.log.*
-client/dev/vacation-chooser/styles/css/
 npm-debug.log
 todo
-vacation-chooser
-!client/dev/vacation-chooser
-client/dev/vacation-chooser/**/*.js
-client/dev/app.module.js
 
-typings/
-typings/globals/es6-shim/index.d.ts
-typings/globals/jasmine/index.d.ts
