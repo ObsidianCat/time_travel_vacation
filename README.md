@@ -1,6 +1,6 @@
 # vacation-chooser-app
 
-##demo
+###demo
 [art-and-history.herokuapp.com](https://art-and-history.herokuapp.com)
 
 ##Installation
@@ -9,14 +9,14 @@ The apps requires installations of Node, npm, and MongoDB. When all there requim
 npm install
 ```
 
-##Run app
+###Run app
 ```
 $ npm run dev 
 ```
 MongoDB process should be running
 
 
-## Testing
+###Production build
 To test production build locally:
 ```
 $ npm run build-dist
