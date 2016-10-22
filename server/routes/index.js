@@ -19,12 +19,12 @@ module.exports = class Routes {
      UsersRoutes.init(router);
      AdvicesRoutes.init(router);
 
-     /*
+
      router
        .route('*')
        .get(StaticDispatcher.sendIndex);
-*/
-     app.use("/vacation-chooser", express.static(__dirname + '/dist/vacation-chooser'));
+
+     // app.use("/vacation-chooser", express.static(__dirname + '/dist/vacation-chooser'));
 
      app.use('/', router);
 
