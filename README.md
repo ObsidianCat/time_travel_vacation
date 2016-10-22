@@ -1,21 +1,25 @@
 # vacation-chooser-app
 
-#demo
+##demo
 art-and-history.herokuapp.com
 
 ##Installation
-Download project and run npm install
-Node and npm should be installed
+The apps requires installations of Node, npm, and MongoDB. When all there requiment are met, donwload the project and run
+```
+npm install
+```
 
 ##Run app
-$ npm run dev <br/>
+```
+$ npm run dev 
+```
 MongoDB process should be running
 
 
 ## Testing
 To test production build locally:
-$ npm run build-dist <br/>
 ```
+$ npm run build-dist
 set NODE_ENV=production && set MONGODBHQ_ENV=mongodb://localhost/vacationsDB && npm start
 ```
 
