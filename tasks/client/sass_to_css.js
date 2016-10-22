@@ -5,7 +5,7 @@ import gulp from 'gulp';
 import {path, tasks} from './const';
 import sass from 'gulp-sass';
 
-const STYLES_SOURCE = path.DEV + path.APP_NAME+'/styles/scss/*.scss';
+const STYLES_SOURCE = path.DEV + path.APP_NAME+'/styles/scss/**/*.scss';
 const STYLES_DESTINATION = path.DEV + path.APP_NAME+'/styles/css/';
 
 gulp.task(tasks.CLIENT_SASS_TO_CSS, function() {

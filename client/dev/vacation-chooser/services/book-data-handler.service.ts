@@ -5,12 +5,15 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from  '@angular/http';
 import 'rxjs/Rx';
 import 'rxjs/add/operator/toPromise';
+import {AuthHttp} from 'angular2-jwt';
 
 import { BOOK_URLS } from '../shared/constants.shared';
 
 @Injectable()
 export class BookDataHandlerService{
-  constructor(private http:Http ){}
+  constructor(private http:Http,
+              private authHttp: AuthHttp
+  ){}
 
   private getData(data_url): Promise<any> {
     return this.http.get(data_url)
@@ -39,7 +42,7 @@ export class BookDataHandlerService{
     return Promise.reject(errMsg);
   }
 
-  saveBook(dataModel, destId){
-    return this.sendData(BOOK_URLS.BASE+"/"+destId, dataModel);
+  saveBook(dataModel, destId, userId){
+    return this.sendData(BOOK_URLS.BASE+"/"+destId+"/"+userId, dataModel);
   }
 }

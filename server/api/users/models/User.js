@@ -1,12 +1,13 @@
-var mongoose = require("mongoose"),
+const mongoose = require("mongoose"),
   Schema = mongoose.Schema;
+  mongoose.Promise = require('bluebird');
+
 
 var userModel = new Schema({
-  firstName:String,
-  lastName:String,
-  nickname:String,
-  email:String,
-  advices:[{type:mongoose.Schema.Types.ObjectId, ref:'Advice'}]
+  authUserId:String,
+  advices:[{type:mongoose.Schema.Types.ObjectId, ref:'Advice'}],
+  books:[{type:mongoose.Schema.Types.ObjectId, ref:'Book'}]
+
 });
 
 

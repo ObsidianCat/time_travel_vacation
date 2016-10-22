@@ -1,1 +1,0 @@
-"use strict";var DestinationModel=function(){function t(t,i,s,e,o,n,a,h){this.placeName=t,this.countryName=i,this.historyTags=s,this.artTags=e,this.books=o,this.advices=n,this._id=a,this.likes=h}return t}();exports.DestinationModel=DestinationModel;

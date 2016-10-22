@@ -4,6 +4,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { NgForm }    from '@angular/forms';
 import { AdviceDataHandlerService } from "../services/advice-data-handler.service";
+import { UserDataHandlerService } from '../services/user-data-handler.service';
 
 @Component({
   templateUrl:'vacation-chooser/templates/advice-form.component.html',
@@ -14,12 +15,14 @@ export class AdviceFormComponent {
   submitted = false;
   @Output() newAdviceAdded = new EventEmitter();
   @Input() destId: string;
-  @Input() userId: string;
+  userId: string;
   model = {};
 
   onSubmit() {
     this.submitted = true;
     console.log(this.model);
+    this.userId = this.userDataHandlerService.getStoredAppUserId();
+
     this.dataHandlerService.saveAdvice(this.model, this.destId, this.userId)
       .then((data)=>{
         this.newAdviceAdded.emit(data);
@@ -31,7 +34,9 @@ export class AdviceFormComponent {
   }
 
 
-  constructor(private dataHandlerService:AdviceDataHandlerService) {
+  constructor(
+    private dataHandlerService:AdviceDataHandlerService,
+    private userDataHandlerService:UserDataHandlerService) {
   }
 
 

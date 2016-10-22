@@ -12,22 +12,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Created by Lula on 7/3/2016.
  */
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var destination_data_handler_service_1 = require("../services/destination-data-handler.service");
-var advice_data_handler_service_1 = require("../services/advice-data-handler.service");
-var book_data_handler_service_1 = require("../services/book-data-handler.service");
+var auth_service_1 = require('../services/auth.service');
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(auth) {
+        this.auth = auth;
         this.name = "Time traveler";
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'vacations-app',
             templateUrl: 'vacation-chooser/templates/app.component.html',
-            directives: [router_1.ROUTER_DIRECTIVES],
-            providers: [destination_data_handler_service_1.DestinationDataHandlerService, advice_data_handler_service_1.AdviceDataHandlerService, book_data_handler_service_1.BookDataHandlerService]
+            providers: [auth_service_1.Auth],
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [auth_service_1.Auth])
     ], AppComponent);
     return AppComponent;
 }());

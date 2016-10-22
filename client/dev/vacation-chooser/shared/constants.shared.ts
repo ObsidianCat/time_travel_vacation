@@ -30,11 +30,16 @@ const BOOK_URLS = {
   BASE:"api/books"
 };
 
+const USER_URLS = {
+  BASE:"api/users"
+};
+
 export {
   ART_TAGS,
   HISTORY_TAGS,
   TIME_RANGE,
   DESTINATION_URLS,
   ADVICE_URLS,
-  BOOK_URLS
+  BOOK_URLS,
+  USER_URLS
 };
