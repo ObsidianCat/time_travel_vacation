@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "main": "src/art-and-history-vacations.js",
   "scripts": {
-    "preinstall": "typings install",
+    "preinstall": "npm install typings -g && typings install",
     "postinstall": "tsc",
     "start": "node index",
     "watch": "gulp",
