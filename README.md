@@ -10,8 +10,9 @@ Download project and run npm install
 Node and npm should be installed
 
 ##Run app
+$ npm run dev <br/>
 MongoDB process should be running
-$ npm run dev
+
 
 ## Testing
 To test production build locally:
