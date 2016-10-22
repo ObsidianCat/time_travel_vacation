@@ -1,5 +1,7 @@
 "use strict";
 
+const express = require('express');
+
 const TodoRoutes = require('../api/todo/routes/todo-routes');
 const DestinationsRoutes = require('../api/destinations/destinations-routes');
 const BooksRoutes = require('../api/books/books-routes');
@@ -17,10 +19,12 @@ module.exports = class Routes {
      UsersRoutes.init(router);
      AdvicesRoutes.init(router);
 
+     /*
      router
        .route('*')
        .get(StaticDispatcher.sendIndex);
-
+*/
+     app.use("/vacation-chooser", express.static(__dirname + '/dist/vacation-chooser'));
 
      app.use('/', router);
 
