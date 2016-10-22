@@ -2,6 +2,7 @@ import {Injectable, Inject}      from '@angular/core';
 import { tokenNotExpired } from 'angular2-jwt';
 import { myConfig }        from '../auth.config';
 import {AuthHttp} from 'angular2-jwt';
+
 // import { UserDataHandlerService }  from 'user-data-handler.service';
 // Avoid name not found warnings
 declare var Auth0Lock: any;
@@ -13,7 +14,8 @@ export class Auth {
     theme: {
       logo: './vacation-chooser/resources/images/bee_icon_small.png',
       primaryColor: '#FFA000'
-    }
+    },
+    redirect: true,
   });
   //Store profile object in auth class
   userProfile: any;
@@ -60,7 +62,8 @@ export class Auth {
   }
   public login() {
     // Call the show method to display the widget.
-    this.lock.show();
+    // TODO Change reference to window to reference from NativeReferencesService
+    this.lock.show({callbackURL: window.location.href});
   };
 
   public authenticated() {

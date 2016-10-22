@@ -5,7 +5,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { NgForm }    from '@angular/forms';
 import { AdviceDataHandlerService } from "../services/advice-data-handler.service";
 import { UserDataHandlerService } from '../services/user-data-handler.service';
-
+import { Auth } from '../services/auth.service';
 @Component({
   templateUrl:'vacation-chooser/templates/advice-form.component.html',
   selector: 'advice-form',
@@ -36,7 +36,8 @@ export class AdviceFormComponent {
 
   constructor(
     private dataHandlerService:AdviceDataHandlerService,
-    private userDataHandlerService:UserDataHandlerService) {
+    private userDataHandlerService:UserDataHandlerService,
+    private auth: Auth) {
   }
 
 
