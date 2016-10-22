@@ -16,6 +16,7 @@ MongoDB process should be running
 
 ## Testing
 To test production build locally:
+$ npm run build-dist <br/>
 ```
 set NODE_ENV=production && set MONGODBHQ_ENV=mongodb://localhost/vacationsDB && npm start
 ```
