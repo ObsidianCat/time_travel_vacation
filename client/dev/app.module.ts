@@ -5,8 +5,8 @@ import { BrowserModule  } from '@angular/platform-browser';
 import { RouterModule }   from '@angular/router';
 import { AUTH_PROVIDERS }      from 'angular2-jwt';
 
-import { AppComponent }   from './vacation-chooser/components/app.component';
-import { HomeComponent }   from './vacation-chooser/components/home.component';
+import { AppComponent }   from 'vacation-chooser/components/app.component';
+import { HomeComponent }   from 'vacation-chooser/components/home.component';
 import { FinderComponent }   from './vacation-chooser/components/finder.component';
 import { ShowListComponent }   from './vacation-chooser/components/show-list.component';
 import { ShowRandomComponent }   from './vacation-chooser/components/show-random.component';
