@@ -6,6 +6,7 @@ typings
 *.map
 tests
 client/dev/**/*.css
+
 npm-debug.log.*
 client/dev/vacation-chooser/styles/css/
 npm-debug.log
