@@ -1,0 +1,18 @@
+@import '../abstracts/vars';
+@import '../abstracts/palette';
+
+.container-fluid{
+  background: $c-middle-amber;
+  padding-top: 50px;
+}
+.vote-inactive{
+  opacity: 0.5;
+}
+.dest-likes p{
+  margin: 0px;
+  margin-left: 1rem;
+}
+ul.tags li,
+ul.books li {
+  list-style: none;
+}

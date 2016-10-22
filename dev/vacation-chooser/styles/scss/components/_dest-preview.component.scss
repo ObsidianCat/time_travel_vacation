@@ -1,0 +1,28 @@
+@import '../abstracts/vars';
+
+article.dest-wrapper{
+  span.label{
+    margin: 0.5rem;
+    font-weight: 500;
+  }
+
+  .panel-heading{
+    background: url('#{$path-to-images}bee_one_comb.png') no-repeat 5px center;
+    background-size: 5%;
+  }
+  .panel-heading a
+  {
+    display: block;
+    cursor: pointer;
+    &:hover{
+      color:green;
+    }
+    h5{
+      padding-left: 30px;
+    }
+  }
+  .panel-default{
+    background-color:$c-middle-amber;
+  }
+}
+

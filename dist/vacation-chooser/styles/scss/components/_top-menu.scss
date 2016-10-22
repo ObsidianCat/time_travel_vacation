@@ -1,0 +1,62 @@
+.navbar-header{
+  @include media(">=extraSmall") {
+    width: 25%;
+  }
+}
+
+.navbar.navbar-fixed-top:after{
+  content: "";
+  background-repeat: no-repeat;
+  background-image: url('#{$path-to-images}bee_flags.png');
+
+}
+
+.nav.navbar-nav{
+  color:$c-grey-1;
+  &:hover{
+    color:$c-linen;
+  }
+  @include media(">=extraSmall") {
+    margin-top: 25px;
+  }
+
+  .navbar__login-status{
+    color:$c-dark-amber;
+  }
+}
+
+
+.navbar-brand{
+  height: 95px;
+  font-size: 1.2em;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  @include media(">=extraSmall") {
+    width: initial;
+  }
+
+  .bee-brand-icon{
+    margin: 5px 0 5px 0;
+    padding: 10px;
+    display: inline-block;
+    margin-right: 0px;
+    margin-left: auto;
+    opacity: 0.8;
+
+    &:hover{
+      opacity: 1;
+    }
+    .bee-brand-icon__picture{
+      height: 40px;
+    }
+  }
+  .navbar-brand__title{
+    display: inline-block;
+    margin: 0 10px;
+    width: 60%;
+    @include media(">=extraSmall") {
+      width: initial;
+    }
+  }
+}
