@@ -25,7 +25,8 @@ module.exports = class DestinationsRoutes {
             }
           });
         }
-      );
+      )
+      .put(destinationCtrl.updateDestination);
 
     router.route("/api/destinations/fullDescription/:destinationId")
       .get(destinationCtrl.getFullDescription);

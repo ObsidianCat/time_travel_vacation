@@ -132,14 +132,26 @@ var destinationCtrl = function(Destination){
     }
   };
 
+  const updateDestination = (req, res, next)=>{
+    Destination.update({_id:req.body._id}, req.body)
+      .then(function(response) {
+        res.json(response);
+        next(err);
+      })
+      .catch(function(err){
+        res.status(500).send(err);
+        next(err);
+      });
+  };
+
   return{
-    get: get,
+    get,
     post,
     getById,
     getRandom,
     voteForTag,
-    getFullDescription
-
+    getFullDescription,
+    updateDestination,
   }
 };
 
