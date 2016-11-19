@@ -1,18 +1,25 @@
 # vacation-chooser-app
-[![Build Status](https://secure.travis-ci.org/ObsidianCat/vacation-chooser-app.png?branch=master)](https://travis-ci.org/ObsidianCat/vacation-chooser-app)
-[![Coverage Status](https://coveralls.io/repos/ObsidianCat/vacation-chooser-app/badge.svg?branch=master)](https://coveralls.io/r/ObsidianCat/vacation-chooser-app/?branch=master)
 
-##Installation
-Download project and run npm install
-Node and npm should be installed
+###demo
+[art-and-history.herokuapp.com](https://art-and-history.herokuapp.com)
 
-##Run app
+###Installation
+The apps requires installations of Node, npm, and MongoDB. When all there requiment are met, donwload the project and run
+```
+npm install
+```
+
+###Run app
+```
+$ npm run dev 
+```
 MongoDB process should be running
-$ npm run dev
 
-## Testing
+
+###Production build
 To test production build locally:
 ```
+$ npm run build-dist
 set NODE_ENV=production && set MONGODBHQ_ENV=mongodb://localhost/vacationsDB && npm start
 ```
 
