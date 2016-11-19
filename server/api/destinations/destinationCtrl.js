@@ -133,10 +133,9 @@ var destinationCtrl = function(Destination){
   };
 
   const updateDestination = (req, res, next)=>{
-    Destination.update({_id:req.body._id}, req.body)
+    Destination.findOneAndUpdate({_id:req.body._id}, req.body, {new:true})
       .then(function(response) {
         res.json(response);
-        next(err);
       })
       .catch(function(err){
         res.status(500).send(err);
