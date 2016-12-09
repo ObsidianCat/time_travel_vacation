@@ -1,8 +1,9 @@
 "use strict";
 
-var Destination = require("../destinations/models/Destination");
-var destinationCtrl = require("../destinations/destinationCtrl.js")(Destination);
-var commonMw = require("../middlewares/commmonMw");
+const Destination = require("../destinations/models/Destination");
+const destinationCtrl = require("../destinations/destinationCtrl.js")(Destination);
+const commonMw = require("../middlewares/commmonMw");
+const activitiesMw = require("../middlewares/activitiesMw");
 
 module.exports = class DestinationsRoutes {
   static init(router) {
@@ -11,22 +12,33 @@ module.exports = class DestinationsRoutes {
     router
     .route("/api/destinations")
       .get(destinationCtrl.get)
-      .post(destinationCtrl.post);
+      .post((req, res, next) => {
+        destinationCtrl.create(req, res, next)
+          .then(() =>{
+            activitiesMw.writeActivity(req, 'created', next);
+        });
+      });
 
     router.route("/api/destinations/:destinationId")
       .get(destinationCtrl.getById)
-      .delete(function(req,res){
-          req.destination.remove(function(err){
+      .delete(function(req,res, next){
+          return req.destination.remove(function(err){
             if(err){
               res.status(500).send(err);
             }
             else{
               res.status(204).send("removed");
+              activitiesMw.writeActivity(req, 'deleted', next);
             }
           });
         }
       )
-      .put(destinationCtrl.updateDestination);
+      .put((req, res, next) =>{
+        destinationCtrl.updateDestination(req, res, next)
+          .then(() => {
+            activitiesMw.writeActivity(req, 'updated', next);
+          });
+      });
 
     router.route("/api/destinations/fullDescription/:destinationId")
       .get(destinationCtrl.getFullDescription);

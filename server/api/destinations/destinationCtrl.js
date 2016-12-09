@@ -50,17 +50,19 @@ var destinationCtrl = function(Destination){
 
   };
 
-  var post = function createDestination (req,res) {
+  var create = function createDestination (req,res, next) {
     var destination = new Destination(req.body);
-    destination.save().then(function(model){
+    return destination.save().then(function(model){
       res.status(201);
       res.send(model);
+      next();
       }
     )
     .catch(
       function(err){
         console.error("Destination not saved");
         res.send(err);
+        next();
       }
     );
   };
@@ -133,9 +135,10 @@ var destinationCtrl = function(Destination){
   };
 
   const updateDestination = (req, res, next)=>{
-    Destination.findOneAndUpdate({_id:req.body._id}, req.body, {new:true})
+    return Destination.findOneAndUpdate({_id:req.body._id}, req.body, {new:true})
       .then(function(response) {
         res.json(response);
+        next();
       })
       .catch(function(err){
         res.status(500).send(err);
@@ -145,7 +148,7 @@ var destinationCtrl = function(Destination){
 
   return{
     get,
-    post,
+    create,
     getById,
     getRandom,
     voteForTag,
