@@ -1,22 +1,18 @@
 "use strict";
 
 const activityCtrl = function(Activity){
-  var getAll = function(req, res){
-    Activity.find(
-      {},
-      function(err, advices){
-        if(err){
-          res.status(500).send(err);
-        }
-        else{
-          res.json(activities);
-        }
-      });
+  var getRecent = function(req, res){
+    Activity.find({}).sort('-date').limit(10).exec().then((activities) => {
+      res.json(activities);
+    })
+    .catch((err)=>{
+      res.status(500).send(err);
+    });
+
   };
 
-
   return{
-    getAll,
+    getRecent,
   }
 };
 

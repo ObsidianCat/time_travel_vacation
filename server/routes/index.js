@@ -7,7 +7,7 @@ const DestinationsRoutes = require('../api/destinations/destinations-routes');
 const BooksRoutes = require('../api/books/books-routes');
 const UsersRoutes = require('../api/users/users-routes');
 const AdvicesRoutes = require('../api/advices/advices-routes');
-const ActivitiesRoutes = require('../api/advices/activities-routes');
+const ActivitiesRoutes = require('../api/activities/activities-routes');
 
 const StaticDispatcher = require('../commons/static/index');
 
