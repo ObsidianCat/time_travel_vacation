@@ -1,7 +1,7 @@
 var Activity = require("../activities/models/activity");
 
 function writeActivity(req, status, next){
-  const message = `Destination ${req.body.placeName} ${status}`;
+  const message = `Destination ${req.body.placeName} ${status}.`;
   let activity = new Activity({message:message});
   activity.save().then(function(){
       next();
