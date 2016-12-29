@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require('@angular/core');
-const angular2_jwt_1 = require('angular2-jwt');
+const core_1 = require("@angular/core");
+const angular2_jwt_1 = require("angular2-jwt");
 let UserDataHandlerService = class UserDataHandlerService {
     constructor(authHttp) {
         this.authHttp = authHttp;
@@ -31,8 +31,8 @@ let UserDataHandlerService = class UserDataHandlerService {
     }
 };
 UserDataHandlerService = __decorate([
-    core_1.Injectable(), 
-    __metadata('design:paramtypes', [angular2_jwt_1.AuthHttp])
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [angular2_jwt_1.AuthHttp])
 ], UserDataHandlerService);
 exports.UserDataHandlerService = UserDataHandlerService;
 //# sourceMappingURL=user-data-handler.service.js.map

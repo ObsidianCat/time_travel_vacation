@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require('@angular/core');
+const core_1 = require("@angular/core");
 function _window() {
     // return the global native browser window object
     return window;
@@ -19,8 +19,8 @@ let NativeReferencesService = class NativeReferencesService {
     }
 };
 NativeReferencesService = __decorate([
-    core_1.Injectable(), 
-    __metadata('design:paramtypes', [])
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [])
 ], NativeReferencesService);
 exports.NativeReferencesService = NativeReferencesService;
 //# sourceMappingURL=native-references.service.js.map

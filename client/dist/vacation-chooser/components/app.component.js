@@ -11,8 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 /**
  * Created by Lula on 7/3/2016.
  */
-const core_1 = require('@angular/core');
-const auth_service_1 = require('../services/auth.service');
+const core_1 = require("@angular/core");
+const auth_service_1 = require("../services/auth.service");
 let AppComponent = class AppComponent {
     constructor(auth) {
         this.auth = auth;
@@ -24,8 +24,8 @@ AppComponent = __decorate([
         selector: 'vacations-app',
         templateUrl: 'vacation-chooser/templates/app.component.html',
         providers: [auth_service_1.Auth],
-    }), 
-    __metadata('design:paramtypes', [auth_service_1.Auth])
+    }),
+    __metadata("design:paramtypes", [auth_service_1.Auth])
 ], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

@@ -11,8 +11,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require('@angular/core');
-const router_1 = require('@angular/router');
+const core_1 = require("@angular/core");
+const router_1 = require("@angular/router");
 const destination_data_handler_service_1 = require("../services/destination-data-handler.service");
 const destination_1 = require("../models/destination");
 let DestViewComponent = class DestViewComponent {
@@ -71,16 +71,17 @@ let DestViewComponent = class DestViewComponent {
     }
 };
 __decorate([
-    core_1.Input(), 
-    __metadata('design:type', Object)
+    core_1.Input(),
+    __metadata("design:type", Object)
 ], DestViewComponent.prototype, "destination", void 0);
 DestViewComponent = __decorate([
     core_1.Component({
         selector: 'destination-view',
         templateUrl: 'vacation-chooser/templates/dest-view.component.html',
         styleUrls: ['vacation-chooser/styles/css/components/dest-view.component.css'],
-    }), 
-    __metadata('design:paramtypes', [destination_data_handler_service_1.DestinationDataHandlerService, router_1.ActivatedRoute])
+    }),
+    __metadata("design:paramtypes", [destination_data_handler_service_1.DestinationDataHandlerService,
+        router_1.ActivatedRoute])
 ], DestViewComponent);
 exports.DestViewComponent = DestViewComponent;
 //# sourceMappingURL=dest-view.component.js.map

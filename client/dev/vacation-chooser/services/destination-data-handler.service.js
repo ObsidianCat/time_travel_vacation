@@ -14,11 +14,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 /**
  * Created by Lula on 7/4/2016.
  */
-const core_1 = require('@angular/core');
-const http_1 = require('@angular/http');
-require('rxjs/Rx');
-require('rxjs/add/operator/toPromise');
-const constants_shared_1 = require('../shared/constants.shared');
+const core_1 = require("@angular/core");
+const http_1 = require("@angular/http");
+require("rxjs/Rx");
+require("rxjs/add/operator/toPromise");
+const constants_shared_1 = require("../shared/constants.shared");
 let DestinationDataHandlerService = class DestinationDataHandlerService {
     constructor(http) {
         this.http = http;
@@ -77,8 +77,8 @@ let DestinationDataHandlerService = class DestinationDataHandlerService {
     }
 };
 DestinationDataHandlerService = __decorate([
-    core_1.Injectable(), 
-    __metadata('design:paramtypes', [http_1.Http])
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
 ], DestinationDataHandlerService);
 exports.DestinationDataHandlerService = DestinationDataHandlerService;
 //# sourceMappingURL=destination-data-handler.service.js.map

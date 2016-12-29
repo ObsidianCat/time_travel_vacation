@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 /**
  * Created by Lula on 7/5/2016.
  */
-const core_1 = require('@angular/core');
+const core_1 = require("@angular/core");
 // import { ROUTER_DIRECTIVES } from '@angular/router';
 let HomeComponent = class HomeComponent {
 };
@@ -20,8 +20,8 @@ HomeComponent = __decorate([
         selector: 'home-content',
         // directives: [ROUTER_DIRECTIVES],
         templateUrl: 'vacation-chooser/templates/home.component.html',
-    }), 
-    __metadata('design:paramtypes', [])
+    }),
+    __metadata("design:paramtypes", [])
 ], HomeComponent);
 exports.HomeComponent = HomeComponent;
 //# sourceMappingURL=home.component.js.map

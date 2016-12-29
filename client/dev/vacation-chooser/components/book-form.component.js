@@ -11,10 +11,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 /**
  * Created by Lula on 7/12/2016.
  */
-const core_1 = require('@angular/core');
+const core_1 = require("@angular/core");
 const book_data_handler_service_1 = require("../services/book-data-handler.service");
-const user_data_handler_service_1 = require('../services/user-data-handler.service');
-const auth_service_1 = require('../services/auth.service');
+const user_data_handler_service_1 = require("../services/user-data-handler.service");
+const auth_service_1 = require("../services/auth.service");
 let BookFormComponent = class BookFormComponent {
     constructor(dataHandlerService, userDataHandlerService, auth) {
         this.dataHandlerService = dataHandlerService;
@@ -40,19 +40,21 @@ let BookFormComponent = class BookFormComponent {
     get diagnostic() { return JSON.stringify(this.model); }
 };
 __decorate([
-    core_1.Output(), 
-    __metadata('design:type', Object)
+    core_1.Output(),
+    __metadata("design:type", Object)
 ], BookFormComponent.prototype, "newBookAdded", void 0);
 __decorate([
-    core_1.Input(), 
-    __metadata('design:type', String)
+    core_1.Input(),
+    __metadata("design:type", String)
 ], BookFormComponent.prototype, "destId", void 0);
 BookFormComponent = __decorate([
     core_1.Component({
         templateUrl: 'vacation-chooser/templates/book-form.component.html',
         selector: 'book-form',
-    }), 
-    __metadata('design:paramtypes', [book_data_handler_service_1.BookDataHandlerService, user_data_handler_service_1.UserDataHandlerService, auth_service_1.Auth])
+    }),
+    __metadata("design:paramtypes", [book_data_handler_service_1.BookDataHandlerService,
+        user_data_handler_service_1.UserDataHandlerService,
+        auth_service_1.Auth])
 ], BookFormComponent);
 exports.BookFormComponent = BookFormComponent;
 //# sourceMappingURL=book-form.component.js.map

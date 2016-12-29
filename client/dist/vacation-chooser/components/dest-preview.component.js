@@ -11,8 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 /**
  * Created by Lula on 7/7/2016.
  */
-const core_1 = require('@angular/core');
-const router_1 = require('@angular/router');
+const core_1 = require("@angular/core");
+const router_1 = require("@angular/router");
 let DestPreviewComponent = class DestPreviewComponent {
     constructor(router) {
         this.router = router;
@@ -23,16 +23,16 @@ let DestPreviewComponent = class DestPreviewComponent {
     }
 };
 __decorate([
-    core_1.Input('cur-destination'), 
-    __metadata('design:type', Object)
+    core_1.Input('cur-destination'),
+    __metadata("design:type", Object)
 ], DestPreviewComponent.prototype, "destination", void 0);
 DestPreviewComponent = __decorate([
     core_1.Component({
         selector: 'destination-preview' + Math.random(),
         styleUrls: ['vacation-chooser/styles/css/components/dest-preview.component.css'],
         templateUrl: 'vacation-chooser/templates/dest-preview.component.html',
-    }), 
-    __metadata('design:paramtypes', [router_1.Router])
+    }),
+    __metadata("design:paramtypes", [router_1.Router])
 ], DestPreviewComponent);
 exports.DestPreviewComponent = DestPreviewComponent;
 //# sourceMappingURL=dest-preview.component.js.map

@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require('@angular/core');
-const destination_1 = require('../models/destination');
+const core_1 = require("@angular/core");
+const destination_1 = require("../models/destination");
 let AddDestFormComponent = class AddDestFormComponent {
     constructor() {
         this.historyTags = ["Early Middle Ages", "The Renaissance", "Ancient Rome", "Ancient Greece"];
@@ -31,8 +31,8 @@ AddDestFormComponent = __decorate([
     core_1.Component({
         selector: 'add-destination-form',
         templateUrl: 'vacation-chooser/templates/add-dest-form.component.html',
-    }), 
-    __metadata('design:paramtypes', [])
+    }),
+    __metadata("design:paramtypes", [])
 ], AddDestFormComponent);
 exports.AddDestFormComponent = AddDestFormComponent;
 //# sourceMappingURL=add-dest-form.component.js.map

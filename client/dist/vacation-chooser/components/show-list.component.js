@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 /**
  * Created by Lula on 7/5/2016.
  */
-const core_1 = require('@angular/core');
+const core_1 = require("@angular/core");
 const destination_data_handler_service_1 = require("../services/destination-data-handler.service");
 let ShowListComponent = class ShowListComponent {
     constructor(dataHandlerService) {
@@ -34,8 +34,8 @@ ShowListComponent = __decorate([
         selector: 'destination-preview',
         templateUrl: 'vacation-chooser/templates/show-list.component.html',
         styleUrls: ['vacation-chooser/styles/css/components/show-list.component.css'],
-    }), 
-    __metadata('design:paramtypes', [destination_data_handler_service_1.DestinationDataHandlerService])
+    }),
+    __metadata("design:paramtypes", [destination_data_handler_service_1.DestinationDataHandlerService])
 ], ShowListComponent);
 exports.ShowListComponent = ShowListComponent;
 //# sourceMappingURL=show-list.component.js.map

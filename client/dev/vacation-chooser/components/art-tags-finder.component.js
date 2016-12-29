@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require('@angular/core');
-const constants_shared_1 = require('../shared/constants.shared');
+const core_1 = require("@angular/core");
+const constants_shared_1 = require("../shared/constants.shared");
 const destination_data_handler_service_1 = require("../services/destination-data-handler.service");
 let ArtTagsFinderComponent = class ArtTagsFinderComponent {
     constructor(dataHandlerService) {
@@ -57,15 +57,15 @@ let ArtTagsFinderComponent = class ArtTagsFinderComponent {
     get diagnostic() { return JSON.stringify(this.model); }
 };
 __decorate([
-    core_1.Output(), 
-    __metadata('design:type', Object)
+    core_1.Output(),
+    __metadata("design:type", Object)
 ], ArtTagsFinderComponent.prototype, "gotSearchResults", void 0);
 ArtTagsFinderComponent = __decorate([
     core_1.Component({
         templateUrl: 'vacation-chooser/templates/tags-finder.component.html',
         selector: 'art-tags-finder',
-    }), 
-    __metadata('design:paramtypes', [destination_data_handler_service_1.DestinationDataHandlerService])
+    }),
+    __metadata("design:paramtypes", [destination_data_handler_service_1.DestinationDataHandlerService])
 ], ArtTagsFinderComponent);
 exports.ArtTagsFinderComponent = ArtTagsFinderComponent;
 //# sourceMappingURL=art-tags-finder.component.js.map

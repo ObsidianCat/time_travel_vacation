@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require('@angular/core');
-const constants_shared_1 = require('../shared/constants.shared');
+const core_1 = require("@angular/core");
+const constants_shared_1 = require("../shared/constants.shared");
 const destination_data_handler_service_1 = require("../services/destination-data-handler.service");
 let HistoryTagsFinderComponent = class HistoryTagsFinderComponent {
     constructor(dataHandlerService) {
@@ -58,15 +58,15 @@ let HistoryTagsFinderComponent = class HistoryTagsFinderComponent {
     get diagnostic() { return JSON.stringify(this.model); }
 };
 __decorate([
-    core_1.Output(), 
-    __metadata('design:type', Object)
+    core_1.Output(),
+    __metadata("design:type", Object)
 ], HistoryTagsFinderComponent.prototype, "gotSearchResults", void 0);
 HistoryTagsFinderComponent = __decorate([
     core_1.Component({
         templateUrl: 'vacation-chooser/templates/tags-finder.component.html',
         selector: 'history-tags-finder',
-    }), 
-    __metadata('design:paramtypes', [destination_data_handler_service_1.DestinationDataHandlerService])
+    }),
+    __metadata("design:paramtypes", [destination_data_handler_service_1.DestinationDataHandlerService])
 ], HistoryTagsFinderComponent);
 exports.HistoryTagsFinderComponent = HistoryTagsFinderComponent;
 //# sourceMappingURL=history-tags-finder.component.js.map

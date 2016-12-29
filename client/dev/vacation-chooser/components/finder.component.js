@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 /**
  * Created by Lula on 7/5/2016.
  */
-const core_1 = require('@angular/core');
+const core_1 = require("@angular/core");
 let FinderComponent = class FinderComponent {
     constructor() {
         this.searchResults = [];
@@ -29,8 +29,8 @@ FinderComponent = __decorate([
     core_1.Component({
         templateUrl: 'vacation-chooser/templates/finder.component.html',
         selector: 'finder',
-    }), 
-    __metadata('design:paramtypes', [])
+    }),
+    __metadata("design:paramtypes", [])
 ], FinderComponent);
 exports.FinderComponent = FinderComponent;
 //# sourceMappingURL=finder.component.js.map

@@ -11,10 +11,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 /**
  * Created by Lula on 7/12/2016.
  */
-const core_1 = require('@angular/core');
+const core_1 = require("@angular/core");
 const advice_data_handler_service_1 = require("../services/advice-data-handler.service");
-const user_data_handler_service_1 = require('../services/user-data-handler.service');
-const auth_service_1 = require('../services/auth.service');
+const user_data_handler_service_1 = require("../services/user-data-handler.service");
+const auth_service_1 = require("../services/auth.service");
 let AdviceFormComponent = class AdviceFormComponent {
     constructor(dataHandlerService, userDataHandlerService, auth) {
         this.dataHandlerService = dataHandlerService;
@@ -40,19 +40,21 @@ let AdviceFormComponent = class AdviceFormComponent {
     get diagnostic() { return JSON.stringify(this.model); }
 };
 __decorate([
-    core_1.Output(), 
-    __metadata('design:type', Object)
+    core_1.Output(),
+    __metadata("design:type", Object)
 ], AdviceFormComponent.prototype, "newAdviceAdded", void 0);
 __decorate([
-    core_1.Input(), 
-    __metadata('design:type', String)
+    core_1.Input(),
+    __metadata("design:type", String)
 ], AdviceFormComponent.prototype, "destId", void 0);
 AdviceFormComponent = __decorate([
     core_1.Component({
         templateUrl: 'vacation-chooser/templates/advice-form.component.html',
         selector: 'advice-form',
-    }), 
-    __metadata('design:paramtypes', [advice_data_handler_service_1.AdviceDataHandlerService, user_data_handler_service_1.UserDataHandlerService, auth_service_1.Auth])
+    }),
+    __metadata("design:paramtypes", [advice_data_handler_service_1.AdviceDataHandlerService,
+        user_data_handler_service_1.UserDataHandlerService,
+        auth_service_1.Auth])
 ], AdviceFormComponent);
 exports.AdviceFormComponent = AdviceFormComponent;
 //# sourceMappingURL=advice-form.component.js.map
