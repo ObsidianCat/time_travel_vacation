@@ -9,48 +9,63 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require("@angular/core");
-const destination_data_handler_service_1 = require("../services/destination-data-handler.service");
 const constants_shared_1 = require("../shared/constants.shared");
-let PeriodFinderComponent = class PeriodFinderComponent {
+const destination_data_handler_service_1 = require("../services/destination-data-handler.service");
+let ArtTagsFinderComponent = class ArtTagsFinderComponent {
     constructor(dataHandlerService) {
         this.dataHandlerService = dataHandlerService;
         this.active = true;
         this.submitted = false;
         this.gotSearchResults = new core_1.EventEmitter();
         this.model = {
-            start: {
-                name: "periodStart",
-                date: constants_shared_1.TIME_RANGE.START
-            },
-            end: {
-                name: "periodEnd",
-                date: constants_shared_1.TIME_RANGE.END
-            }
+            tagsType: "artTags"
         };
+        var tagsList = (function (tags) {
+            var tagsCollection = [];
+            for (let tag of tags) {
+                tagsCollection.push({
+                    "name": tag,
+                    "isChecked": false
+                });
+            } //end of for of
+            return tagsCollection;
+        })(constants_shared_1.ART_TAGS);
+        this.model["tags"] = tagsList;
     }
     onSubmit() {
         this.submitted = true;
-        this.dataHandlerService.getDestinationsByPeriod(this.model)
+        let selectedTags = this.model["tags"].filter(this.isSelected);
+        this.model["selectedTags"] = (function () {
+            let tagsNames = [];
+            for (let tag of selectedTags) {
+                tagsNames.push(tag.name);
+            }
+            return tagsNames;
+        })();
+        // console.log(this.model);
+        this.dataHandlerService.getDestinationsByTags(this.model)
             .then((data) => {
-            console.log(data);
             this.gotSearchResults.emit(data);
         })
             .catch((err) => {
             console.error(err);
         });
     }
+    isSelected(value) {
+        return value.isChecked;
+    }
     get diagnostic() { return JSON.stringify(this.model); }
 };
 __decorate([
     core_1.Output(),
     __metadata("design:type", Object)
-], PeriodFinderComponent.prototype, "gotSearchResults", void 0);
-PeriodFinderComponent = __decorate([
+], ArtTagsFinderComponent.prototype, "gotSearchResults", void 0);
+ArtTagsFinderComponent = __decorate([
     core_1.Component({
-        templateUrl: 'vacation-chooser/templates/period-finder.component.html',
-        selector: 'period-finder'
+        templateUrl: 'vacation-chooser/finder/tags-finder.component.html',
+        selector: 'art-tags-finder',
     }),
     __metadata("design:paramtypes", [destination_data_handler_service_1.DestinationDataHandlerService])
-], PeriodFinderComponent);
-exports.PeriodFinderComponent = PeriodFinderComponent;
-//# sourceMappingURL=period-finder.component.js.map
+], ArtTagsFinderComponent);
+exports.ArtTagsFinderComponent = ArtTagsFinderComponent;
+//# sourceMappingURL=art-tags-finder.component.js.map

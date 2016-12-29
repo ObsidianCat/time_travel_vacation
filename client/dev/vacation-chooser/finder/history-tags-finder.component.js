@@ -63,7 +63,7 @@ __decorate([
 ], HistoryTagsFinderComponent.prototype, "gotSearchResults", void 0);
 HistoryTagsFinderComponent = __decorate([
     core_1.Component({
-        templateUrl: 'vacation-chooser/templates/tags-finder.component.html',
+        templateUrl: 'vacation-chooser/finder/tags-finder.component.html',
         selector: 'history-tags-finder',
     }),
     __metadata("design:paramtypes", [destination_data_handler_service_1.DestinationDataHandlerService])

@@ -12,13 +12,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Created by Lula on 7/5/2016.
  */
 const core_1 = require("@angular/core");
-// import { ROUTER_DIRECTIVES } from '@angular/router';
 let HomeComponent = class HomeComponent {
 };
 HomeComponent = __decorate([
     core_1.Component({
         selector: 'home-content',
-        // directives: [ROUTER_DIRECTIVES],
         templateUrl: 'vacation-chooser/templates/home.component.html',
     }),
     __metadata("design:paramtypes", [])

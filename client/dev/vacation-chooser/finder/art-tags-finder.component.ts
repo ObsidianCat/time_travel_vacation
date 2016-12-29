@@ -1,14 +1,12 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { NgForm }    from '@angular/forms';
-import {HISTORY_TAGS } from '../shared/constants.shared'
+import {ART_TAGS } from '../shared/constants.shared'
 import { DestinationDataHandlerService } from "../services/destination-data-handler.service";
 
 @Component({
-  templateUrl:'vacation-chooser/templates/tags-finder.component.html',
-  selector: 'history-tags-finder',
+  templateUrl:'vacation-chooser/finder/tags-finder.component.html',
+  selector: 'art-tags-finder',
 })
-export class HistoryTagsFinderComponent {
-
+export class ArtTagsFinderComponent {
   active = true;
   submitted = false;
   @Output() gotSearchResults = new EventEmitter();
@@ -26,7 +24,6 @@ export class HistoryTagsFinderComponent {
     // console.log(this.model);
     this.dataHandlerService.getDestinationsByTags(this.model)
       .then((data)=>{
-        console.log(data);
         this.gotSearchResults.emit(data);
       })
       .catch((err)=>{
@@ -36,7 +33,7 @@ export class HistoryTagsFinderComponent {
   }
 
   model = {
-    tagsType:"historyTags"
+    tagsType:"artTags"
   };
 
   constructor(private dataHandlerService:DestinationDataHandlerService) {
@@ -50,7 +47,7 @@ export class HistoryTagsFinderComponent {
         });
       }//end of for of
       return tagsCollection;
-    })(HISTORY_TAGS);
+    })(ART_TAGS);
 
     this.model["tags"] = tagsList;
   }

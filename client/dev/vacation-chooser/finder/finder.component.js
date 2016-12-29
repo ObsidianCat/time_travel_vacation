@@ -27,7 +27,7 @@ let FinderComponent = class FinderComponent {
 };
 FinderComponent = __decorate([
     core_1.Component({
-        templateUrl: 'vacation-chooser/templates/finder.component.html',
+        templateUrl: 'vacation-chooser/finder/finder.component.html',
         selector: 'finder',
     }),
     __metadata("design:paramtypes", [])
