@@ -2,9 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {AuthHttp} from 'angular2-jwt';
 import 'rxjs/add/operator/map';
 import { Router } from '@angular/router';
-import { NativeReferencesService } from '../services/native-references.service';
-import { Auth } from '../services/auth.service';
-import { UserDataHandlerService } from '../services/user-data-handler.service';
+import { NativeReferencesService } from '../core/native-references.service';
+import { Auth } from '../core/auth.service';
+import { UserDataHandlerService } from '../core/user-data-handler.service';
 
 @Component({
   selector:'user-profile',

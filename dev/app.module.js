@@ -26,11 +26,11 @@ const advice_form_component_1 = require('./vacation-chooser/components/advice-fo
 const destination_data_handler_service_1 = require('./vacation-chooser/services/destination-data-handler.service');
 const advice_data_handler_service_1 = require('./vacation-chooser/services/advice-data-handler.service');
 const book_data_handler_service_1 = require('./vacation-chooser/services/book-data-handler.service');
-const native_references_service_1 = require('./vacation-chooser/services/native-references.service');
-const user_data_handler_service_1 = require('./vacation-chooser/services/user-data-handler.service');
+/* Feature Modules */
 const finder_module_1 = require("./vacation-chooser/finder/finder.module");
 const finder_component_1 = require("./vacation-chooser/finder/finder.component");
 const shared_module_1 = require("./vacation-chooser/shared/shared.module");
+const core_module_1 = require("./vacation-chooser/core/core.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -52,6 +52,7 @@ AppModule = __decorate([
             ]),
             finder_module_1.FinderModule,
             shared_module_1.SharedModule,
+            core_module_1.CoreModule,
         ],
         declarations: [
             app_component_1.AppComponent,
@@ -70,8 +71,6 @@ AppModule = __decorate([
             destination_data_handler_service_1.DestinationDataHandlerService,
             advice_data_handler_service_1.AdviceDataHandlerService,
             book_data_handler_service_1.BookDataHandlerService,
-            native_references_service_1.NativeReferencesService,
-            user_data_handler_service_1.UserDataHandlerService,
         ],
         bootstrap: [
             app_component_1.AppComponent,

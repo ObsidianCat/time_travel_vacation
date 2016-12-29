@@ -17,7 +17,7 @@ let HomeComponent = class HomeComponent {
 HomeComponent = __decorate([
     core_1.Component({
         selector: 'home-content',
-        templateUrl: 'vacation-chooser/templates/home.component.html',
+        templateUrl: 'vacation-chooser/home/home.component.html',
     }),
     __metadata("design:paramtypes", [])
 ], HomeComponent);

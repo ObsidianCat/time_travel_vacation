@@ -4,7 +4,7 @@ import { BrowserModule  } from '@angular/platform-browser';
 import { RouterModule }   from '@angular/router';
 import { AUTH_PROVIDERS }      from 'angular2-jwt';
 
-import { AppComponent }   from './vacation-chooser/components/app.component';
+import { AppComponent }   from './vacation-chooser/app.component';
 import { HomeComponent }   from './vacation-chooser/home/home.component';
 import { ShowListComponent }   from './vacation-chooser/components/show-list.component';
 import { ShowRandomComponent }   from './vacation-chooser/components/show-random.component';
@@ -19,11 +19,13 @@ import { AdviceFormComponent }   from './vacation-chooser/components/advice-form
 import { DestinationDataHandlerService }   from './vacation-chooser/services/destination-data-handler.service';
 import { AdviceDataHandlerService }   from './vacation-chooser/services/advice-data-handler.service';
 import { BookDataHandlerService }   from './vacation-chooser/services/book-data-handler.service';
-import { NativeReferencesService } from './vacation-chooser/services/native-references.service';
-import { UserDataHandlerService }  from './vacation-chooser/services/user-data-handler.service';
+
+/* Feature Modules */
 import {FinderModule} from "./vacation-chooser/finder/finder.module";
 import {FinderComponent} from "./vacation-chooser/finder/finder.component";
+
 import {SharedModule} from "./vacation-chooser/shared/shared.module";
+import {CoreModule} from "./vacation-chooser/core/core.module";
 
 @NgModule({
     imports: [
@@ -44,6 +46,7 @@ import {SharedModule} from "./vacation-chooser/shared/shared.module";
       ]),
       FinderModule,
       SharedModule,
+      CoreModule,
     ],
    declarations: [
      AppComponent,
@@ -62,8 +65,6 @@ import {SharedModule} from "./vacation-chooser/shared/shared.module";
       DestinationDataHandlerService,
       AdviceDataHandlerService,
       BookDataHandlerService,
-      NativeReferencesService,
-      UserDataHandlerService,
     ],
     bootstrap: [
       AppComponent,

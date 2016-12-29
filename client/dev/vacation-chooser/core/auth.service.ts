@@ -1,9 +1,8 @@
-import {Injectable, Inject}      from '@angular/core';
+import {Injectable}      from '@angular/core';
 import { tokenNotExpired } from 'angular2-jwt';
-import { myConfig }        from '../auth.config';
+import { myConfig }        from './auth.config';
 import {AuthHttp} from 'angular2-jwt';
 
-// import { UserDataHandlerService }  from 'user-data-handler.service';
 // Avoid name not found warnings
 declare var Auth0Lock: any;
 

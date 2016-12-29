@@ -13,7 +13,7 @@ const http_1 = require("@angular/http");
 const platform_browser_1 = require("@angular/platform-browser");
 const router_1 = require("@angular/router");
 const angular2_jwt_1 = require("angular2-jwt");
-const app_component_1 = require("./vacation-chooser/components/app.component");
+const app_component_1 = require("./vacation-chooser/app.component.ts");
 const home_component_1 = require("./vacation-chooser/home/home.component");
 const show_list_component_1 = require("./vacation-chooser/components/show-list.component");
 const show_random_component_1 = require("./vacation-chooser/components/show-random.component");
@@ -26,12 +26,12 @@ const advice_form_component_1 = require("./vacation-chooser/components/advice-fo
 const destination_data_handler_service_1 = require("./vacation-chooser/services/destination-data-handler.service");
 const advice_data_handler_service_1 = require("./vacation-chooser/services/advice-data-handler.service");
 const book_data_handler_service_1 = require("./vacation-chooser/services/book-data-handler.service");
-const native_references_service_1 = require("./vacation-chooser/services/native-references.service");
-const user_data_handler_service_1 = require("./vacation-chooser/services/user-data-handler.service");
+const native_references_service_1 = require("./vacation-chooser/core/native-references.service");
+/* Feature Modules */
 const finder_module_1 = require("./vacation-chooser/finder/finder.module");
 const finder_component_1 = require("./vacation-chooser/finder/finder.component");
 const shared_module_1 = require("./vacation-chooser/shared/shared.module");
-// import { Auth } from './vacation-chooser/services/auth.service';
+const core_module_1 = require("./vacation-chooser/core/core.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -53,6 +53,7 @@ AppModule = __decorate([
             ]),
             finder_module_1.FinderModule,
             shared_module_1.SharedModule,
+            core_module_1.CoreModule,
         ],
         declarations: [
             app_component_1.AppComponent,
@@ -72,7 +73,6 @@ AppModule = __decorate([
             advice_data_handler_service_1.AdviceDataHandlerService,
             book_data_handler_service_1.BookDataHandlerService,
             native_references_service_1.NativeReferencesService,
-            user_data_handler_service_1.UserDataHandlerService,
         ],
         bootstrap: [
             app_component_1.AppComponent,

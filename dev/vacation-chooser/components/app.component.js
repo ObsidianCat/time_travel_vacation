@@ -12,7 +12,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Created by Lula on 7/3/2016.
  */
 const core_1 = require('@angular/core');
-const auth_service_1 = require('../services/auth.service');
+const auth_service_1 = require('../core/auth.service');
 let AppComponent = class AppComponent {
     constructor(auth) {
         this.auth = auth;

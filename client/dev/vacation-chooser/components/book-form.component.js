@@ -13,8 +13,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  */
 const core_1 = require("@angular/core");
 const book_data_handler_service_1 = require("../services/book-data-handler.service");
-const user_data_handler_service_1 = require("../services/user-data-handler.service");
-const auth_service_1 = require("../services/auth.service");
+const user_data_handler_service_1 = require("../core/user-data-handler.service");
+const auth_service_1 = require("../core/auth.service");
 let BookFormComponent = class BookFormComponent {
     constructor(dataHandlerService, userDataHandlerService, auth) {
         this.dataHandlerService = dataHandlerService;

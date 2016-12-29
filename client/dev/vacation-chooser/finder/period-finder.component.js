@@ -12,8 +12,8 @@ const core_1 = require("@angular/core");
 const destination_data_handler_service_1 = require("../services/destination-data-handler.service");
 const constants_shared_1 = require("../shared/constants.shared");
 let PeriodFinderComponent = class PeriodFinderComponent {
-    constructor(dataHandlerService) {
-        this.dataHandlerService = dataHandlerService;
+    constructor(_dataHandlerService) {
+        this._dataHandlerService = _dataHandlerService;
         this.active = true;
         this.submitted = false;
         this.gotSearchResults = new core_1.EventEmitter();
@@ -30,7 +30,7 @@ let PeriodFinderComponent = class PeriodFinderComponent {
     }
     onSubmit() {
         this.submitted = true;
-        this.dataHandlerService.getDestinationsByPeriod(this.model)
+        this._dataHandlerService.getDestinationsByPeriod(this.model)
             .then((data) => {
             console.log(data);
             this.gotSearchResults.emit(data);
