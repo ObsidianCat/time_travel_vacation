@@ -10,5 +10,7 @@ npm-debug.log.*
 npm-debug.log
 todo
 
+dist
+dev
 client/dist
 client/dev/vacation-chooser/**/**.js

@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 const core_1 = require("@angular/core");
 const angular2_jwt_1 = require("angular2-jwt");
-const auth_config_1 = require("auth.config.ts");
+const auth_config_1 = require("./auth.config");
 const angular2_jwt_2 = require("angular2-jwt");
 let Auth = class Auth {
     constructor(authHttp) {

@@ -11,8 +11,7 @@ import { ShowRandomComponent }   from './vacation-chooser/components/show-random
 import { DestViewComponent }   from './vacation-chooser/components/dest-view.component';
 import { DestPreviewComponent }   from './vacation-chooser/components/dest-preview.component';
 
-import { AddDestFormComponent }   from './vacation-chooser/components/add-dest-form.component';
-import { UserProfileComponent }   from './vacation-chooser/components/user-profile.component';
+import { UserProfileComponent }   from './vacation-chooser/user-profile/user-profile.component';
 
 import { BookFormComponent }   from './vacation-chooser/components/book-form.component';
 import { AdviceFormComponent }   from './vacation-chooser/components/advice-form.component';
@@ -26,27 +25,30 @@ import {FinderComponent} from "./vacation-chooser/finder/finder.component";
 
 import {SharedModule} from "./vacation-chooser/shared/shared.module";
 import {CoreModule} from "./vacation-chooser/core/core.module";
+import {UserProfileModule} from "./vacation-chooser/user-profile/user-profile.module";
+import {HelloSectionModule} from "./vacation-chooser/hello-section/hello-section.module";
+import {HelloSectionComponent} from "./vacation-chooser/hello-section/hello-section.component";
 
 @NgModule({
     imports: [
       BrowserModule,
       HttpModule,
+      HelloSectionModule,
+      // UserProfileModule,
+      FinderModule,
+      SharedModule,
+      CoreModule,
       RouterModule.forRoot([
-        { path: '',
-          redirectTo: '/home',
-          pathMatch: 'full'},
         { path: 'home', component: HomeComponent},
         { path: 'find', component: FinderComponent },
         { path: 'browse', component: ShowListComponent },
         { path: 'inspire', component: ShowRandomComponent },
         { path: 'destination/:id', component: DestViewComponent},
-        { path: 'add-destination', component: AddDestFormComponent},
          { path: 'user-profile', component: UserProfileComponent},
-
+        { path: '', redirectTo: '/home', pathMatch: 'full'},
+        { path: '**', redirectTo: '/home', pathMatch: 'full'},
       ]),
-      FinderModule,
-      SharedModule,
-      CoreModule,
+
     ],
    declarations: [
      AppComponent,
@@ -55,7 +57,6 @@ import {CoreModule} from "./vacation-chooser/core/core.module";
      ShowListComponent,
      ShowRandomComponent,
      DestViewComponent,
-     AddDestFormComponent,
      BookFormComponent,
      AdviceFormComponent,
      UserProfileComponent,

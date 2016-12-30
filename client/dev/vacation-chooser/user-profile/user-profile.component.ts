@@ -8,7 +8,7 @@ import { UserDataHandlerService } from '../core/user-data-handler.service';
 
 @Component({
   selector:'user-profile',
-  templateUrl:'vacation-chooser/templates/user-profile.component.html'
+  templateUrl:'vacation-chooser/user-profile/user-profile.component.html'
 })
 
 export class UserProfileComponent implements OnInit {
