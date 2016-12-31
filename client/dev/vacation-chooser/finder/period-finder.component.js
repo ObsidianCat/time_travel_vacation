@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require("@angular/core");
-const destination_data_handler_service_1 = require("../services/destination-data-handler.service");
+const destination_data_handler_service_1 = require("../core/destination-data-handler.service");
 const constants_shared_1 = require("../shared/constants.shared");
 let PeriodFinderComponent = class PeriodFinderComponent {
     constructor(_dataHandlerService) {

@@ -4,16 +4,16 @@
 
 import {Component, Input, OnInit, OnDestroy} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { DestinationDataHandlerService } from "../services/destination-data-handler.service";
+import { DestinationDataHandlerService } from "../core/destination-data-handler.service";
 import { DestinationModel } from "../models/destination";
-import { AdviceFormComponent } from "./advice-form.component";
-import { BookFormComponent } from "./book-form.component";
+import {BookDataHandlerService} from "./book-data-handler.service";
+import {AdviceDataHandlerService} from "./advice-data-handler.service";
 
 @Component({
   selector:'destination-view',
-  templateUrl:'vacation-chooser/templates/dest-view.component.html',
+  templateUrl:'vacation-chooser/destination-full-view/dest-view.component.html',
   styleUrls: ['vacation-chooser/styles/css/components/dest-view.component.css'],
-  // directives:[AdviceFormComponent, BookFormComponent]
+  providers: [AdviceDataHandlerService, BookDataHandlerService],
 })
 export class DestViewComponent implements OnInit, OnDestroy{
   @Input() destination = new DestinationModel("","", [],[],[],[]);
@@ -32,7 +32,7 @@ export class DestViewComponent implements OnInit, OnDestroy{
       this.dataHandlerService.getDestinationById(id)
         .then(destination => {
           Object.assign(this.destination, destination);
-          
+
         });
     });
   }

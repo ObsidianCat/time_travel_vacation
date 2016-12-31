@@ -12,26 +12,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Created by Lula on 7/12/2016.
  */
 const core_1 = require("@angular/core");
-const book_data_handler_service_1 = require("../services/book-data-handler.service");
+const advice_data_handler_service_1 = require("./advice-data-handler.service");
 const user_data_handler_service_1 = require("../core/user-data-handler.service");
 const auth_service_1 = require("../core/auth.service");
-let BookFormComponent = class BookFormComponent {
+let AdviceFormComponent = class AdviceFormComponent {
     constructor(dataHandlerService, userDataHandlerService, auth) {
         this.dataHandlerService = dataHandlerService;
         this.userDataHandlerService = userDataHandlerService;
         this.auth = auth;
+        this.active = true;
         this.submitted = false;
-        this.newBookAdded = new core_1.EventEmitter();
+        this.newAdviceAdded = new core_1.EventEmitter();
         this.model = {};
     }
     onSubmit() {
-        this.userId = this.userDataHandlerService.getStoredAppUserId();
         this.submitted = true;
         console.log(this.model);
-        this.dataHandlerService.saveBook(this.model, this.destId, this.userId)
+        this.userId = this.userDataHandlerService.getStoredAppUserId();
+        this.dataHandlerService.saveAdvice(this.model, this.destId, this.userId)
             .then((data) => {
-            this.newBookAdded.emit(data);
-            this.model = {};
+            this.newAdviceAdded.emit(data);
         })
             .catch((err) => {
             console.error(err);
@@ -42,19 +42,19 @@ let BookFormComponent = class BookFormComponent {
 __decorate([
     core_1.Output(),
     __metadata("design:type", Object)
-], BookFormComponent.prototype, "newBookAdded", void 0);
+], AdviceFormComponent.prototype, "newAdviceAdded", void 0);
 __decorate([
     core_1.Input(),
     __metadata("design:type", String)
-], BookFormComponent.prototype, "destId", void 0);
-BookFormComponent = __decorate([
+], AdviceFormComponent.prototype, "destId", void 0);
+AdviceFormComponent = __decorate([
     core_1.Component({
-        templateUrl: 'vacation-chooser/templates/book-form.component.html',
-        selector: 'book-form',
+        templateUrl: 'vacation-chooser/destination-full-view/advice-form.component.html',
+        selector: 'advice-form',
     }),
-    __metadata("design:paramtypes", [book_data_handler_service_1.BookDataHandlerService,
+    __metadata("design:paramtypes", [advice_data_handler_service_1.AdviceDataHandlerService,
         user_data_handler_service_1.UserDataHandlerService,
         auth_service_1.Auth])
-], BookFormComponent);
-exports.BookFormComponent = BookFormComponent;
-//# sourceMappingURL=book-form.component.js.map
+], AdviceFormComponent);
+exports.AdviceFormComponent = AdviceFormComponent;
+//# sourceMappingURL=advice-form.component.js.map

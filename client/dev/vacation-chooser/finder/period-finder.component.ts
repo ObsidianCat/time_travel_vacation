@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { DestinationDataHandlerService } from "../services/destination-data-handler.service";
+import { DestinationDataHandlerService } from "../core/destination-data-handler.service";
 import { TIME_RANGE } from '../shared/constants.shared';
 
 @Component({

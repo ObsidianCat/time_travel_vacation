@@ -14,23 +14,18 @@ const platform_browser_1 = require("@angular/platform-browser");
 const angular2_jwt_1 = require("angular2-jwt");
 const app_component_1 = require("./vacation-chooser/app.component");
 const home_component_1 = require("./vacation-chooser/home/home.component");
-const show_list_component_1 = require("./vacation-chooser/components/show-list.component");
-const show_random_component_1 = require("./vacation-chooser/components/show-random.component");
-const dest_view_component_1 = require("./vacation-chooser/components/dest-view.component");
-const dest_preview_component_1 = require("./vacation-chooser/components/dest-preview.component");
-// import { UserProfileComponent }   from './vacation-chooser/user-profile/user-profile.component';
-const book_form_component_1 = require("./vacation-chooser/components/book-form.component");
-const advice_form_component_1 = require("./vacation-chooser/components/advice-form.component");
-const destination_data_handler_service_1 = require("./vacation-chooser/services/destination-data-handler.service");
-const advice_data_handler_service_1 = require("./vacation-chooser/services/advice-data-handler.service");
-const book_data_handler_service_1 = require("./vacation-chooser/services/book-data-handler.service");
+const destination_data_handler_service_1 = require("./vacation-chooser/core/destination-data-handler.service");
+const advice_data_handler_service_1 = require("./vacation-chooser/destination-full-view/advice-data-handler.service");
+const book_data_handler_service_1 = require("./vacation-chooser/destination-full-view/book-data-handler.service");
 /* Feature Modules */
 const finder_module_1 = require("./vacation-chooser/finder/finder.module");
 const shared_module_1 = require("./vacation-chooser/shared/shared.module");
 const core_module_1 = require("./vacation-chooser/core/core.module");
 const user_profile_module_1 = require("./vacation-chooser/user-profile/user-profile.module");
-const hello_section_module_1 = require("./vacation-chooser/hello-section/hello-section.module");
 const app_routing_module_1 = require("./vacation-chooser/routes/app-routing.module");
+const destination_full_view_module_1 = require("./vacation-chooser/destination-full-view/destination-full-view.module");
+const show_random_component_1 = require("./vacation-chooser/shared/show-random.component");
+const show_list_component_1 = require("./vacation-chooser/shared/show-list.component");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -38,9 +33,9 @@ AppModule = __decorate([
         imports: [
             platform_browser_1.BrowserModule,
             http_1.HttpModule,
-            hello_section_module_1.HelloSectionModule,
             user_profile_module_1.UserProfileModule,
             finder_module_1.FinderModule,
+            destination_full_view_module_1.DestinationFullViewModule,
             shared_module_1.SharedModule,
             core_module_1.CoreModule,
             app_routing_module_1.AppRoutingModule,
@@ -48,12 +43,8 @@ AppModule = __decorate([
         declarations: [
             app_component_1.AppComponent,
             home_component_1.HomeComponent,
-            dest_preview_component_1.DestPreviewComponent,
             show_list_component_1.ShowListComponent,
-            show_random_component_1.ShowRandomComponent,
-            dest_view_component_1.DestViewComponent,
-            book_form_component_1.BookFormComponent,
-            advice_form_component_1.AdviceFormComponent,
+            show_random_component_1.ShowRandomComponent
         ],
         providers: [
             angular2_jwt_1.AUTH_PROVIDERS,

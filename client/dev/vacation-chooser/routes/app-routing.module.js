@@ -12,9 +12,9 @@ const core_1 = require("@angular/core");
 const router_1 = require("@angular/router");
 const home_component_1 = require("../home/home.component");
 const finder_component_1 = require("../finder/finder.component");
-const show_list_component_1 = require("../components/show-list.component");
-const show_random_component_1 = require("../components/show-random.component");
-const dest_view_component_1 = require("../components/dest-view.component");
+const show_list_component_1 = require("../shared/show-list.component");
+const show_random_component_1 = require("../shared/show-random.component");
+const dest_view_component_1 = require("../destination-full-view/dest-view.component");
 const user_profile_component_1 = require("../user-profile/user-profile.component");
 const appRoutes = [
     { path: 'home', component: home_component_1.HomeComponent },

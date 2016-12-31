@@ -1,9 +1,3 @@
-/**
- * Created by Lula on 7/6/2016.
- */
-/**
- * Created by Lula on 7/4/2016.
- */
 import { Injectable } from '@angular/core';
 import { Http, Response } from  '@angular/http';
 import 'rxjs/Rx';

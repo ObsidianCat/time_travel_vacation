@@ -2,11 +2,11 @@
  * Created by Lula on 7/5/2016.
  */
 import {Component, OnInit} from '@angular/core';
-import { DestinationDataHandlerService } from "../services/destination-data-handler.service";
+import { DestinationDataHandlerService } from "../core/destination-data-handler.service";
 
 @Component({
   selector:'destination-preview',
-  templateUrl:'vacation-chooser/templates/show-list.component.html',
+  templateUrl:'vacation-chooser/shared/show-list.component.html',
   styleUrls: ['vacation-chooser/styles/css/components/show-list.component.css'],
 
 })

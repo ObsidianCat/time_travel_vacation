@@ -3,11 +3,11 @@
  */
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { NgForm }    from '@angular/forms';
-import { AdviceDataHandlerService } from "../services/advice-data-handler.service";
+import { AdviceDataHandlerService } from "./advice-data-handler.service";
 import { UserDataHandlerService } from '../core/user-data-handler.service';
 import { Auth } from '../core/auth.service';
 @Component({
-  templateUrl:'vacation-chooser/templates/advice-form.component.html',
+  templateUrl:'vacation-chooser/destination-full-view/advice-form.component.html',
   selector: 'advice-form',
 })
 export class AdviceFormComponent {

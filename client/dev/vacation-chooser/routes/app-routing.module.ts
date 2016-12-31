@@ -2,9 +2,9 @@ import {NgModule}             from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from "../home/home.component";
 import {FinderComponent} from "../finder/finder.component";
-import {ShowListComponent} from "../components/show-list.component";
-import {ShowRandomComponent} from "../components/show-random.component";
-import {DestViewComponent} from "../components/dest-view.component";
+import {ShowListComponent} from "../shared/show-list.component";
+import {ShowRandomComponent} from "../shared/show-random.component";
+import {DestViewComponent} from "../destination-full-view/dest-view.component";
 import {UserProfileComponent} from "../user-profile/user-profile.component";
 
 

@@ -13,8 +13,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 const core_1 = require("@angular/core");
 const router_1 = require("@angular/router");
-const destination_data_handler_service_1 = require("../services/destination-data-handler.service");
+const destination_data_handler_service_1 = require("../core/destination-data-handler.service");
 const destination_1 = require("../models/destination");
+const book_data_handler_service_1 = require("./book-data-handler.service");
+const advice_data_handler_service_1 = require("./advice-data-handler.service");
 let DestViewComponent = class DestViewComponent {
     constructor(dataHandlerService, route) {
         this.dataHandlerService = dataHandlerService;
@@ -77,8 +79,9 @@ __decorate([
 DestViewComponent = __decorate([
     core_1.Component({
         selector: 'destination-view',
-        templateUrl: 'vacation-chooser/templates/dest-view.component.html',
+        templateUrl: 'vacation-chooser/destination-full-view/dest-view.component.html',
         styleUrls: ['vacation-chooser/styles/css/components/dest-view.component.css'],
+        providers: [advice_data_handler_service_1.AdviceDataHandlerService, book_data_handler_service_1.BookDataHandlerService],
     }),
     __metadata("design:paramtypes", [destination_data_handler_service_1.DestinationDataHandlerService,
         router_1.ActivatedRoute])

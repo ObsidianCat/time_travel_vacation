@@ -3,12 +3,12 @@
  */
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { NgForm }    from '@angular/forms';
-import {BookDataHandlerService } from "../services/book-data-handler.service";
+import {BookDataHandlerService } from "./book-data-handler.service";
 import { UserDataHandlerService } from '../core/user-data-handler.service';
 import { Auth } from '../core/auth.service';
 
 @Component({
-  templateUrl:'vacation-chooser/templates/book-form.component.html',
+  templateUrl:'vacation-chooser/destination-full-view/book-form.component.html',
   selector: 'book-form',
 })
 export class BookFormComponent {

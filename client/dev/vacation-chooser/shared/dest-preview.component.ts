@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 @Component({
   selector:'destination-preview'+Math.random(),
   styleUrls: ['vacation-chooser/styles/css/components/dest-preview.component.css'],
-  templateUrl:'vacation-chooser/templates/dest-preview.component.html',
+  templateUrl:'vacation-chooser/shared/dest-preview.component.html',
 })
 export class DestPreviewComponent {
   // @Input() destination: {};

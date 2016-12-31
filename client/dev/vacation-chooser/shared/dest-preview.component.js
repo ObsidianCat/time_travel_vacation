@@ -30,7 +30,7 @@ DestPreviewComponent = __decorate([
     core_1.Component({
         selector: 'destination-preview' + Math.random(),
         styleUrls: ['vacation-chooser/styles/css/components/dest-preview.component.css'],
-        templateUrl: 'vacation-chooser/templates/dest-preview.component.html',
+        templateUrl: 'vacation-chooser/shared/dest-preview.component.html',
     }),
     __metadata("design:paramtypes", [router_1.Router])
 ], DestPreviewComponent);

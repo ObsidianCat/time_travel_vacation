@@ -12,7 +12,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Created by Lula on 7/5/2016.
  */
 const core_1 = require("@angular/core");
-const destination_data_handler_service_1 = require("../services/destination-data-handler.service");
+const destination_data_handler_service_1 = require("../core/destination-data-handler.service");
 let ShowRandomComponent = class ShowRandomComponent {
     constructor(dataHandlerService) {
         this.dataHandlerService = dataHandlerService;
@@ -36,8 +36,7 @@ let ShowRandomComponent = class ShowRandomComponent {
 ShowRandomComponent = __decorate([
     core_1.Component({
         selector: 'destination-random',
-        templateUrl: 'vacation-chooser/templates/show-random.component.html',
-        // directives:[DestPreviewComponent],
+        templateUrl: 'vacation-chooser/shared/show-random.component.html',
         styleUrls: ['vacation-chooser/styles/css/components/show-random.component.css'],
     }),
     __metadata("design:paramtypes", [destination_data_handler_service_1.DestinationDataHandlerService])

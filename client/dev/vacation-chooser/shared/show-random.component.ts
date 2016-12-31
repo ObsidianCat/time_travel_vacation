@@ -2,13 +2,11 @@
  * Created by Lula on 7/5/2016.
  */
 import {Component, OnInit} from '@angular/core';
-import { DestinationDataHandlerService } from "../services/destination-data-handler.service";
-import { DestPreviewComponent } from './dest-preview.component';
+import { DestinationDataHandlerService } from "../core/destination-data-handler.service";
 
 @Component({
   selector:'destination-random',
-  templateUrl:'vacation-chooser/templates/show-random.component.html',
-  // directives:[DestPreviewComponent],
+  templateUrl:'vacation-chooser/shared/show-random.component.html',
   styleUrls: ['vacation-chooser/styles/css/components/show-random.component.css'],
 
 })

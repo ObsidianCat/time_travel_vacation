@@ -12,7 +12,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Created by Lula on 7/5/2016.
  */
 const core_1 = require("@angular/core");
-const destination_data_handler_service_1 = require("../services/destination-data-handler.service");
+const destination_data_handler_service_1 = require("../core/destination-data-handler.service");
 let ShowListComponent = class ShowListComponent {
     constructor(dataHandlerService) {
         this.dataHandlerService = dataHandlerService;
@@ -32,7 +32,7 @@ let ShowListComponent = class ShowListComponent {
 ShowListComponent = __decorate([
     core_1.Component({
         selector: 'destination-preview',
-        templateUrl: 'vacation-chooser/templates/show-list.component.html',
+        templateUrl: 'vacation-chooser/shared/show-list.component.html',
         styleUrls: ['vacation-chooser/styles/css/components/show-list.component.css'],
     }),
     __metadata("design:paramtypes", [destination_data_handler_service_1.DestinationDataHandlerService])

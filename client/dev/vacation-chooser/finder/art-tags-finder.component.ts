@@ -1,6 +1,6 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import {ART_TAGS } from '../shared/constants.shared'
-import { DestinationDataHandlerService } from "../services/destination-data-handler.service";
+import { DestinationDataHandlerService } from "../core/destination-data-handler.service";
 
 @Component({
   templateUrl:'vacation-chooser/finder/tags-finder.component.html',

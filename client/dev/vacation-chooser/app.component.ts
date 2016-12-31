@@ -8,7 +8,6 @@ import { Auth } from './core/auth.service';
   selector: 'vacations-app',
   templateUrl:'vacation-chooser/app.component.html',
   providers: [ Auth ],
-
 })
 export class AppComponent {
   constructor(private auth: Auth) {}

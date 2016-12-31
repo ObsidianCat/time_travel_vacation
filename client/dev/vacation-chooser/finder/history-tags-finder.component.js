@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 const core_1 = require("@angular/core");
 const constants_shared_1 = require("../shared/constants.shared");
-const destination_data_handler_service_1 = require("../services/destination-data-handler.service");
+const destination_data_handler_service_1 = require("../core/destination-data-handler.service");
 let HistoryTagsFinderComponent = class HistoryTagsFinderComponent {
     constructor(dataHandlerService) {
         this.dataHandlerService = dataHandlerService;
