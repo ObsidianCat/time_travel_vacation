@@ -11,7 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 const core_1 = require("@angular/core");
 const http_1 = require("@angular/http");
 const platform_browser_1 = require("@angular/platform-browser");
-const router_1 = require("@angular/router");
 const angular2_jwt_1 = require("angular2-jwt");
 const app_component_1 = require("./vacation-chooser/app.component");
 const home_component_1 = require("./vacation-chooser/home/home.component");
@@ -19,7 +18,7 @@ const show_list_component_1 = require("./vacation-chooser/components/show-list.c
 const show_random_component_1 = require("./vacation-chooser/components/show-random.component");
 const dest_view_component_1 = require("./vacation-chooser/components/dest-view.component");
 const dest_preview_component_1 = require("./vacation-chooser/components/dest-preview.component");
-const user_profile_component_1 = require("./vacation-chooser/user-profile/user-profile.component");
+// import { UserProfileComponent }   from './vacation-chooser/user-profile/user-profile.component';
 const book_form_component_1 = require("./vacation-chooser/components/book-form.component");
 const advice_form_component_1 = require("./vacation-chooser/components/advice-form.component");
 const destination_data_handler_service_1 = require("./vacation-chooser/services/destination-data-handler.service");
@@ -27,10 +26,11 @@ const advice_data_handler_service_1 = require("./vacation-chooser/services/advic
 const book_data_handler_service_1 = require("./vacation-chooser/services/book-data-handler.service");
 /* Feature Modules */
 const finder_module_1 = require("./vacation-chooser/finder/finder.module");
-const finder_component_1 = require("./vacation-chooser/finder/finder.component");
 const shared_module_1 = require("./vacation-chooser/shared/shared.module");
 const core_module_1 = require("./vacation-chooser/core/core.module");
+const user_profile_module_1 = require("./vacation-chooser/user-profile/user-profile.module");
 const hello_section_module_1 = require("./vacation-chooser/hello-section/hello-section.module");
+const app_routing_module_1 = require("./vacation-chooser/routes/app-routing.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -39,20 +39,11 @@ AppModule = __decorate([
             platform_browser_1.BrowserModule,
             http_1.HttpModule,
             hello_section_module_1.HelloSectionModule,
-            // UserProfileModule,
+            user_profile_module_1.UserProfileModule,
             finder_module_1.FinderModule,
             shared_module_1.SharedModule,
             core_module_1.CoreModule,
-            router_1.RouterModule.forRoot([
-                { path: 'home', component: home_component_1.HomeComponent },
-                { path: 'find', component: finder_component_1.FinderComponent },
-                { path: 'browse', component: show_list_component_1.ShowListComponent },
-                { path: 'inspire', component: show_random_component_1.ShowRandomComponent },
-                { path: 'destination/:id', component: dest_view_component_1.DestViewComponent },
-                { path: 'user-profile', component: user_profile_component_1.UserProfileComponent },
-                { path: '', redirectTo: '/home', pathMatch: 'full' },
-                { path: '**', redirectTo: '/home', pathMatch: 'full' },
-            ]),
+            app_routing_module_1.AppRoutingModule,
         ],
         declarations: [
             app_component_1.AppComponent,
@@ -63,7 +54,6 @@ AppModule = __decorate([
             dest_view_component_1.DestViewComponent,
             book_form_component_1.BookFormComponent,
             advice_form_component_1.AdviceFormComponent,
-            user_profile_component_1.UserProfileComponent,
         ],
         providers: [
             angular2_jwt_1.AUTH_PROVIDERS,
