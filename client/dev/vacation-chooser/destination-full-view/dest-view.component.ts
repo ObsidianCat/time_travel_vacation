@@ -5,7 +5,7 @@
 import {Component, Input, OnInit, OnDestroy} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DestinationDataHandlerService } from "../core/destination-data-handler.service";
-import { DestinationModel } from "../models/destination";
+import { DestinationModel } from "./destination";
 import {BookDataHandlerService} from "./book-data-handler.service";
 import {AdviceDataHandlerService} from "./advice-data-handler.service";
 
